@@ -1,0 +1,13 @@
+databaseChangeLog:
+  - preConditions:
+      - dbms:
+          type: postgresql
+  - changeSet:
+      id: PPL-001-202107191234
+      author: PaulRobinson
+      comment: Create Initial DB Structure
+      # runOnChange: true
+      changes:
+      - sqlFile:
+          path: PPL-001-202107191234.sql
+          relativeToChangelogFile: true
