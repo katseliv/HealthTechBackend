@@ -1,7 +1,10 @@
 package team.healthtech.db.entity;
 
 import javax.persistence.*;
-
+/*
+    MappedSuperClass InheritanceStrategy - две аннотации, которые позволяют организовывать наследование, где его по сути нет
+    в реляционных бд их нет ни в каком виде, а с точки зрения кода - есть
+ */
 @Table(schema = "healthtech", name = "user")
 @Entity(name = "user")
 public class User {

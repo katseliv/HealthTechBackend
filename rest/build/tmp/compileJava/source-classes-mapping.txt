@@ -1,6 +1,6 @@
-team.healthtech/rest/api/RestConfiguration.java
- team.healthtech.rest.api.RestConfiguration
-team.healthtech/rest/api/HelloWorldController.java
- team.healthtech.rest.api.HelloWorldController
 team.healthtech/rest/api/UserController.java
  team.healthtech.rest.api.UserController
+team.healthtech/rest/api/HelloWorldController.java
+ team.healthtech.rest.api.HelloWorldController
+team.healthtech/rest/api/RestConfiguration.java
+ team.healthtech.rest.api.RestConfiguration
