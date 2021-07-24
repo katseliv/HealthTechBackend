@@ -7,7 +7,7 @@ import javax.persistence.*;
  */
 @Table(schema = "healthtech", name = "user")
 @Entity(name = "user")
-public class User {
+public class UserEntity {
     @Id //javax.persistence
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
