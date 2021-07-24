@@ -1,106 +1,111 @@
 CREATE SCHEMA healthtech;
 
-CREATE TABLE healthtech.speciality
+CREATE TABLE healthtech.users
 (
-    speciality_id SERIAL PRIMARY KEY,
-    name          VARCHAR(50)
+    id         SERIAL PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    mid_name   VARCHAR(50) NOT NULL,
+    last_name  VARCHAR(50) NOT NULL,
+    password   VARCHAR(50) NOT NULL
 );
 
-CREATE TABLE healthtech.user
+CREATE TABLE healthtech.administrators
 (
-    user_id  SERIAL PRIMARY KEY,
-    first_name   VARCHAR(50) NOT NULL,
-    mid_name     VARCHAR(50) NOT NULL,
-    last_name    VARCHAR(50) NOT NULL,
-    phone_number VARCHAR(11) NOT NULL,
-    password VARCHAR(50)  NOT NULL,
-    email    VARCHAR(100) NOT NULL
+    id INTEGER PRIMARY KEY,
+    FOREIGN KEY (id) REFERENCES healthtech.users (id) ON DELETE CASCADE
+    -- прописать privileges
 );
 
---CREATE SEQUENCE user_seq START 10;
+CREATE TABLE healthtech.doctors
+(
+    user_id_ptr INTEGER PRIMARY KEY,
+    sex         BOOLEAN,
+    rating      FLOAT NOT NULL,
+    FOREIGN KEY (user_id_ptr) REFERENCES healthtech.users (id) ON DELETE CASCADE
+);
 
---ALTER TABLE healthtech.user ALTER COLUMN id SET DEFAULT nextval('user_seq');
+CREATE TABLE healthtech.patients
+(
+    user_id_ptr INTEGER PRIMARY KEY, -- подумать с неймингом
+    age         INTEGER NOT NULL,    -- сменить на birthdate
+    sex         CHAR(1) NOT NULL,
+    FOREIGN KEY (user_id_ptr) REFERENCES healthtech.users (id) ON DELETE CASCADE
+);
+
+CREATE TABLE healthtech.specialities
+(
+    id   SERIAL PRIMARY KEY,
+    name VARCHAR(50)
+);
 
 CREATE TABLE healthtech.allergies
 (
-    allergy_id   SERIAL PRIMARY KEY,
-    allergy_name VARCHAR(100) NOT NULL
+    id   SERIAL PRIMARY KEY,
+    name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE healthtech.patient
+CREATE TABLE healthtech.patients_allergies
 (
-    patient_id   INTEGER PRIMARY KEY,
-    age          INTEGER     NOT NULL,
-    sex          BOOLEAN     NOT NULL,
-    allergies    INTEGER REFERENCES healthtech.allergies (allergy_id),
-    diseases     INTEGER, --REFERENCES healthtech.diseases (disease_id),
-    appointments INTEGER  --REFERENCES healthtech.appointment (appointment_id)
-) INHERITS (healthtech.user);
+    patient_id INTEGER REFERENCES healthtech.patients (user_id_ptr),
+    allergy_id INTEGER REFERENCES healthtech.allergies (id)
+);
 
-CREATE TABLE healthtech.appointment
+CREATE TABLE healthtech.time_records
 (
-    appointment_id INTEGER PRIMARY KEY,
-    is_taken       BOOLEAN,
-    patient_id     INTEGER REFERENCES healthtech.patient (patient_id) NOT NULL,
-    timetable_id   INTEGER, --REFERENCES healthtech.timetable (id)       NOT NULL,
-    datetime       TIMESTAMPTZ                                        NOT NULL
+    id         INTEGER PRIMARY KEY,
+    doctor_id  INTEGER REFERENCES healthtech.doctors (user_id_ptr),
+    date       DATE,
+    start_time TIME,
+    end_time   TIME
+);
+
+CREATE TABLE healthtech.appointments
+(
+    id             SERIAL PRIMARY KEY,
+    patient_id     INTEGER REFERENCES healthtech.patients (user_id_ptr) ON DELETE CASCADE NOT NULL,
+    time_record_id INTEGER REFERENCES healthtech.time_records (id) ON DELETE CASCADE      NOT NULL,
+    is_taken       BOOLEAN DEFAULT FALSE,
+    datetime       TIMESTAMPTZ                                                            NOT NULL
 );
 
 CREATE TABLE healthtech.diseases
 (
-    disease_id SERIAL PRIMARY KEY,
-    patient_id INTEGER REFERENCES healthtech.patient (patient_id),
+    id         SERIAL PRIMARY KEY,
+    patient_id INTEGER REFERENCES healthtech.patients (user_id_ptr),
     name       VARCHAR(100) NOT NULL,
     start_date DATE         NOT NULL,
     end_date   DATE
 );
 
-CREATE TABLE healthtech.administrator
+CREATE TABLE healthtech.doctors_specialities
 (
-    admin_id INTEGER PRIMARY KEY
+    doctor_id     INTEGER REFERENCES healthtech.doctors (user_id_ptr),
+    speciality_id INTEGER REFERENCES healthtech.specialities (id),
+    receive_date  DATE NOT NULL
 );
 
-CREATE TABLE healthtech.doctor
-(
-    id            INTEGER PRIMARY KEY,
-    speciality_id INTEGER REFERENCES healthtech.speciality (speciality_id) NOT NULL,
-    sex           BOOLEAN,
-    rating        FLOAT                                                    NOT NULL,
-    timetable_id  INTEGER --REFERENCES healthtech.timetable (id)
-) INHERITS (healthtech.user);
-
-CREATE TABLE healthtech.timetable
-(
-    timetable_id INTEGER PRIMARY KEY,
-    doctor_id    INTEGER REFERENCES healthtech.doctor (id),
-    date         DATE,
-    start_time   TIME,
-    end_time     TIME
-);
-
-CREATE TABLE healthtech.comment
+CREATE TABLE healthtech.comments
 (
     id         SERIAL PRIMARY KEY,
-    doctor_id  INTEGER REFERENCES healthtech.doctor (id),
-    patient_id INTEGER REFERENCES healthtech.patient (patient_id),
+    doctor_id  INTEGER REFERENCES healthtech.doctors (user_id_ptr),
+    patient_id INTEGER REFERENCES healthtech.patients (user_id_ptr),
     data       DATE    NOT NULL,
     mark       INTEGER NOT NULL,
     comment    VARCHAR(500)
 );
-
-ALTER TABLE healthtech.patient
+/*
+ALTER TABLE healthtech.patients
     ADD CONSTRAINT disease_fk FOREIGN KEY (diseases) REFERENCES healthtech.diseases (disease_id);
 
-ALTER TABLE healthtech.patient
-    ADD CONSTRAINT appointment_fk FOREIGN KEY (appointments) REFERENCES healthtech.appointment (appointment_id);
+ALTER TABLE healthtech.patients
+    ADD CONSTRAINT appointment_fk FOREIGN KEY (appointments) REFERENCES healthtech.appointments (id);
 
-ALTER TABLE healthtech.doctor
-    ADD CONSTRAINT timetable_fk FOREIGN KEY (timetable_id) REFERENCES healthtech.timetable (timetable_id);
+ALTER TABLE healthtech.doctors
+    ADD CONSTRAINT timetable_fk FOREIGN KEY (timetable_id) REFERENCES healthtech.time_records (id);
 
-ALTER TABLE healthtech.appointment
-    ADD CONSTRAINT timetable_fk FOREIGN KEY (timetable_id) REFERENCES healthtech.timetable (timetable_id);
-
-
+ALTER TABLE healthtech.appointments
+    ADD CONSTRAINT timetable_fk FOREIGN KEY (time_record_id) REFERENCES healthtech.time_records (id);
+*/
 -- прочитать про inherits
 -- контроллеры - принимают и отдают
 -- сервисы - бизнес-логика, если бизнес-логики много, в работу включаются facade
@@ -108,3 +113,8 @@ ALTER TABLE healthtech.appointment
 -- провайдеры - достают данные откуда-нибудь
 -- репозитории привязываются к какому-нибудь хранилищу данных
 --
+
+--CREATE SEQUENCE user_seq START 10;
+--ALTER TABLE healthtech.user ALTER COLUMN id SET DEFAULT nextval('user_seq');
+
+--*/

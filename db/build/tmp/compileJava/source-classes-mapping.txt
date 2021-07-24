@@ -4,5 +4,7 @@ team/healthtech/db/DatabaseConfiguration.java
  team.healthtech.db.DatabaseConfiguration
 team/healthtech/db/repository/UserRepository.java
  team.healthtech.db.repository.UserRepository
-team/healthtech/db/entity/User.java
- team.healthtech.db.entity.User
+team/healthtech/db/entity/UserEntity.java
+ team.healthtech.db.entity.UserEntity
+team/healthtech/db/entity/DoctorEntity.java
+ team.healthtech.db.entity.DoctorEntity

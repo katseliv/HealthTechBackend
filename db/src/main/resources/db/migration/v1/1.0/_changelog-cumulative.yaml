@@ -11,3 +11,12 @@ databaseChangeLog:
         - sqlFile:
             path: PPL-001-202107241150.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: PPL-002-alter-time_records
+      author: PaulRobinson
+      comment: id INTEGER -> id SERIAL
+      # runOnChange: true
+      changes:
+        - sqlFile:
+            path: PPL-002-alter-time_records.sql
+            relativeToChangelogFile: true
