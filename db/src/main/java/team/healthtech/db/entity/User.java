@@ -10,7 +10,7 @@ import javax.persistence.*;
 public class User {
     @Id //javax.persistence
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "user_id")
     private int id;
 
     @Column(name = "first_name")

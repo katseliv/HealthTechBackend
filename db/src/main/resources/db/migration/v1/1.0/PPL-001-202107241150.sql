@@ -8,9 +8,13 @@ CREATE TABLE healthtech.speciality
 
 CREATE TABLE healthtech.user
 (
-    user_id      SERIAL PRIMARY KEY,
-    password     VARCHAR(50)  NOT NULL,
-    email        VARCHAR(100) NOT NULL
+    user_id  SERIAL PRIMARY KEY,
+    first_name   VARCHAR(50) NOT NULL,
+    mid_name     VARCHAR(50) NOT NULL,
+    last_name    VARCHAR(50) NOT NULL,
+    phone_number VARCHAR(11) NOT NULL,
+    password VARCHAR(50)  NOT NULL,
+    email    VARCHAR(100) NOT NULL
 );
 
 --CREATE SEQUENCE user_seq START 10;
@@ -23,28 +27,24 @@ CREATE TABLE healthtech.allergies
     allergy_name VARCHAR(100) NOT NULL
 );
 
-CREATE TABLE healthtech.appointment
-(
-    appointment_id INTEGER PRIMARY KEY,
-    is_taken      BOOLEAN,
-    patient_id    INTEGER REFERENCES healthtech.patient (patient_id) NOT NULL,
-    timetable_id  INTEGER REFERENCES healthtech.timetable (id)       NOT NULL,
-    datetime      TIMESTAMPTZ                                        NOT NULL
-);
-
 CREATE TABLE healthtech.patient
 (
     patient_id   INTEGER PRIMARY KEY,
-    age          INTEGER NOT NULL,
-    first_name   VARCHAR(50)  NOT NULL,
-    mid_name     VARCHAR(50)  NOT NULL,
-    last_name    VARCHAR(50)  NOT NULL,
-    phone_number VARCHAR(11)  NOT NULL,
-    sex          BOOLEAN NOT NULL,
+    age          INTEGER     NOT NULL,
+    sex          BOOLEAN     NOT NULL,
     allergies    INTEGER REFERENCES healthtech.allergies (allergy_id),
     diseases     INTEGER, --REFERENCES healthtech.diseases (disease_id),
-    appointments INTEGER REFERENCES healthtech.appointment (appointment_id)
+    appointments INTEGER  --REFERENCES healthtech.appointment (appointment_id)
 ) INHERITS (healthtech.user);
+
+CREATE TABLE healthtech.appointment
+(
+    appointment_id INTEGER PRIMARY KEY,
+    is_taken       BOOLEAN,
+    patient_id     INTEGER REFERENCES healthtech.patient (patient_id) NOT NULL,
+    timetable_id   INTEGER, --REFERENCES healthtech.timetable (id)       NOT NULL,
+    datetime       TIMESTAMPTZ                                        NOT NULL
+);
 
 CREATE TABLE healthtech.diseases
 (
@@ -64,23 +64,18 @@ CREATE TABLE healthtech.doctor
 (
     id            INTEGER PRIMARY KEY,
     speciality_id INTEGER REFERENCES healthtech.speciality (speciality_id) NOT NULL,
-    age           INTEGER,
-    first_name   VARCHAR(50)  NOT NULL,
-    mid_name     VARCHAR(50)  NOT NULL,
-    last_name    VARCHAR(50)  NOT NULL,
-    phone_number VARCHAR(11)  NOT NULL,
     sex           BOOLEAN,
     rating        FLOAT                                                    NOT NULL,
-    timetable     INTEGER REFERENCES healthtech.timetable (id)
+    timetable_id  INTEGER --REFERENCES healthtech.timetable (id)
 ) INHERITS (healthtech.user);
 
 CREATE TABLE healthtech.timetable
 (
-    id         INTEGER PRIMARY KEY,
-    doctor_id  INTEGER REFERENCES healthtech.doctor (id),
-    date       DATE,
-    start_time TIME,
-    end_time   TIME
+    timetable_id INTEGER PRIMARY KEY,
+    doctor_id    INTEGER REFERENCES healthtech.doctor (id),
+    date         DATE,
+    start_time   TIME,
+    end_time     TIME
 );
 
 CREATE TABLE healthtech.comment
@@ -94,7 +89,17 @@ CREATE TABLE healthtech.comment
 );
 
 ALTER TABLE healthtech.patient
-    ADD CONSTRAINT disease_fk FOREIGN KEY (diseases) REFERENCES healthtech.diseases (disease_id)
+    ADD CONSTRAINT disease_fk FOREIGN KEY (diseases) REFERENCES healthtech.diseases (disease_id);
+
+ALTER TABLE healthtech.patient
+    ADD CONSTRAINT appointment_fk FOREIGN KEY (appointments) REFERENCES healthtech.appointment (appointment_id);
+
+ALTER TABLE healthtech.doctor
+    ADD CONSTRAINT timetable_fk FOREIGN KEY (timetable_id) REFERENCES healthtech.timetable (timetable_id);
+
+ALTER TABLE healthtech.appointment
+    ADD CONSTRAINT timetable_fk FOREIGN KEY (timetable_id) REFERENCES healthtech.timetable (timetable_id);
+
 
 -- прочитать про inherits
 -- контроллеры - принимают и отдают
