@@ -104,3 +104,7 @@ Icon
 Network Trash Folder
 Temporary Items
 .apdisk
+
+# .meta and .name files excluded
+*.meta
+*.name
