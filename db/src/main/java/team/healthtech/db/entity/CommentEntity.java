@@ -84,4 +84,5 @@ public class CommentEntity {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
 }

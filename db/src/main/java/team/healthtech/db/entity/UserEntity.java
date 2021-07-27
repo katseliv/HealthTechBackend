@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Table(schema = "healthtech", name = "users")
 @Entity(name = "users")
 public class UserEntity {
+
     @Id //javax.persistence
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -64,4 +65,5 @@ public class UserEntity {
     public void setId(int id) {
         this.id = id;
     }
+
 }

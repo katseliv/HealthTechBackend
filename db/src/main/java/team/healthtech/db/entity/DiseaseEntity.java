@@ -6,6 +6,7 @@ import java.time.Instant;
 @Table(schema = "healthtech", name = "diseases")
 @Entity(name = "diseases")
 public class DiseaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -62,4 +63,5 @@ public class DiseaseEntity {
     public void setPatientId(Integer patientId) {
         this.patientId = patientId;
     }
+
 }

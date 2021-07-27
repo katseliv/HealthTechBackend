@@ -6,6 +6,7 @@ import java.time.Instant;
 @Table(schema = "healthtech", name = "diseases")
 @Entity(name = "diseases")
 public class TimeRecordsEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -62,4 +63,5 @@ public class TimeRecordsEntity {
     public void setEndTime(Instant endTime) {
         this.endTime = endTime;
     }
+
 }

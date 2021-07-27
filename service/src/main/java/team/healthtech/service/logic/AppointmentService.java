@@ -6,8 +6,4 @@ public interface AppointmentService {
 
     AppointmentDto createAppointment(AppointmentDto appointmentDto);
 
-    AppointmentDto updateUser(AppointmentDto appointmentDto);
-
-    void deleteAppointmentById(int id);
-
 }

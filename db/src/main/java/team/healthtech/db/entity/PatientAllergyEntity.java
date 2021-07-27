@@ -22,6 +22,7 @@ import java.time.Instant;
 @Table(name = "patients", schema = "healthtech")
 @Entity(name = "PatientAllergy")
 public class PatientAllergyEntity {
+
     @EmbeddedId
     private PatientAllergyId id;
 
@@ -47,4 +48,5 @@ public class PatientAllergyEntity {
     public void setUser(UserEntity user) {
         this.user = user;
     }
+
 }

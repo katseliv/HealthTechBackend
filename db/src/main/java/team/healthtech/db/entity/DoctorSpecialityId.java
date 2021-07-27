@@ -40,4 +40,5 @@ public class DoctorSpecialityId  implements Serializable {
     public int hashCode() {
         return Objects.hash(doctorId, speciality);
     }
+
 }
