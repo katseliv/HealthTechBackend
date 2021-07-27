@@ -26,7 +26,7 @@ public class AppointmentEntity {
         referencedColumnName = "id",
         insertable = false,
         updatable = false)
-    private TimeRecordEntity timeRecord;
+    private TimeRecordsEntity timeRecord;
 
     @Column(name = "is_taken")
     private boolean isTaken;
@@ -50,11 +50,11 @@ public class AppointmentEntity {
         this.patient = patient;
     }
 
-    public TimeRecordEntity getTimeRecord() {
+    public TimeRecordsEntity getTimeRecord() {
         return timeRecord;
     }
 
-    public void setTimeRecord(TimeRecordEntity timeRecord) {
+    public void setTimeRecord(TimeRecordsEntity timeRecord) {
         this.timeRecord = timeRecord;
     }
 
