@@ -1,5 +1,5 @@
 dependencies {
-    compile(project(':db'))
+    implementation(project(':db'))
     implementation 'org.springframework:spring-context:5.3.9'
     implementation 'org.mapstruct:mapstruct:1.4.2.Final'
     implementation 'com.fasterxml.jackson.core:jackson-core:2.12.4'
@@ -9,8 +9,7 @@ dependencies {
     implementation 'jakarta.persistence:jakarta.persistence-api:2.2.3'
 }
 
-java {
-    compileJava {
-        options.compilerArgs.add("-Amapstrust.defaultComponentModel=spring")
-    }
+compileJava {
+    options.compilerArgs.add("-Amapstrust.defaultComponentModel=spring")
 }
+

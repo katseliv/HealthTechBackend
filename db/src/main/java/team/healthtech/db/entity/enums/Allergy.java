@@ -1,17 +1,14 @@
-package team.healthtech.db.entity;
+package team.healthtech.db.entity.enums;
 
 import java.util.Optional;
 
-public enum Speciality {
-
-    SPECIALITY1(1),
-    SPECIALITY2(2),
-    SPECIALITY3(3)
-    ;
-
+public enum Allergy {
+    ALLERGY1(1),
+    ALLERGY2(2),
+    ALLERGY3(3);
     private final int id;
 
-    Speciality(int id) {
+    Allergy(int id) {
         this.id = id;
     }
 
@@ -19,18 +16,15 @@ public enum Speciality {
         return id;
     }
 
-    public static Optional<Speciality> fromId(Integer id) {
+    public static Optional<Allergy> fromId(Integer id) {
         if (id == null) {
             return Optional.empty();
         }
-
-        for (var value : Speciality.values()) {
+        for (var value : Allergy.values()) {
             if (value.id == id) {
                 return Optional.of(value);
             }
         }
-
         return Optional.empty();
     }
-
 }

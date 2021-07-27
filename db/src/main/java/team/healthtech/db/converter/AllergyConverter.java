@@ -1,6 +1,6 @@
 package team.healthtech.db.converter;
 
-import team.healthtech.db.entity.Allergy;
+import team.healthtech.db.entity.enums.Allergy;
 
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
