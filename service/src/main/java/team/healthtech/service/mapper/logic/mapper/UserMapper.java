@@ -1,7 +1,8 @@
-package team.healthtech.service.mapper;
+package team.healthtech.service.mapper.logic.mapper;
 
 import team.healthtech.db.entity.UserEntity;
 import org.mapstruct.Mapper;
+import team.healthtech.service.mapper.logic.model.UserDto;
 
 import java.util.List;
 

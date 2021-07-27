@@ -1,0 +1,25 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:13-alpine
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - type: volume
+        source: pgdata
+        target: /var/lib/postgre/sql/data
+    backend:
+      image: healthtech-backend:latest
+      depends_on:
+        - postgres
+      environment:
+        spring.datasource.url: jdbc:postgresql://postgres:5432/postgres
+        spring.datasource.password: password
+        spring.datasource.username: postgres
+      links:
+        - postgres
+      expose:
+        - 8081:8081
+volumes:
+  pgdata:
+    name: pgdata

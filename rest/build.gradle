@@ -1,5 +1,5 @@
 dependencies {
     implementation 'org.springframework:spring-webmvc:5.3.9'
-    implementation(project(':security'))
-    implementation(project(':service'))
+    compile(project(':security'))
+    compile(project(':service'))
 }

@@ -1,28 +1,32 @@
 package team.healthtech.db.entity;
 
 import javax.persistence.*;
-import java.time.Instant;
 
 @NamedEntityGraphs(
     @NamedEntityGraph(
-        name = "1",
-        subgraphs = @NamedSubgraph(
-            name = "patient",
-            attributeNodes = {
-                @NamedAttributeNode("user_id_ptr"),
-                @NamedAttributeNode("age"),
-                @NamedAttributeNode("sex")
-            }),
+        name = "patient-with-allergies",
         attributeNodes = {
-            @NamedAttributeNode(value = "patient", subgraph = "patient"),
-            @NamedAttributeNode("user_id_ptr")
+            @NamedAttributeNode("user_id_ptr"),
+            @NamedAttributeNode("age"),
+            @NamedAttributeNode("sex"),
+            @NamedAttributeNode(value = "allergies", subgraph = "allergies")
+        },
+        subgraphs = {
+            @NamedSubgraph(
+                name = "allergies",
+                attributeNodes = {
+                    @NamedAttributeNode("id"),
+                    @NamedAttributeNode("name")
+                }
+            )
         }
     )
 )
+
 @Table(name = "patients", schema = "healthtech")
 @Entity(name = "PatientAllergy")
 public class PatientAllergyEntity {
-    @EmbeddedId
+    @Id
     private PatientAllergyId id;
 
     @OneToMany
@@ -34,7 +38,6 @@ public class PatientAllergyEntity {
     )
 
     private UserEntity user;
-
 
     public void setId(PatientAllergyId id) {
         this.id = id;

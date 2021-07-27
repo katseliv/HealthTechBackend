@@ -7,7 +7,7 @@ import java.util.Objects;
 public class PatientAllergyId implements Serializable {
     @Column(name = "patient_id")
     private Integer patientId;
-
+////////////////////////////////
     @Column(name = "room_id")
     private Integer roomId;
 

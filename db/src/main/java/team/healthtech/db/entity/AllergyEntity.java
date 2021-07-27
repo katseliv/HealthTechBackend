@@ -3,9 +3,9 @@ package team.healthtech.db.entity;
 import java.util.Optional;
 
 public enum AllergyEntity {
-    Pizdetsoma(1),
-    Hueta(2),
-    Comatoz(3);
+    ALLERGY1(1),
+    ALLERGY2(2),
+    ALLERGY3(3);
     private final int id;
 
     AllergyEntity(int id) {

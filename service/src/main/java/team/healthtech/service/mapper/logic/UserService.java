@@ -1,6 +1,6 @@
 package team.healthtech.service.mapper.logic;
 
-import team.healthtech.service.mapper.UserDto;
+import team.healthtech.service.mapper.logic.model.UserDto;
 import java.util.List;
 
 public interface UserService {

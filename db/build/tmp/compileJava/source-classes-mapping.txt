@@ -1,6 +1,22 @@
+team/healthtech/db/HelloWorldProvider.java
+ team.healthtech.db.HelloWorldProvider
+team/healthtech/db/entity/PatientAllergyEntity.java
+ team.healthtech.db.entity.PatientAllergyEntity
+team/healthtech/db/entity/UserEntity.java
+ team.healthtech.db.entity.UserEntity
+team/healthtech/db/entity/TimeRecordsEntity.java
+ team.healthtech.db.entity.TimeRecordsEntity
 team/healthtech/db/repository/UserRepository.java
  team.healthtech.db.repository.UserRepository
 team/healthtech/db/DatabaseConfiguration.java
  team.healthtech.db.DatabaseConfiguration
-team/healthtech/db/entity/UserEntity.java
- team.healthtech.db.entity.UserEntity
+team/healthtech/db/entity/AllergyEntity.java
+ team.healthtech.db.entity.AllergyEntity
+team/healthtech/db/entity/DoctorEntity.java
+ team.healthtech.db.entity.DoctorEntity
+team/healthtech/db/entity/PatientAllergyId.java
+ team.healthtech.db.entity.PatientAllergyId
+team/healthtech/db/entity/Comment.java
+ team.healthtech.db.entity.Comment
+team/healthtech/db/entity/DiseaseEntity.java
+ team.healthtech.db.entity.DiseaseEntity

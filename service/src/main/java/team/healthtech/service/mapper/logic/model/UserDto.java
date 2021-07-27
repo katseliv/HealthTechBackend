@@ -1,4 +1,4 @@
-package team.healthtech.service.mapper;
+package team.healthtech.service.mapper.logic.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

@@ -3,8 +3,8 @@ package team.healthtech.service.mapper.logic.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.repository.UserRepository;
-import team.healthtech.service.mapper.UserDto;
-import team.healthtech.service.mapper.UserMapper;
+import team.healthtech.service.mapper.logic.model.UserDto;
+import team.healthtech.service.mapper.logic.mapper.UserMapper;
 import team.healthtech.service.mapper.logic.UserService;
 
 import java.util.List;
@@ -16,7 +16,7 @@ public class UserServiceImpl implements UserService {
     private final UserRepository repository;
     private final UserMapper userMapper;
 
-//    @Autowired
+    @Autowired
     public UserServiceImpl(UserRepository repository, UserMapper userMapper) {
         this.repository = repository;
         this.userMapper = userMapper;

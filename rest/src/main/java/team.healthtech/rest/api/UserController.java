@@ -2,7 +2,7 @@ package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import team.healthtech.service.mapper.UserDto;
+import team.healthtech.service.mapper.logic.model.UserDto;
 import team.healthtech.service.mapper.logic.UserService;
 
 import java.util.List;
