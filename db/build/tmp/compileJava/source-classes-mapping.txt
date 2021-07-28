@@ -1,5 +1,5 @@
-team/healthtech/db/repository/DoctorsSpecialitiesRepository.java
- team.healthtech.db.repository.DoctorsSpecialitiesRepository
+team/healthtech/db/repository/CommentRepository.java
+ team.healthtech.db.repository.CommentRepository
 team/healthtech/db/DatabaseConfiguration.java
  team.healthtech.db.DatabaseConfiguration
 team/healthtech/db/entity/DoctorSpecialityId.java
@@ -38,7 +38,7 @@ team/healthtech/db/entity/DiseaseEntity.java
  team.healthtech.db.entity.DiseaseEntity
 team/healthtech/db/entity/DoctorEntity.java
  team.healthtech.db.entity.DoctorEntity
-team/healthtech/db/repository/CommentRepository.java
- team.healthtech.db.repository.CommentRepository
 team/healthtech/db/entity/DoctorsSpecialitiesEntity.java
  team.healthtech.db.entity.DoctorsSpecialitiesEntity
+team/healthtech/db/repository/DoctorsSpecialitiesRepository.java
+ team.healthtech.db.repository.DoctorsSpecialitiesRepository

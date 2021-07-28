@@ -52,3 +52,11 @@ databaseChangeLog:
         - sqlFile:
             path: PHT-003-202107281412.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-004-202107282000
+      author: EV_Obukhova
+      comment: add phonenumber and email to table patients
+      changes:
+        - sqlFile:
+            path: PHT-004-202107282000.sql
+            relativeToChangelogFile: true
