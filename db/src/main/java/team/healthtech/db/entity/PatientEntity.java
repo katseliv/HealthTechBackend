@@ -17,6 +17,12 @@ public class PatientEntity {
     @Column(name = "sex")
     private Character sex;
 
+    @Column(name = "email")
+    private String email;
+
+    @Column(name = "phone_number")
+    private String phoneNumber;
+
     public Integer getId() {
         return id;
     }
@@ -41,4 +47,19 @@ public class PatientEntity {
         this.sex = sex;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
 }
