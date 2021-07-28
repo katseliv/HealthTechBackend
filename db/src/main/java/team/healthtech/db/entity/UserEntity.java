@@ -6,7 +6,8 @@ import javax.persistence.*;
     в реляционных бд их нет ни в каком виде, а с точки зрения кода - есть
  */
 @Table(schema = "healthtech", name = "users")
-@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+@Entity(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class UserEntity {
 
     @Id
@@ -30,8 +31,8 @@ public class UserEntity {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer u_id_ptr) {
+        this.id = u_id_ptr;
     }
 
     public String getFirstName() {

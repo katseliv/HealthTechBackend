@@ -6,11 +6,6 @@ import javax.persistence.*;
 @Entity(name = "doctors")
 public class DoctorEntity extends UserEntity {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id_ptr")
-    private Integer id;
-
     @Column(name = "sex")
     private Boolean sex;
 
