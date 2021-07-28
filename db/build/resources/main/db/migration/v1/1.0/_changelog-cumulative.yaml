@@ -20,3 +20,27 @@ databaseChangeLog:
         - sqlFile:
             path: PPL-002-alter-time_records.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-003-202107281206
+      author: EkaterinaSelivanova
+      comment: Rename column data into date in table comments
+      changes:
+        - sqlFile:
+            path: PHT-003-202107281206.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-003-202107281212
+      author: EkaterinaSelivanova
+      comment: Change type of column date in table comments (DATE -> TIMESTAMP) and set default expression
+      changes:
+        - sqlFile:
+            path: PHT-003-202107281212.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-003-202107281239
+      author: EkaterinaSelivanova
+      comment: Change type of column date in table appointments (DATE -> TIMESTAMP) and set default expression
+      changes:
+        - sqlFile:
+            path: PHT-003-202107281239.sql
+            relativeToChangelogFile: true

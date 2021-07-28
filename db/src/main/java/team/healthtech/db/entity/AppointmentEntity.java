@@ -10,12 +10,12 @@ public class AppointmentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(
         name = "patient_id",
-        referencedColumnName = "id",
+        referencedColumnName = "user_id_ptr",
         insertable = false,
         updatable = false)
     private PatientEntity patient;
@@ -29,16 +29,16 @@ public class AppointmentEntity {
     private TimeRecordsEntity timeRecord;
 
     @Column(name = "is_taken")
-    private boolean isTaken;
+    private Boolean isTaken;
 
     @Column(name = "datetime")
     private Instant datetime;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -58,11 +58,11 @@ public class AppointmentEntity {
         this.timeRecord = timeRecord;
     }
 
-    public boolean isTaken() {
+    public Boolean isTaken() {
         return isTaken;
     }
 
-    public void setTaken(boolean taken) {
+    public void setTaken(Boolean taken) {
         isTaken = taken;
     }
 

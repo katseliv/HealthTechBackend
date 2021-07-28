@@ -19,7 +19,10 @@ public class AppointmentServiceImpl implements AppointmentService {
     private final AppointmentMapper appointmentMapper;
 
     @Autowired
-    public AppointmentServiceImpl(AppointmentRepository appointmentRepository, PatientRepository patientRepository, AppointmentMapper appointmentMapper) {
+    public AppointmentServiceImpl(
+        AppointmentRepository appointmentRepository,
+        PatientRepository patientRepository,
+        AppointmentMapper appointmentMapper) {
         this.appointmentRepository = appointmentRepository;
         this.patientRepository = patientRepository;
         this.appointmentMapper = appointmentMapper;
@@ -27,8 +30,8 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public AppointmentDto createAppointment(AppointmentDto appointmentDto, int patientId) {
-//        appointmentRepository.findById(patientId);
-//        appointmentDto.getPatient().setId(patientId);
+        appointmentDto.setPatient(patientRepository.findById(patientId).orElseThrow());
+
         return Optional.of(appointmentDto)
             .map(appointmentMapper::toEntity)
             .map(appointmentRepository::save)

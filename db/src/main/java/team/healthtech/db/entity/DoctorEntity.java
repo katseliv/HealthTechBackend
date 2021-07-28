@@ -9,6 +9,6 @@ public class DoctorEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id_ptr")
-    private int id;
+    private Integer id;
 
 }

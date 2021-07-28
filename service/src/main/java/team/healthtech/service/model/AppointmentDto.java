@@ -11,8 +11,9 @@ public class AppointmentDto {
     private TimeRecordsEntity timeRecord;
 //    private String result;
 //    private String recipe;
-    private Instant datetime;
+    private boolean isTaken;
 //    private String status;
+    private Instant datetime;
 
     public PatientEntity getPatient() {
         return patient;
@@ -30,6 +31,14 @@ public class AppointmentDto {
         this.timeRecord = timeRecord;
     }
 
+    public boolean isTaken() {
+        return isTaken;
+    }
+
+    public void setTaken(boolean taken) {
+        isTaken = taken;
+    }
+
     public Instant getDatetime() {
         return datetime;
     }
@@ -37,4 +46,5 @@ public class AppointmentDto {
     public void setDatetime(Instant datetime) {
         this.datetime = datetime;
     }
+
 }

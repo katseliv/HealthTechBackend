@@ -1,20 +1,9 @@
-package team.healthtech.db.entity;
+package team.healthtech.service.model;
 
-import javax.persistence.*;
+public class PatientDto {
 
-@Table(schema = "healthtech", name = "patients")
-@Entity(name = "patients")
-public class PatientEntity {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_id_ptr")
     private Integer id;
-
-    @Column(name = "age")
     private Integer age;
-
-    @Column(name = "sex")
     private String sex;
 
     public Integer getId() {
@@ -40,5 +29,4 @@ public class PatientEntity {
     public void setSex(String sex) {
         this.sex = sex;
     }
-
 }

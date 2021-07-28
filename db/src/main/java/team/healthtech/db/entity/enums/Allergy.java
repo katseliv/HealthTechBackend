@@ -3,9 +3,12 @@ package team.healthtech.db.entity.enums;
 import java.util.Optional;
 
 public enum Allergy {
+
     ALLERGY1(1),
     ALLERGY2(2),
-    ALLERGY3(3);
+    ALLERGY3(3)
+    ;
+
     private final int id;
 
     Allergy(int id) {
@@ -27,4 +30,5 @@ public enum Allergy {
         }
         return Optional.empty();
     }
+
 }
