@@ -6,5 +6,5 @@ import team.healthtech.db.entity.DoctorSpecialityId;
 import team.healthtech.db.entity.DoctorsSpecialitiesEntity;
 
 @Repository
-public interface DoctorSpecialitiesRepository extends CrudRepository<DoctorsSpecialitiesEntity, DoctorSpecialityId> {
+public interface DoctorsSpecialitiesRepository extends CrudRepository<DoctorsSpecialitiesEntity, DoctorSpecialityId> {
 }
