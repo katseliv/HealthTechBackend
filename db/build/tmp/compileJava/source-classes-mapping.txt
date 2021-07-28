@@ -38,3 +38,5 @@ team/healthtech/db/entity/AppointmentEntity.java
  team.healthtech.db.entity.AppointmentEntity
 team/healthtech/db/entity/TimeRecordsEntity.java
  team.healthtech.db.entity.TimeRecordsEntity
+team/healthtech/db/repository/DoctorSpecialitiesRepository.java
+ team.healthtech.db.repository.DoctorSpecialitiesRepository

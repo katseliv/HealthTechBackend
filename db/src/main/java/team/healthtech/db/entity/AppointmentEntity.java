@@ -34,6 +34,12 @@ public class AppointmentEntity {
     @Column(name = "datetime")
     private Instant datetime;
 
+    @Column(name = "result")
+    private String result;
+
+    @Column(name = "recipe")
+    private String recipe;
+
     public Integer getId() {
         return id;
     }
@@ -72,6 +78,22 @@ public class AppointmentEntity {
 
     public void setDatetime(Instant datetime) {
         this.datetime = datetime;
+    }
+
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(String recipe) {
+        this.recipe = recipe;
     }
 
 }

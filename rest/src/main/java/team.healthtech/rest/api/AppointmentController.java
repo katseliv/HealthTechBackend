@@ -26,7 +26,8 @@ public class AppointmentController {
 
     @GetMapping("/{patientId}")
     public List<AppointmentDto> getAppointmentsOfPatient(@PathVariable int patientId) {
-        return service.getAppointmentsOfPatientById(patientId);
+//        return service.getAppointmentsOfPatientById(patientId);
+        return null;
     }
 
 }

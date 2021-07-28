@@ -39,10 +39,4 @@ public class AppointmentServiceImpl implements AppointmentService {
             .orElseThrow();
     }
 
-    @Override
-    public List<AppointmentDto> getAppointmentsOfPatientById(int patientId) {
-        patientRepository.findById(patientId);
-        return null;
-    }
-
 }

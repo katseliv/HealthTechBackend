@@ -8,6 +8,4 @@ public interface AppointmentService {
 
     AppointmentDto createAppointment(AppointmentDto appointmentDto, int patientId);
 
-    List<AppointmentDto> getAppointmentsOfPatientById(int patientId);
-
 }

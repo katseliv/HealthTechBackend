@@ -9,11 +9,10 @@ public class AppointmentDto {
 
     private PatientEntity patient;
     private TimeRecordsEntity timeRecord;
-//    private String result;
-//    private String recipe;
     private boolean isTaken;
-//    private String status;
     private Instant datetime;
+    private String result;
+    private String recipe;
 
     public PatientEntity getPatient() {
         return patient;
@@ -47,4 +46,19 @@ public class AppointmentDto {
         this.datetime = datetime;
     }
 
+    public String getResult() {
+        return result;
+    }
+
+    public void setResult(String result) {
+        this.result = result;
+    }
+
+    public String getRecipe() {
+        return recipe;
+    }
+
+    public void setRecipe(String recipe) {
+        this.recipe = recipe;
+    }
 }
