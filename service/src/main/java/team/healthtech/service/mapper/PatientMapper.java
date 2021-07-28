@@ -1,6 +1,7 @@
 package team.healthtech.service.mapper;
 
 import org.mapstruct.Mapper;
+import org.mapstruct.MappingTarget;
 import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.service.model.PatientDto;
 
@@ -15,4 +16,5 @@ public interface PatientMapper {
 
     List<PatientDto> fromEntities(Iterable<PatientEntity> entities);
 
+    void merge(PatientDto dto, @MappingTarget PatientEntity entity);
 }
