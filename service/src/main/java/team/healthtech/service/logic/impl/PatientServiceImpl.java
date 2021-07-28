@@ -34,7 +34,9 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientDto updatePatient(PatientDto patientDto, int patientId) {
-        return null;
+        PatientDto patientDtoResult = patientMapper.fromEntity(patientRepository.findById(patientId).orElseThrow());
+        patientDtoResult.setAge(patientDto.getAge());
+        return patientDtoResult;
     }
 
     @Override
