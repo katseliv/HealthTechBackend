@@ -6,10 +6,10 @@ import javax.persistence.*;
     в реляционных бд их нет ни в каком виде, а с точки зрения кода - есть
  */
 @Table(schema = "healthtech", name = "users")
-@Entity(name = "users")
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class UserEntity {
 
-    @Id //javax.persistence
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
