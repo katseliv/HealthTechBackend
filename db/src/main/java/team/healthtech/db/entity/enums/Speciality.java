@@ -1,12 +1,12 @@
-package team.healthtech.db.entity;
+package team.healthtech.db.entity.enums;
 
 import java.util.Optional;
 
 public enum Speciality {
 
-    SPECIALITY1(1),
-    SPECIALITY2(2),
-    SPECIALITY3(3)
+    IMMUNOLOGIST(1),
+    NUTRITIONIST(2),
+    ORTHODONTIST(3)
     ;
 
     private final int id;
@@ -32,4 +32,5 @@ public enum Speciality {
 
         return Optional.empty();
     }
+
 }

@@ -1,33 +1,35 @@
 package team.healthtech.db.entity;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.time.Instant;
 
 @Table(schema = "healthtech", name = "diseases")
 @Entity(name = "diseases")
 public class DiseaseEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @Column(name = "name")
     private String name;
 
     @Column(name = "start_date")
-    private Instant startDate;
+    private Date startDate;
 
     @Column(name = "end_date")
-    private Instant endDate;
+    private Date endDate;
 
     @Column(name = "patient_id")
     private Integer patientId;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -39,19 +41,19 @@ public class DiseaseEntity {
         this.name = name;
     }
 
-    public Instant getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Instant startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
-    public Instant getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
-    public void setEndDate(Instant endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
@@ -62,4 +64,5 @@ public class DiseaseEntity {
     public void setPatientId(Integer patientId) {
         this.patientId = patientId;
     }
+
 }

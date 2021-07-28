@@ -10,12 +10,12 @@ public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private int id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(
         name = "doctor_id",
-        referencedColumnName = "id",
+        referencedColumnName = "user_id_ptr",
         insertable = false,
         updatable = false)
     private DoctorEntity doctor;
@@ -23,7 +23,7 @@ public class CommentEntity {
     @ManyToOne
     @JoinColumn(
         name = "patient_id",
-        referencedColumnName = "id",
+        referencedColumnName = "user_id_ptr",
         insertable = false,
         updatable = false)
     private PatientEntity patient;
@@ -32,16 +32,16 @@ public class CommentEntity {
     private Instant date;
 
     @Column(name = "mark")
-    private int mark;
+    private Integer mark;
 
     @Column(name = "comment")
     private String comment;
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -69,11 +69,11 @@ public class CommentEntity {
         this.date = date;
     }
 
-    public int getMark() {
+    public Integer getMark() {
         return mark;
     }
 
-    public void setMark(int mark) {
+    public void setMark(Integer mark) {
         this.mark = mark;
     }
 
@@ -84,4 +84,5 @@ public class CommentEntity {
     public void setComment(String comment) {
         this.comment = comment;
     }
+
 }

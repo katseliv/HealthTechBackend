@@ -2,8 +2,8 @@ package team.healthtech.db.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import team.healthtech.db.entity.AppointmentEntity;
+import team.healthtech.db.entity.PatientEntity;
 
 @Repository
-public interface AppointmentRepository extends CrudRepository<AppointmentEntity, Integer> {
+public interface PatientRepository extends CrudRepository<PatientEntity, Integer> {
 }

@@ -1,5 +1,7 @@
 team.healthtech/rest/api/UserController.java
  team.healthtech.rest.api.UserController
+team.healthtech/rest/api/CommentController.java
+ team.healthtech.rest.api.CommentController
 team.healthtech/rest/RestConfiguration.java
  team.healthtech.rest.RestConfiguration
 team.healthtech/rest/api/AppointmentController.java

@@ -3,20 +3,52 @@ databaseChangeLog:
       - dbms:
           type: postgresql
   - changeSet:
-      id: PPL-001-202107241150
+      id: PHT-001-202107241150
       author: PaulRobinson
       comment: Create Initial DB Structure
       # runOnChange: true
       changes:
         - sqlFile:
-            path: PPL-001-202107241150.sql
+            path: PHT-001-202107241150.sql
             relativeToChangelogFile: true
   - changeSet:
-      id: PPL-002-alter-time_records
+      id: PHT-002-alter-time_records
       author: PaulRobinson
       comment: id INTEGER -> id SERIAL
       # runOnChange: true
       changes:
         - sqlFile:
-            path: PPL-002-alter-time_records.sql
+            path: PHT-002-alter-time_records.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-003-202107281206
+      author: EkaterinaSelivanova
+      comment: Rename column data into date in table comments
+      changes:
+        - sqlFile:
+            path: PHT-003-202107281206.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-003-202107281212
+      author: EkaterinaSelivanova
+      comment: Change type of column date in table comments (DATE -> TIMESTAMP) and set default expression
+      changes:
+        - sqlFile:
+            path: PHT-003-202107281212.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-003-202107281239
+      author: EkaterinaSelivanova
+      comment: Change type of column date in table appointments (DATE -> TIMESTAMP) and set default expression
+      changes:
+        - sqlFile:
+            path: PHT-003-202107281239.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-003-202107281412
+      author: EkaterinaSelivanova
+      comment: Add columns to table appointments
+      changes:
+        - sqlFile:
+            path: PHT-003-202107281412.sql
             relativeToChangelogFile: true
