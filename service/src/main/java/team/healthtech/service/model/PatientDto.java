@@ -4,7 +4,7 @@ public class PatientDto {
 
     private Integer id;
     private Integer age;
-    private String sex;
+    private Character sex;
 
     public Integer getId() {
         return id;
@@ -22,11 +22,11 @@ public class PatientDto {
         this.age = age;
     }
 
-    public String getSex() {
+    public Character getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Character sex) {
         this.sex = sex;
     }
 }

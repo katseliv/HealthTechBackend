@@ -15,7 +15,7 @@ public class TimeRecordsEntity {
     private Integer id;
 
     @Column(name = "doctor_id")
-    private String doctorId;
+    private Integer doctorId;
 
     @Column(name = "date")
     private Date date;
@@ -34,11 +34,11 @@ public class TimeRecordsEntity {
         this.id = id;
     }
 
-    public String getDoctorId() {
+    public Integer getDoctorId() {
         return doctorId;
     }
 
-    public void setDoctorId(String doctorId) {
+    public void setDoctorId(Integer doctorId) {
         this.doctorId = doctorId;
     }
 

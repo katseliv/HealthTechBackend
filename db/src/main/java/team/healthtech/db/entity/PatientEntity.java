@@ -15,7 +15,7 @@ public class PatientEntity {
     private Integer age;
 
     @Column(name = "sex")
-    private String sex;
+    private Character sex;
 
     public Integer getId() {
         return id;
@@ -33,11 +33,11 @@ public class PatientEntity {
         this.age = age;
     }
 
-    public String getSex() {
+    public Character getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Character sex) {
         this.sex = sex;
     }
 
