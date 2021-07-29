@@ -13,18 +13,11 @@ public class DoctorEntity extends UserEntity {
     @Column(name = "rating")
     private Double rating;
 
-    @ManyToMany
-    @JoinTable(
-        joinColumns = @JoinColumn(name = "doctor_id", referencedColumnName = "doctor_id"),
-        inverseJoinColumns = @JoinColumn(name = "speciality_id", referencedColumnName = "speciality_id"),
-        name = "doctors_specialities",
-        schema = "healthtech"
-    )
-    private List<DoctorsSpecialitiesEntity> specialities;
+//    @OneToMany(mappedBy = "doctorId")
+//    private List<DoctorSpecialityId> specialities;
 
-    @OneToMany(mappedBy = "doctors")
+    @OneToMany(mappedBy = "doctor")
     private List<CommentEntity> comments;
-
 
     public Boolean getSex() {
         return sex;
@@ -42,19 +35,4 @@ public class DoctorEntity extends UserEntity {
         this.rating = rating;
     }
 
-    public List<DoctorsSpecialitiesEntity> getSpecialities() {
-        return specialities;
-    }
-
-    public void setSpecialities(List<DoctorsSpecialitiesEntity> specialities) {
-        this.specialities = specialities;
-    }
-
-    public List<CommentEntity> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<CommentEntity> comments) {
-        this.comments = comments;
-    }
 }
