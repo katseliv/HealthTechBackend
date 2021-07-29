@@ -1,6 +1,7 @@
 package team.healthtech.db.entity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Table(schema = "healthtech", name = "patients")
 @Entity(name = "patients")
@@ -17,6 +18,9 @@ public class PatientEntity extends UserEntity {
 
     @Column(name = "phone_number")
     private String phoneNumber;
+
+    @OneToMany(mappedBy = "patient")
+    private List<CommentEntity> comments;
 
     public Integer getAge() {
         return age;
