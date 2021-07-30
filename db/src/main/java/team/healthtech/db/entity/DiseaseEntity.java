@@ -22,6 +22,7 @@ public class DiseaseEntity {
     @Column(name = "end_date")
     private Date endDate;
 
+    // ask
     @Column(name = "patient_id")
     private Integer patientId;
 

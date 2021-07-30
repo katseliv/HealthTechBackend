@@ -2,9 +2,11 @@ package team.healthtech.service.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import team.healthtech.db.entity.AppointmentEntity;
 import team.healthtech.db.repository.AppointmentRepository;
 import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.service.mapper.AppointmentMapper;
+import team.healthtech.service.model.AppointmentCreateDto;
 import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.logic.AppointmentService;
 
@@ -29,7 +31,10 @@ public class AppointmentServiceImpl implements AppointmentService {
     }
 
     @Override
-    public AppointmentDto createAppointment(AppointmentDto appointmentDto, int patientId) {
+    public AppointmentDto createAppointment(AppointmentCreateDto appointmentDto, int patientId) {
+        AppointmentEntity appointmentEntity = new AppointmentEntity();
+        appointmentEntity.setPatient(patientRepository.findById(patientId).orElseThrow());
+        appointmentEntity.setId(patientRepository.findById(patientId).orElseThrow());
         appointmentDto.setPatient(patientRepository.findById(patientId).orElseThrow());
 
         return Optional.of(appointmentDto)
