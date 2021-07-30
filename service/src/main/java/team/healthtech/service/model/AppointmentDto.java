@@ -1,8 +1,5 @@
 package team.healthtech.service.model;
 
-import team.healthtech.db.entity.PatientEntity;
-import team.healthtech.db.entity.TimeRecordsEntity;
-
 import java.time.Instant;
 
 public class AppointmentDto {
@@ -11,7 +8,7 @@ public class AppointmentDto {
     //timeRecordId
 
     private PatientDto patient;
-    private TimeRecordsDto timeRecord;
+    private TimeRecordDto timeRecord;
     private boolean isTaken;
     private Instant datetime;
     private String result;
@@ -25,11 +22,11 @@ public class AppointmentDto {
         this.patient = patient;
     }
 
-    public TimeRecordsDto getTimeRecord() {
+    public TimeRecordDto getTimeRecord() {
         return timeRecord;
     }
 
-    public void setTimeRecord(TimeRecordsDto timeRecord) {
+    public void setTimeRecord(TimeRecordDto timeRecord) {
         this.timeRecord = timeRecord;
     }
 
