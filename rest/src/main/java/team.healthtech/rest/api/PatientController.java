@@ -3,6 +3,7 @@ package team.healthtech.rest.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.PatientService;
+import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.model.PatientDto;
 
 import java.util.List;
@@ -43,5 +44,10 @@ public class PatientController {
     @DeleteMapping("/{patientId}")
     public void deletePatient(@PathVariable int patientId){
         service.deletePatientById(patientId);
+    }
+
+    @PostMapping("/{patientId}/appointment")
+    public AppointmentDto createAppointment(@PathVariable int patientId, @RequestBody AppointmentCreateDto dto) {
+
     }
 }

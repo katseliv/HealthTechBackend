@@ -34,8 +34,8 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public void updatePatient(PatientDto patientDto, int patientId) {
-//        patientRepository.save()
         patientMapper.merge(patientDto, patientRepository.findById(patientId).orElseThrow());
+        patientRepository.save(patientMapper.toEntity(patientDto));
     }
 
     @Override

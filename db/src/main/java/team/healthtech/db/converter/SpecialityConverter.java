@@ -7,6 +7,7 @@ import javax.persistence.Converter;
 
 @Converter(autoApply = true)
 public class SpecialityConverter implements AttributeConverter<Speciality, Integer> {
+
     @Override
     public Integer convertToDatabaseColumn(Speciality attribute) {
         return attribute == null ? null : attribute.getId();
@@ -16,4 +17,5 @@ public class SpecialityConverter implements AttributeConverter<Speciality, Integ
     public Speciality convertToEntityAttribute(Integer dbData) {
         return Speciality.fromId(dbData).orElse(null);
     }
+
 }

@@ -7,26 +7,29 @@ import java.time.Instant;
 
 public class AppointmentDto {
 
-    private PatientEntity patient;
-    private TimeRecordsEntity timeRecord;
+    //patientId
+    //timeRecordId
+
+    private PatientDto patient;
+    private TimeRecordsDto timeRecord;
     private boolean isTaken;
     private Instant datetime;
     private String result;
     private String recipe;
 
-    public PatientEntity getPatient() {
+    public PatientDto getPatient() {
         return patient;
     }
 
-    public void setPatient(PatientEntity patient) {
+    public void setPatient(PatientDto patient) {
         this.patient = patient;
     }
 
-    public TimeRecordsEntity getTimeRecord() {
+    public TimeRecordsDto getTimeRecord() {
         return timeRecord;
     }
 
-    public void setTimeRecord(TimeRecordsEntity timeRecord) {
+    public void setTimeRecord(TimeRecordsDto timeRecord) {
         this.timeRecord = timeRecord;
     }
 
