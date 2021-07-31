@@ -1,6 +1,6 @@
 package team.healthtech.service.model;
 
-public class TimeRecordsDto {
+public class TimeRecordDto {
 
     private Integer id;
 
