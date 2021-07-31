@@ -7,7 +7,7 @@ import java.time.Instant;
 
 @Table(schema = "healthtech", name = "time_records")
 @Entity(name = "time_records")
-public class TimeRecordsEntity {
+public class TimeRecordEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
