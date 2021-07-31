@@ -1,5 +1,7 @@
 package team.healthtech.db.entity;
 
+import team.healthtech.db.entity.enums.Allergy;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -21,6 +23,13 @@ public class PatientEntity extends UserEntity {
 
     @OneToMany(mappedBy = "patient")
     private List<CommentEntity> comments;
+
+    @OneToMany
+    @JoinColumn(
+        name = "allergies",
+        referencedColumnName = "id"
+    )
+    private List<Allergy> allergies;
 
     public Integer getAge() {
         return age;

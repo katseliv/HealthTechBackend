@@ -1,4 +1,7 @@
 dependencies {
+    implementation 'org.springframework.security:spring-security-web:5.5.1'
+    implementation 'org.springframework.security:spring-security-config:5.5.1'
+    implementation 'jakarta.servlet:jakarta.servlet-api:4.0.3'
     implementation(project(':db'))
     implementation(project(':service'))
 }

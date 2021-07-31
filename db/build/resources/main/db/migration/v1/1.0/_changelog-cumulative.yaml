@@ -76,3 +76,20 @@ databaseChangeLog:
         - sqlFile:
             path: PHT-006-rename-column.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: PPL-001-20210729173033
+      author: TODO
+      comment: TODO
+      changes:
+        - sqlFile:
+            path: PPL-001-20210729173033.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: PPL-001-20210729173130
+      author: TODO
+      comment: TODO
+      changes:
+        - sqlFile:
+            path: PPL-001-20210729173130.sql
+            relativeToChangelogFile: true

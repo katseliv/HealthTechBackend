@@ -13,8 +13,8 @@ public class DoctorEntity extends UserEntity {
     @Column(name = "rating")
     private Double rating;
 
-//    @OneToMany(mappedBy = "doctorId")
-//    private List<DoctorSpecialityId> specialities;
+    @OneToMany(mappedBy = "doctorId")
+    private List<DoctorSpecialityId> specialities;
 
     @OneToMany(mappedBy = "doctor")
     private List<CommentEntity> comments;

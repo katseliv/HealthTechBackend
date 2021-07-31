@@ -1,9 +1,6 @@
 package team.healthtech.db.entity;
 
-import javax.persistence.Column;
-import javax.persistence.EmbeddedId;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.sql.Date;
 import java.time.Instant;
 
@@ -15,6 +12,13 @@ public class DoctorsSpecialitiesEntity {
 
     @Column(name = "receive_date")
     private Date receiveDate;
+
+    @ManyToMany
+    @JoinColumn(
+        name = "doctor_id",
+        referencedColumnName = "id"
+    )
+    private DoctorEntity doctor;
 
     public DoctorSpecialityId getId() {
         return id;
