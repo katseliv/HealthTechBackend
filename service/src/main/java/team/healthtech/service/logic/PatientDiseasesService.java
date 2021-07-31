@@ -7,6 +7,7 @@ import team.healthtech.service.model.DiseaseDto;
 import java.util.List;
 
 public interface PatientDiseasesService {
+
     List<DiseaseDto> getAllDiseases(int patientId);
 
     // dto because акромя id disease has startdate and patientid

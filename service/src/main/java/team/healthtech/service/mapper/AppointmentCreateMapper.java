@@ -10,4 +10,5 @@ public interface AppointmentCreateMapper {
     AppointmentCreateDto fromEntity(AppointmentEntity entity);
 
     AppointmentEntity toEntity(AppointmentCreateDto dto);
+
 }

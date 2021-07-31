@@ -4,12 +4,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.repository.AppointmentRepository;
 import team.healthtech.db.repository.PatientRepository;
-import team.healthtech.service.mapper.AppointmentCreateMapper;
 import team.healthtech.service.mapper.AppointmentMapper;
 import team.healthtech.service.mapper.PatientMapper;
 import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.logic.AppointmentService;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -45,6 +45,12 @@ public class AppointmentServiceImpl implements AppointmentService {
             .orElseThrow();
     }
 
+    @Override
+    public List<AppointmentDto> getAppointmentsOfPatientById(int patientId) {
+        return appointmentMapper.fromEntities(appointmentRepository.findAllByPatientId(patientId));
+    }
+
+//    questionable
 //    @Override
 //    public AppointmentDto createAppointment(AppointmentCreateDto appointmentDto, int patientId) {
 //        AppointmentEntity appointmentEntity = new AppointmentEntity();

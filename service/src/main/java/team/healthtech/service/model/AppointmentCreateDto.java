@@ -1,6 +1,6 @@
 package team.healthtech.service.model;
 
-public class AppointmentCreateDto {
+public class AppointmentCreateDto { // questionable
 
     private Integer patientId;
     private Integer timeRecordId;

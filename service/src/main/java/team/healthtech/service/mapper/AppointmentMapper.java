@@ -14,4 +14,5 @@ public interface AppointmentMapper {
     AppointmentEntity toEntity(AppointmentDto dto);
 
     List<AppointmentDto> fromEntities(Iterable<AppointmentEntity> entities);
+
 }

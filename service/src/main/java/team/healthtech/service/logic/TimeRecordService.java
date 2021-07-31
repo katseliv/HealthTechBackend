@@ -6,6 +6,7 @@ import team.healthtech.service.model.TimeRecordDto;
 import java.util.List;
 
 public interface TimeRecordService {
+
     // нужно ли делить на два сервиса для пациентов и докторов?
     TimeRecordDto createTimeRecord(TimeRecordDto dto);
 

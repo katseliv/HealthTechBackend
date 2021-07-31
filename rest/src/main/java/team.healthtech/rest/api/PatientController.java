@@ -33,15 +33,15 @@ public class PatientController {
     }
 
     @PutMapping("/{patientId}")
-    public PatientDto updatePatient(
+    public void updatePatient(
         @RequestBody PatientDto patientDto,
         @PathVariable int patientId
     ) {
-        return null;
+        service.updatePatient(patientDto, patientId);
     }
 
     @GetMapping("/{patientId}")
-    public PatientDto getPatient(
+    public PatientDto findPatient(
         @PathVariable int patientId
     ){
         return service.getPatientById(patientId);
@@ -54,12 +54,4 @@ public class PatientController {
         service.deletePatientById(patientId);
     }
 
-    @PostMapping("/{patientId}/appointment")
-    public AppointmentDto createAppointment(
-        @PathVariable int patientId,
-        @RequestBody AppointmentCreateDto dto
-    ) {
-
-        return null;
-    }
 }
