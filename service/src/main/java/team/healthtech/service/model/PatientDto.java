@@ -1,20 +1,11 @@
 package team.healthtech.service.model;
 
-public class PatientDto {
+public class PatientDto extends UserDto {
 
-    private Integer id;
     private Integer age;
     private Character sex;
     private String email;
     private String phoneNumber;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
 
     public Integer getAge() {
         return age;

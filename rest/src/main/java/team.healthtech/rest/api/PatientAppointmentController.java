@@ -8,7 +8,7 @@ import team.healthtech.service.model.AppointmentDto;
 import java.util.List;
 
 @RestController
-@RequestMapping("/patients/{patientId}/appointments")
+@RequestMapping("/patients/{patientId}/visits")
 public class PatientAppointmentController {
 
     private final AppointmentService service;
