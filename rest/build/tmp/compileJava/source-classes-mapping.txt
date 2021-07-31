@@ -1,8 +1,8 @@
-team.healthtech/rest/api/UserController.java
- team.healthtech.rest.api.UserController
 team.healthtech/rest/RestConfiguration.java
  team.healthtech.rest.RestConfiguration
 team.healthtech/rest/api/PatientController.java
  team.healthtech.rest.api.PatientController
 team.healthtech/rest/api/PatientAppointmentController.java
  team.healthtech.rest.api.PatientAppointmentController
+team.healthtech/rest/api/UserController.java
+ team.healthtech.rest.api.UserController
