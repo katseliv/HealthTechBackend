@@ -1,14 +1,8 @@
 package team.healthtech.service.model;
 
-import team.healthtech.db.entity.PatientEntity;
-import team.healthtech.db.entity.TimeRecordsEntity;
-
 import java.time.Instant;
 
 public class AppointmentDto {
-
-    //patientId
-    //timeRecordId
 
     private PatientDto patient;
     private TimeRecordsDto timeRecord;

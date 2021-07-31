@@ -18,6 +18,6 @@ public interface PatientMapper {
     List<PatientDto> fromEntities(Iterable<PatientEntity> entities);
 
     @Mapping(target="id", ignore = true)
-
     void merge(PatientDto dto, @MappingTarget PatientEntity entity);
+
 }
