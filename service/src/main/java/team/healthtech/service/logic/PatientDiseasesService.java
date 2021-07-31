@@ -1,17 +1,19 @@
 package team.healthtech.service.logic;
 
-import team.healthtech.service.model.DiseaseEditDto;
+import team.healthtech.service.model.DiseaseDto;
 
 import java.util.List;
 
 public interface PatientDiseasesService {
-    List<DiseaseEditDto> getAllDiseases(int patientId);
 
     // dto because акромя id disease has startdate and patientid
-    DiseaseEditDto addDisease(DiseaseEditDto disease, int patientId);
+    DiseaseDto createDisease(DiseaseDto disease);
 
-    DiseaseEditDto updateDisease(DiseaseEditDto diseaseEditDto, int diseaseId);
+    DiseaseDto updateDisease(DiseaseDto diseaseDto, int diseaseId);
 
-    void deleteDisease(DiseaseEditDto disease, int patientId);
+    void deleteDisease(int diseaseId);
 
+    DiseaseDto getDiseaseById(int diseaseId);
+
+    List<DiseaseDto> getAllDiseases(int patientId);
 }

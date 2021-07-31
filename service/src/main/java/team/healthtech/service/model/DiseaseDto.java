@@ -2,7 +2,7 @@ package team.healthtech.service.model;
 
 import java.time.Instant;
 
-public class DiseaseEditDto {
+public class DiseaseDto {
     private Integer id;
     private Integer patientId;
     private String name;
