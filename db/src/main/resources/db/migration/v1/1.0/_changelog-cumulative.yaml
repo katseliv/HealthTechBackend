@@ -93,3 +93,12 @@ databaseChangeLog:
         - sqlFile:
             path: PPL-001-20210729173130.sql
             relativeToChangelogFile: true
+
+  - changeSet:
+      id: PPL-001-20210731230215
+      author: TODO
+      comment: TODO
+      changes:
+        - sqlFile:
+            path: PPL-001-20210731230215.sql
+            relativeToChangelogFile: true
