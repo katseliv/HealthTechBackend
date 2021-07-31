@@ -5,7 +5,6 @@ import java.time.Instant;
 public class AppointmentDto {
 
     private PatientDto patient;
-    private TimeRecordDto timeRecord;
     private boolean isTaken;
     private Instant datetime;
     private String result;
@@ -17,14 +16,6 @@ public class AppointmentDto {
 
     public void setPatient(PatientDto patient) {
         this.patient = patient;
-    }
-
-    public TimeRecordDto getTimeRecord() {
-        return timeRecord;
-    }
-
-    public void setTimeRecord(TimeRecordDto timeRecord) {
-        this.timeRecord = timeRecord;
     }
 
     public boolean isTaken() {
@@ -58,4 +49,5 @@ public class AppointmentDto {
     public void setRecipe(String recipe) {
         this.recipe = recipe;
     }
+
 }

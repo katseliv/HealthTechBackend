@@ -55,9 +55,4 @@ public class PatientServiceImpl implements PatientService {
         return patientMapper.fromEntities(patientRepository.findAll());
     }
 
-    @Override
-    public List<AppointmentDto> getAppointmentsOfPatientById(int patientId) {
-        return null;
-    }
-
 }

@@ -31,8 +31,8 @@ public class UserEntity {
         return id;
     }
 
-    public void setId(Integer u_id_ptr) {
-        this.id = u_id_ptr;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {

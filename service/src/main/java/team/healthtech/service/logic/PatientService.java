@@ -17,6 +17,4 @@ public interface PatientService {
 
     List<PatientDto> getAllPatients();
 
-    List<AppointmentDto> getAppointmentsOfPatientById(int patientId);
-
 }
