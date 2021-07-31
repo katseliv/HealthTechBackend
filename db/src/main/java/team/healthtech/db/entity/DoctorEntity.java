@@ -1,7 +1,5 @@
 package team.healthtech.db.entity;
 
-import team.healthtech.db.entity.enums.Speciality;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -9,8 +7,14 @@ import java.util.List;
 @Entity(name = "doctors")
 public class DoctorEntity extends UserEntity {
 
-    @Column(name = "sex")
-    private Boolean sex;
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "mid_name")
+    private String midName;
+
+    @Column(name = "last_name")
+    private String lastName;
 
     @Column(name = "rating")
     private Double rating;
@@ -20,14 +24,6 @@ public class DoctorEntity extends UserEntity {
 
     @OneToMany(mappedBy = "doctor")
     private List<CommentEntity> comments;
-
-    public Boolean getSex() {
-        return sex;
-    }
-
-    public void setSex(Boolean sex) {
-        this.sex = sex;
-    }
 
     public Double getRating() {
         return rating;

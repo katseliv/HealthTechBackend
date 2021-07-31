@@ -11,7 +11,7 @@ public class Allergy {
     @Column(name = "id")
     private final int id;
 
-    @Column
+    @Column(name = "name")
     private final String name;
 
     public Allergy(int id, String name) {

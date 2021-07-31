@@ -12,7 +12,7 @@ public class DoctorSpecialityId  implements Serializable {
     private Integer doctorId;
 
     @Column(name = "speciality_id")
-    private Speciality speciality;
+    private Integer specialityId;
 
     public Integer getDoctorId() {
         return doctorId;
@@ -22,12 +22,12 @@ public class DoctorSpecialityId  implements Serializable {
         this.doctorId = doctorId;
     }
 
-    public Speciality getSpeciality() {
-        return speciality;
+    public Integer getSpecialityId() {
+        return specialityId;
     }
 
-    public void setSpeciality(Speciality speciality) {
-        this.speciality = speciality;
+    public void setSpecialityId(Integer specialityId) {
+        this.specialityId = specialityId;
     }
 
     @Override
@@ -35,12 +35,12 @@ public class DoctorSpecialityId  implements Serializable {
         if (this == o) return true;
         if (!(o instanceof DoctorSpecialityId)) return false;
         DoctorSpecialityId that = (DoctorSpecialityId) o;
-        return Objects.equals(doctorId, that.doctorId) && speciality == that.speciality;
+        return Objects.equals(doctorId, that.doctorId) && specialityId.equals(that.specialityId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(doctorId, speciality);
+        return Objects.hash(doctorId, specialityId);
     }
 
 }

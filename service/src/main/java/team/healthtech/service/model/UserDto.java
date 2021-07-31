@@ -3,9 +3,8 @@ package team.healthtech.service.model;
 public class UserDto {
 
     private Integer id;
-    private String firstName;
-    private String midName;
-    private String lastName;
+    private String login;
+    private String email;
 
     public Integer getId() {
         return id;
@@ -15,28 +14,19 @@ public class UserDto {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getLogin() {
+        return login;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setLogin(String login) {
+        this.login = login;
     }
 
-    public String getMidName() {
-        return midName;
+    public String getEmail() {
+        return email;
     }
 
-    public void setMidName(String midName) {
-        this.midName = midName;
+    public void setEmail(String email) {
+        this.email = email;
     }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
 }

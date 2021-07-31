@@ -15,10 +15,10 @@ public class Speciality {
     @Column(name = "id")
     private final int id;
 
-    @Column
+    @Column(name = "name")
     private final String name;
 
-    @OneToMany(mappedBy = "specialities")
+    @OneToMany(mappedBy = "speciality")
     private List<DoctorsSpecialitiesEntity> doctors;
 
     public Speciality(int id, String name) {
