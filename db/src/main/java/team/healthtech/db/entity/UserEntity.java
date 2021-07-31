@@ -7,9 +7,10 @@ import javax.persistence.*;
  */
 @Table(schema = "healthtech", name = "users")
 @Entity(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)
 public class UserEntity {
 
-    @Id //javax.persistence
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Integer id;
@@ -30,8 +31,8 @@ public class UserEntity {
         return id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public void setId(Integer u_id_ptr) {
+        this.id = u_id_ptr;
     }
 
     public String getFirstName() {
@@ -65,5 +66,4 @@ public class UserEntity {
     public void setPassword(String password) {
         this.password = password;
     }
-
 }

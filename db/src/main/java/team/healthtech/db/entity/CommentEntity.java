@@ -15,7 +15,7 @@ public class CommentEntity {
     @ManyToOne
     @JoinColumn(
         name = "doctor_id",
-        referencedColumnName = "user_id_ptr",
+        referencedColumnName = "id",
         insertable = false,
         updatable = false)
     private DoctorEntity doctor;
@@ -23,7 +23,7 @@ public class CommentEntity {
     @ManyToOne
     @JoinColumn(
         name = "patient_id",
-        referencedColumnName = "user_id_ptr",
+        referencedColumnName = "id",
         insertable = false,
         updatable = false)
     private PatientEntity patient;

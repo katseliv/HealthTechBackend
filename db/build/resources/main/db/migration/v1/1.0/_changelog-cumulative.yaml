@@ -60,3 +60,19 @@ databaseChangeLog:
         - sqlFile:
             path: PHT-004-202107282000.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-005-rename-column
+      author: PaulRobinson
+      comment: rename column in patients (user_id_ptr -> id)
+      changes:
+        - sqlFile:
+            path: PHT-005-rename-column.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-006-rename-column
+      author: PaulRobinson
+      comment: rename column in doctors (user_id_ptr -> id)
+      changes:
+        - sqlFile:
+            path: PHT-006-rename-column.sql
+            relativeToChangelogFile: true

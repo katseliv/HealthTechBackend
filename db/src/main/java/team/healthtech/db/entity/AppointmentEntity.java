@@ -15,7 +15,7 @@ public class AppointmentEntity {
     @ManyToOne
     @JoinColumn(
         name = "patient_id",
-        referencedColumnName = "user_id_ptr",
+        referencedColumnName = "id",
         insertable = false,
         updatable = false)
     private PatientEntity patient;
