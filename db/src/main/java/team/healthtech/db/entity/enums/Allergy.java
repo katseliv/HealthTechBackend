@@ -1,34 +1,29 @@
 package team.healthtech.db.entity.enums;
 
-import java.util.Optional;
+import javax.persistence.*;
 
-public enum Allergy {
+@Table(schema = "healthtech", name = "allergies")
+@Entity(name = "allergies")
+public class Allergy {
 
-    ALLERGY1(1),
-    ALLERGY2(2),
-    ALLERGY3(3)
-    ;
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private final int id;
 
-    Allergy(int id) {
+    @Column
+    private final String name;
+
+    public Allergy(int id, String name) {
         this.id = id;
+        this.name = name;
     }
 
     public int getId() {
         return id;
     }
 
-    public static Optional<Allergy> fromId(Integer id) {
-        if (id == null) {
-            return Optional.empty();
-        }
-        for (var value : Allergy.values()) {
-            if (value.id == id) {
-                return Optional.of(value);
-            }
-        }
-        return Optional.empty();
+    public String getName() {
+        return name;
     }
-
 }

@@ -16,7 +16,7 @@ public class DoctorEntity extends UserEntity {
     private Double rating;
 
     @OneToMany(mappedBy = "doctor")
-    private List<Speciality> specialities;
+    private List<DoctorsSpecialitiesEntity> specialities;
 
     @OneToMany(mappedBy = "doctor")
     private List<CommentEntity> comments;

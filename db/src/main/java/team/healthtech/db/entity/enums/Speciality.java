@@ -1,36 +1,36 @@
 package team.healthtech.db.entity.enums;
 
-import java.util.Optional;
+import team.healthtech.db.entity.DoctorEntity;
+import team.healthtech.db.entity.DoctorsSpecialitiesEntity;
 
-public enum Speciality {
+import javax.persistence.*;
+import java.util.List;
 
-    IMMUNOLOGIST(1),
-    NUTRITIONIST(2),
-    ORTHODONTIST(3)
-    ;
+@Table(schema = "healthtech", name = "specialities")
+@Entity(name = "specialities")
+public class Speciality {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private final int id;
 
-    Speciality(int id) {
+    @Column
+    private final String name;
+
+    @OneToMany(mappedBy = "specialities")
+    private List<DoctorsSpecialitiesEntity> doctors;
+
+    public Speciality(int id, String name) {
         this.id = id;
+        this.name = name;
     }
 
     public int getId() {
         return id;
     }
 
-    public static Optional<Speciality> fromId(Integer id) {
-        if (id == null) {
-            return Optional.empty();
-        }
-
-        for (var value : Speciality.values()) {
-            if (value.id == id) {
-                return Optional.of(value);
-            }
-        }
-
-        return Optional.empty();
+    public String getName() {
+        return name;
     }
-
 }
