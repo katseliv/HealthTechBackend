@@ -29,4 +29,9 @@ public class CommentServiceImpl implements CommentService {
             .map(commentMapper::fromEntity)
             .orElseThrow();
     }
+
+    @Override
+    public void deleteComment(CommentDto commentDto) {
+        // realization
+    }
 }

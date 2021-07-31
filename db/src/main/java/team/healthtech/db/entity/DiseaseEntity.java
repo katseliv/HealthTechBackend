@@ -22,8 +22,13 @@ public class DiseaseEntity {
     @Column(name = "end_date")
     private Date endDate;
 
-    @Column(name = "patient_id")
-    private Integer patientId;
+    @ManyToOne
+    @JoinColumn(
+        name = "patient_id",
+        referencedColumnName = "id",
+        insertable = false,
+        updatable = false)
+    private PatientEntity patient;
 
     public Integer getId() {
         return id;
@@ -57,12 +62,11 @@ public class DiseaseEntity {
         this.endDate = endDate;
     }
 
-    public Integer getPatientId() {
-        return patientId;
+    public PatientEntity getPatient() {
+        return patient;
     }
 
-    public void setPatientId(Integer patientId) {
-        this.patientId = patientId;
+    public void setPatient(PatientEntity patient) {
+        this.patient = patient;
     }
-
 }

@@ -1,32 +1,29 @@
 package team.healthtech.service.model;
 
-import team.healthtech.db.entity.PatientEntity;
-import team.healthtech.db.entity.TimeRecordsEntity;
-
 import java.time.Instant;
 
 public class AppointmentDto {
 
-    private PatientEntity patient;
-    private TimeRecordsEntity timeRecord;
+    private PatientDto patient;
+    private TimeRecordDto timeRecord;
     private boolean isTaken;
     private Instant datetime;
     private String result;
     private String recipe;
 
-    public PatientEntity getPatient() {
+    public PatientDto getPatient() {
         return patient;
     }
 
-    public void setPatient(PatientEntity patient) {
+    public void setPatient(PatientDto patient) {
         this.patient = patient;
     }
 
-    public TimeRecordsEntity getTimeRecord() {
+    public TimeRecordDto getTimeRecord() {
         return timeRecord;
     }
 
-    public void setTimeRecord(TimeRecordsEntity timeRecord) {
+    public void setTimeRecord(TimeRecordDto timeRecord) {
         this.timeRecord = timeRecord;
     }
 

@@ -7,6 +7,7 @@ import java.time.Instant;
 @Table(schema = "healthtech", name = "doctors_specialities")
 @Entity(name = "doctors_specialities")
 public class DoctorsSpecialitiesEntity {
+
     @EmbeddedId
     private DoctorSpecialityId id;
 

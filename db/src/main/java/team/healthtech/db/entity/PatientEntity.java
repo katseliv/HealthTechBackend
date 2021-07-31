@@ -62,4 +62,5 @@ public class PatientEntity extends UserEntity {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 }
