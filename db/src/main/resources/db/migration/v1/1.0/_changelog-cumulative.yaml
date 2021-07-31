@@ -76,3 +76,11 @@ databaseChangeLog:
         - sqlFile:
             path: PHT-006-rename-column.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-007-202107311930
+      author: EV_Obukhova
+      comment: delete column date in healthtech.time_records, change type of columns st_time, en_time
+      changes:
+        - sqlFile:
+            path: PHT-007-202107311930.sql
+            relativeToChangelogFile: true

@@ -1,5 +1,6 @@
 package team.healthtech.service.model;
 
+import java.sql.Time;
 import java.time.Instant;
 import java.util.Date;
 
@@ -8,12 +9,10 @@ public class TimeRecordDto {
     private Integer id;
 
     private Integer doctorId;
-    // Date?
-    private Date date;
 
-    private Instant startTime;
+    private Time startTime;
 
-    private Instant endTime;
+    private Time endTime;
 
     public Integer getId() {
         return id;
@@ -31,27 +30,19 @@ public class TimeRecordDto {
         this.doctorId = doctorId;
     }
 
-    public Date getDate() {
-        return date;
-    }
-
-    public void setDate(Date date) {
-        this.date = date;
-    }
-
-    public Instant getStartTime() {
+    public Time getStartTime() {
         return startTime;
     }
 
-    public void setStartTime(Instant startTime) {
+    public void setStartTime(Time startTime) {
         this.startTime = startTime;
     }
 
-    public Instant getEndTime() {
+    public Time getEndTime() {
         return endTime;
     }
 
-    public void setEndTime(Instant endTime) {
+    public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
 }
