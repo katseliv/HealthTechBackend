@@ -3,6 +3,7 @@ package team.healthtech.rest.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.PatientService;
+import team.healthtech.service.model.AppointmentCreateDto;
 import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.model.PatientDto;
 
@@ -32,22 +33,33 @@ public class PatientController {
     }
 
     @PutMapping("/{patientId}")
-    public PatientDto updatePatient(@RequestBody PatientDto patientDto, @PathVariable int patientId) {
+    public PatientDto updatePatient(
+        @RequestBody PatientDto patientDto,
+        @PathVariable int patientId
+    ) {
         return null;
     }
 
     @GetMapping("/{patientId}")
-    public PatientDto getPatient(@PathVariable int patientId){
+    public PatientDto getPatient(
+        @PathVariable int patientId
+    ){
         return service.getPatientById(patientId);
     }
 
     @DeleteMapping("/{patientId}")
-    public void deletePatient(@PathVariable int patientId){
+    public void deletePatient(
+        @PathVariable int patientId
+    ){
         service.deletePatientById(patientId);
     }
 
     @PostMapping("/{patientId}/appointment")
-    public AppointmentDto createAppointment(@PathVariable int patientId, @RequestBody AppointmentCreateDto dto) {
+    public AppointmentDto createAppointment(
+        @PathVariable int patientId,
+        @RequestBody AppointmentCreateDto dto
+    ) {
 
+        return null;
     }
 }

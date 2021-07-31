@@ -14,8 +14,13 @@ public class TimeRecordsEntity {
     @Column(name = "id")
     private Integer id;
 
-    @Column(name = "doctor_id")
-    private Integer doctorId;
+    @ManyToOne
+    @JoinColumn(
+        name = "doctor_id",
+        referencedColumnName = "id",
+        insertable = false,
+        updatable = false)
+    private DoctorEntity doctor;
 
     @Column(name = "date")
     private Date date;
@@ -34,12 +39,12 @@ public class TimeRecordsEntity {
         this.id = id;
     }
 
-    public Integer getDoctorId() {
-        return doctorId;
+    public DoctorEntity getDoctor() {
+        return doctor;
     }
 
-    public void setDoctorId(Integer doctorId) {
-        this.doctorId = doctorId;
+    public void setDoctor(DoctorEntity doctor) {
+        this.doctor = doctor;
     }
 
     public Date getDate() {

@@ -4,9 +4,6 @@ import java.time.Instant;
 
 public class AppointmentDto {
 
-    //patientId
-    //timeRecordId
-
     private PatientDto patient;
     private TimeRecordDto timeRecord;
     private boolean isTaken;
