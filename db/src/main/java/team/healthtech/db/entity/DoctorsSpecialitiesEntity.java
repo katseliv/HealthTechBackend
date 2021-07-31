@@ -1,5 +1,7 @@
 package team.healthtech.db.entity;
 
+import team.healthtech.db.entity.enums.Speciality;
+
 import javax.persistence.*;
 import java.sql.Date;
 import java.time.Instant;
@@ -14,12 +16,23 @@ public class DoctorsSpecialitiesEntity {
     @Column(name = "receive_date")
     private Date receiveDate;
 
-    @ManyToMany
+    @ManyToOne
     @JoinColumn(
         name = "doctor_id",
-        referencedColumnName = "id"
+        referencedColumnName = "id",
+        insertable = false,
+        updatable = false
     )
     private DoctorEntity doctor;
+
+    @ManyToOne
+    @JoinColumn(
+        name = "speciality_id",
+        referencedColumnName = "id",
+        insertable = false,
+        updatable = false
+    )
+    private Speciality speciality;
 
     public DoctorSpecialityId getId() {
         return id;

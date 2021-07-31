@@ -3,11 +3,7 @@ package team.healthtech.db.entity;
 import team.healthtech.db.entity.enums.Speciality;
 
 import javax.persistence.Column;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
 import java.io.Serializable;
-import java.sql.Date;
 import java.util.Objects;
 
 public class DoctorSpecialityId  implements Serializable {

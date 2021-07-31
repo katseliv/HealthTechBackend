@@ -1,5 +1,7 @@
 package team.healthtech.db.entity;
 
+import team.healthtech.db.entity.enums.Speciality;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -13,8 +15,8 @@ public class DoctorEntity extends UserEntity {
     @Column(name = "rating")
     private Double rating;
 
-    @OneToMany(mappedBy = "doctorId")
-    private List<DoctorSpecialityId> specialities;
+    @OneToMany(mappedBy = "doctor")
+    private List<Speciality> specialities;
 
     @OneToMany(mappedBy = "doctor")
     private List<CommentEntity> comments;
