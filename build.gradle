@@ -15,11 +15,11 @@ allprojects {
     }
 
     dependencies {
-        implementation("team.healthtech.common:commons")
+        implementation("team.healthtech.commons:commons")
     }
 }
 
 dependencies {
     implementation(project(':rest'))
-    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.2'
+    implementation 'org.springframework.boot:spring-boot-starter-web:2.5.3'
 }

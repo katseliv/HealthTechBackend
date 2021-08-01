@@ -4,4 +4,4 @@ plugins {
 
 sourceCompatibility = 11
 
-group = "team.healthtech.common"
+group = "team.healthtech.commons"

@@ -58,10 +58,6 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return new UserDetailsServiceImpl(userSecurityProvider);
     }
 
-    public static void main(String[] args) {
-        System.out.println(new BCryptPasswordEncoder().encode("admin"));
-    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http

@@ -11,7 +11,4 @@ import java.util.List;
 
 @Repository
 public interface AllergyRepository extends CrudRepository<AllergyEntity, Integer>, JpaRepository<AllergyEntity, Integer>, JpaSpecificationExecutor<AllergyEntity> {
-
-    List<AllergyEntity> getAllByPatientId(Integer patientId);
-
 }
