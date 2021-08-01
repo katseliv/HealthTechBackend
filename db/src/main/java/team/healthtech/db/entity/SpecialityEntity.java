@@ -8,7 +8,7 @@ import java.util.List;
 
 @Table(schema = "healthtech", name = "specialities")
 @Entity(name = "specialities")
-public class SpecialityEntity {
+public class SpecialityEntity { // ?
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
