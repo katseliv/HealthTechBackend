@@ -1,10 +1,7 @@
 package team.healthtech.db.entity;
 
-import team.healthtech.db.entity.enums.Speciality;
-
 import javax.persistence.*;
 import java.sql.Date;
-import java.time.Instant;
 
 @Table(schema = "healthtech", name = "doctors_specialities")
 @Entity(name = "doctors_specialities")
@@ -32,7 +29,7 @@ public class DoctorsSpecialitiesEntity {
         insertable = false,
         updatable = false
     )
-    private Speciality speciality;
+    private SpecialityEntity specialityEntity;
 
     public DoctorSpecialityId getId() {
         return id;

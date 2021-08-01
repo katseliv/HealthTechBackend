@@ -3,9 +3,9 @@ package team.healthtech.service.logic.impl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.repository.PatientRepository;
+import team.healthtech.db.repository.UserRepository;
 import team.healthtech.service.logic.PatientService;
 import team.healthtech.service.mapper.PatientMapper;
-import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.model.PatientDto;
 
 import java.util.List;
@@ -16,15 +16,18 @@ public class PatientServiceImpl implements PatientService {
 
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
+    private final UserRepository userRepository;
 
     @Autowired
-    public PatientServiceImpl(PatientRepository patientRepository, PatientMapper patientMapper) {
+    public PatientServiceImpl(PatientRepository patientRepository, PatientMapper patientMapper, UserRepository userRepository) {
         this.patientRepository = patientRepository;
         this.patientMapper = patientMapper;
+        this.userRepository = userRepository;
     }
 
     @Override
     public PatientDto createPatient(PatientDto patientDto) {
+
         return Optional.of(patientDto)
             .map(patientMapper::toEntity)
             .map(patientRepository::save)

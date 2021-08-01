@@ -1,6 +1,6 @@
 package team.healthtech.service.model;
 
-public class DoctorDto {
+public class DoctorDto extends UserDto{
 
     private Boolean sex;
     private Double rating;

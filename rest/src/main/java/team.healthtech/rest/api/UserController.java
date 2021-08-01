@@ -1,10 +1,26 @@
 package team.healthtech.rest.api;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import team.healthtech.service.logic.UserService;
+import team.healthtech.service.model.UserDto;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
+    private final UserService userService;
+
+    @Autowired
+    public UserController(UserService userService) {
+        this.userService = userService;
+    }
+
+    @PostMapping
+    public UserDto createUser(@RequestBody UserDto userDto){
+        return userService.createUser(userDto);
+    }
+
 //    private final UserRepository userRepository;
 //
 //    @Autowired
