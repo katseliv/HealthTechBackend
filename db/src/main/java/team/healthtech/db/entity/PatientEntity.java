@@ -1,7 +1,5 @@
 package team.healthtech.db.entity;
 
-import team.healthtech.db.entity.enums.Allergy;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -37,7 +35,7 @@ public class PatientEntity extends UserEntity {
         name = "patients_allergies",
         schema = "healthtech"
     )
-    private List<Allergy> allergies;
+    private List<AllergyEntity> allergies;
 
     public String getFirstName() {
         return firstName;
@@ -71,11 +69,11 @@ public class PatientEntity extends UserEntity {
         this.comments = comments;
     }
 
-    public List<Allergy> getAllergies() {
+    public List<AllergyEntity> getAllergies() {
         return allergies;
     }
 
-    public void setAllergies(List<Allergy> allergies) {
+    public void setAllergies(List<AllergyEntity> allergies) {
         this.allergies = allergies;
     }
 

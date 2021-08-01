@@ -1,4 +1,4 @@
-package team.healthtech.db.entity.enums;
+package team.healthtech.db.entity;
 
 import team.healthtech.db.entity.DoctorEntity;
 import team.healthtech.db.entity.DoctorsSpecialitiesEntity;
@@ -8,20 +8,20 @@ import java.util.List;
 
 @Table(schema = "healthtech", name = "specialities")
 @Entity(name = "specialities")
-public class Speciality {
+public class SpecialityEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private final int id;
+    private int id;
 
     @Column(name = "name")
-    private final String name;
+    private String name;
 
     @OneToMany(mappedBy = "speciality")
     private List<DoctorsSpecialitiesEntity> doctors;
 
-    public Speciality(int id, String name) {
+    public SpecialityEntity(int id, String name) {
         this.id = id;
         this.name = name;
     }
@@ -33,4 +33,5 @@ public class Speciality {
     public String getName() {
         return name;
     }
+
 }

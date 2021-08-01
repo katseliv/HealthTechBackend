@@ -1,7 +1,6 @@
 package team.healthtech.service.logic;
 
-import team.healthtech.db.entity.enums.Allergy;
-import team.healthtech.service.model.DiseaseDto;
+import team.healthtech.db.entity.AllergyEntity;
 
 import java.util.List;
 
@@ -10,7 +9,7 @@ public interface PatientAllergiesService {
 
     void deleteAllergyFromPatient(int allergyId, int patientId);
 
-    List<Allergy> getAllAllergiesFromPatient(int patientId);
+    List<AllergyEntity> getAllAllergiesFromPatient(int patientId);
 
-    Allergy getAllergyById(int allergyId);
+    AllergyEntity getAllergyById(int allergyId);
 }

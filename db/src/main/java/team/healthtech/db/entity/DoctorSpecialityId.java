@@ -1,7 +1,5 @@
 package team.healthtech.db.entity;
 
-import team.healthtech.db.entity.enums.Speciality;
-
 import javax.persistence.Column;
 import java.io.Serializable;
 import java.util.Objects;
