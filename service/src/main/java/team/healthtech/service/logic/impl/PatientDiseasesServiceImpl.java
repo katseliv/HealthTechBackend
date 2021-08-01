@@ -10,6 +10,7 @@ import team.healthtech.service.model.DiseaseCreateDto;
 import team.healthtech.service.model.DiseaseDto;
 import team.healthtech.service.model.PatientDto;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,9 +56,15 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
             .orElse(null);
     }
 
-    // make a question
     @Override
     public List<DiseaseDto> getAllDiseases(int patientId) {
-        return null;
+        // what's going on people?
+        List<DiseaseDto> list = new ArrayList<>();
+
+        repository.findAll().forEach(diseaseEntity -> {
+            if (diseaseEntity.getPatient().getId() == patientId)
+                list.add(updateMapper.fromEntity(diseaseEntity));
+        });
+        return list;
     }
 }
