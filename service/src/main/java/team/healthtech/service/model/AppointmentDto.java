@@ -5,6 +5,7 @@ import java.time.Instant;
 public class AppointmentDto {
 
     private PatientDto patient;
+    private TimeRecordDto timeRecordDto;
     private boolean isTaken;
     private Instant datetime;
     private String result;
@@ -16,6 +17,14 @@ public class AppointmentDto {
 
     public void setPatient(PatientDto patient) {
         this.patient = patient;
+    }
+
+    public TimeRecordDto getTimeRecordDto() {
+        return timeRecordDto;
+    }
+
+    public void setTimeRecordDto(TimeRecordDto timeRecordDto) {
+        this.timeRecordDto = timeRecordDto;
     }
 
     public boolean isTaken() {

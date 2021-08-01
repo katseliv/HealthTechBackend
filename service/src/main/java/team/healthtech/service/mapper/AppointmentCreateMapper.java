@@ -3,12 +3,13 @@ package team.healthtech.service.mapper;
 import org.mapstruct.Mapper;
 import team.healthtech.db.entity.AppointmentEntity;
 import team.healthtech.service.model.AppointmentCreateDto;
+import team.healthtech.service.model.AppointmentDto;
 
 @Mapper(componentModel = "spring")
 public interface AppointmentCreateMapper {
 
-    AppointmentCreateDto fromEntity(AppointmentEntity entity);
+    AppointmentCreateDto fromAppointmentDto(AppointmentDto appointmentDto);
 
-    AppointmentEntity toEntity(AppointmentCreateDto dto);
+    AppointmentDto toAppointmentDto(AppointmentCreateDto appointmentCreateDto);
 
 }

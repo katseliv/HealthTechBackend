@@ -35,7 +35,11 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public CommentDto createComment(CommentDto commentDto, Integer doctorId) {
-        commentDto.setDoctor(doctorMapper.fromEntity(doctorRepository.findById(doctorId).orElseThrow()));
+        commentDto.setDoctor(
+            doctorMapper.fromEntity(
+                doctorRepository.findById(doctorId).orElseThrow()
+            )
+        );
 
         return Optional.of(commentDto)
             .map(commentMapper::toEntity)
