@@ -1,5 +1,6 @@
 package team.healthtech.service.logic;
 
+import team.healthtech.service.model.DiseaseCreateDto;
 import team.healthtech.service.model.DiseaseDto;
 
 import java.util.List;
@@ -7,9 +8,9 @@ import java.util.List;
 public interface PatientDiseasesService {
 
     // dto because акромя id disease has startdate and patientid
-    DiseaseDto createDisease(DiseaseDto disease);
+    DiseaseCreateDto createDisease(DiseaseCreateDto disease);
 
-    DiseaseDto updateDisease(DiseaseDto diseaseDto, int diseaseId);
+    void updateDisease(DiseaseDto diseaseDto, int diseaseId);
 
     void deleteDisease(int diseaseId);
 

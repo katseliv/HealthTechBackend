@@ -1,12 +1,13 @@
 package team.healthtech.service.model;
 
+import java.sql.Date;
 import java.time.Instant;
 
 public class DiseaseCreateDto {
     private Integer id;
     private Integer patientId;
     private String name;
-    private Instant startDate;
+    private Date startDate;
 
     public Integer getId() {
         return id;
@@ -32,11 +33,11 @@ public class DiseaseCreateDto {
         this.name = name;
     }
 
-    public Instant getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
-    public void setStartDate(Instant startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 }
