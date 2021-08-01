@@ -8,7 +8,9 @@ import team.healthtech.service.model.DiseaseCreateDto;
 
 @Mapper(componentModel = "spring")
 public interface DiseaseCreateMapper {
+
     DiseaseCreateDto fromEntity(DiseaseEntity entity);
 
     DiseaseEntity toEntity(DiseaseCreateDto createDto);
+
 }

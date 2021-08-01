@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HealthtechFailureHandler implements AuthenticationFailureHandler {
+
     @Override
     public void onAuthenticationFailure(
         HttpServletRequest request,
@@ -15,4 +16,5 @@ public class HealthtechFailureHandler implements AuthenticationFailureHandler {
     ) {
         response.setStatus(401);
     }
+
 }

@@ -6,6 +6,7 @@ import team.healthtech.service.model.TimeRecordDto;
 import java.util.List;
 
 public interface TimeRecordService {
+
     TimeRecordDto createTimeRecord(TimeRecordDto dto);
 
     void updateTimeRecord(TimeRecordDto timeRecordDto, int timeRecordsId);

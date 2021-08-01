@@ -1,5 +1,4 @@
 package team.healthtech.db.entity;
-import team.healthtech.db.entity.SpecialityEntity;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -46,6 +45,22 @@ public class DoctorsSpecialitiesEntity {
 
     public void setReceiveDate(Date receiveDate) {
         this.receiveDate = receiveDate;
+    }
+
+    public DoctorEntity getDoctor() {
+        return doctor;
+    }
+
+    public void setDoctor(DoctorEntity doctor) {
+        this.doctor = doctor;
+    }
+
+    public SpecialityEntity getSpeciality() {
+        return speciality;
+    }
+
+    public void setSpeciality(SpecialityEntity speciality) {
+        this.speciality = speciality;
     }
 
 }

@@ -47,4 +47,5 @@ public class DoctorDto extends UserDto{
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
 }

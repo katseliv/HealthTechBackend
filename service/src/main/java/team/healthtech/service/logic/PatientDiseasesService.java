@@ -7,7 +7,7 @@ import java.util.List;
 
 public interface PatientDiseasesService {
 
-    // dto because акромя id disease has startdate and patientid
+    // dto because а кроме id disease has startdate and patientid
     DiseaseCreateDto createDisease(DiseaseCreateDto disease);
 
     void updateDisease(DiseaseDto diseaseDto, int diseaseId);
@@ -17,4 +17,5 @@ public interface PatientDiseasesService {
     DiseaseDto getDiseaseById(int diseaseId);
 
     List<DiseaseDto> getAllDiseases(int patientId);
+
 }

@@ -9,6 +9,7 @@ import java.util.List;
 
 @Service
 public class PatientAllergiesServiceImpl implements PatientAllergiesService {
+
     private final AllergyRepository repository;
 
     public PatientAllergiesServiceImpl(AllergyRepository repository) {
@@ -18,7 +19,6 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
     @Override
     public void addAllergyToPatient(int allergyId, int patientId) {
         // need to make a question
-
     }
 
     @Override

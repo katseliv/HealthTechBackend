@@ -11,6 +11,6 @@ import java.util.List;
 @Repository
 public interface AppointmentRepository extends CrudRepository<AppointmentEntity, Integer>, JpaRepository<AppointmentEntity, Integer>, JpaSpecificationExecutor<AppointmentEntity> {
 
-    List<AppointmentEntity> findAllByPatientId(Integer patientId);
+    List<AppointmentEntity> getAllByPatientId(Integer patientId);
 
 }

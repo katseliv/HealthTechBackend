@@ -56,4 +56,5 @@ public class PatientDto extends UserDto {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 }

@@ -1,7 +1,5 @@
 package team.healthtech.db.entity;
 
-import team.healthtech.common.Role;
-
 import javax.persistence.*;
 /*
     MappedSuperClass InheritanceStrategy - две аннотации, которые позволяют организовывать наследование, где его по сути нет
@@ -19,7 +17,6 @@ public class UserEntity {
 
     @Column(name = "login")
     private String login;
-
 
     @Column(name = "email")
     private String email;

@@ -14,5 +14,4 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableJpaRepositories(basePackages = "team.healthtech.db.repository")
 @EnableTransactionManagement
 public class DatabaseConfiguration {
-
 }

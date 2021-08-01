@@ -14,7 +14,7 @@ public enum Role {
         this.id = id;
     }
 
-    public static Optional<Role> of(Integer id) {
+    public static Optional<Role> fromId(Integer id) {
         if (id == null) {
             return Optional.empty();
         }
@@ -31,4 +31,5 @@ public enum Role {
     public int getId() {
         return id;
     }
+
 }

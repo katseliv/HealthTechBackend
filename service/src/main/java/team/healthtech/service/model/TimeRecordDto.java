@@ -45,4 +45,5 @@ public class TimeRecordDto {
     public void setEndTime(Time endTime) {
         this.endTime = endTime;
     }
+
 }

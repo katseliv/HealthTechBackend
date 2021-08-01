@@ -4,6 +4,7 @@ import java.sql.Date;
 import java.time.Instant;
 
 public class DiseaseDto {
+
     private Integer id;
     private Integer patientId;
     private String name;
@@ -49,4 +50,5 @@ public class DiseaseDto {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
 }

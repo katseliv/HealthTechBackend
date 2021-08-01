@@ -1,8 +1,5 @@
 package team.healthtech.db.entity;
 
-import team.healthtech.db.entity.DoctorEntity;
-import team.healthtech.db.entity.DoctorsSpecialitiesEntity;
-
 import javax.persistence.*;
 import java.util.List;
 
@@ -25,15 +22,24 @@ public class SpecialityEntity {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public void setId(int id) {
         this.id = id;
+    }
+
+    public String getName() {
+        return name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
+
+    public List<DoctorsSpecialitiesEntity> getDoctors() {
+        return doctors;
+    }
+
+    public void setDoctors(List<DoctorsSpecialitiesEntity> doctors) {
+        this.doctors = doctors;
+    }
+
 }

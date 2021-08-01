@@ -7,6 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class HealthtechAccessDeniedHandler implements AccessDeniedHandler {
+
     @Override
     public void handle(
         HttpServletRequest request,
@@ -15,4 +16,5 @@ public class HealthtechAccessDeniedHandler implements AccessDeniedHandler {
     ) {
         response.setStatus(403);
     }
+
 }

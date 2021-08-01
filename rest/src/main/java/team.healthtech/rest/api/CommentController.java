@@ -19,7 +19,10 @@ public class CommentController {
     }
 
     @PostMapping
-    public CommentDto createComment(@RequestBody CommentDto commentDto, @PathVariable int doctorId){
+    public CommentDto createComment(
+        @RequestBody CommentDto commentDto,
+        @PathVariable int doctorId
+    ){
         return service.createComment(commentDto, doctorId);
     }
 

@@ -47,7 +47,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public List<AppointmentDto> getAppointmentsOfPatientById(int patientId) {
-        return appointmentMapper.fromEntities(appointmentRepository.findAllByPatientId(patientId));
+        return appointmentMapper.fromEntities(appointmentRepository.getAllByPatientId(patientId));
     }
 
 //    questionable

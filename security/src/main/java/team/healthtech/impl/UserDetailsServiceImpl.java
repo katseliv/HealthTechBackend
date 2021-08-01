@@ -24,4 +24,5 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserEntity x = userSecurityProvider.findByLogin(username);
         return new User(x.getLogin(), x.getPassword(), List.of());
     }
+
 }

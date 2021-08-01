@@ -16,14 +16,16 @@ import java.util.Optional;
 
 @Service
 public class PatientDiseasesServiceImpl implements PatientDiseasesService {
+
     private final DiseaseCreateMapper createMapper;
     private final DiseaseUpdateMapper updateMapper;
     private final DiseaseRepository repository;
 
     @Autowired
-    public PatientDiseasesServiceImpl(DiseaseCreateMapper createMapper,
-                                      DiseaseUpdateMapper updateMapper,
-                                      DiseaseRepository repository) {
+    public PatientDiseasesServiceImpl(
+        DiseaseCreateMapper createMapper,
+        DiseaseUpdateMapper updateMapper,
+        DiseaseRepository repository) {
         this.createMapper = createMapper;
         this.updateMapper = updateMapper;
         this.repository = repository;
@@ -67,4 +69,5 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
         });
         return list;
     }
+
 }

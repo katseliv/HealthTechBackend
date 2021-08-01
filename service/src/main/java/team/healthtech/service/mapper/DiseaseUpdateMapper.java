@@ -10,6 +10,7 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface DiseaseUpdateMapper {
+
     DiseaseDto fromEntity(DiseaseEntity entity);
 
     DiseaseEntity toEntity(DiseaseDto createDto);
@@ -21,4 +22,5 @@ public interface DiseaseUpdateMapper {
     @Mapping(target = "name", ignore = true)
     @Mapping(target = "startDate", ignore = true)
     void merge(DiseaseDto dto, @MappingTarget DiseaseEntity entity);
+
 }

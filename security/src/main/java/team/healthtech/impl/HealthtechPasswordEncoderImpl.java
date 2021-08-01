@@ -19,4 +19,5 @@ public class HealthtechPasswordEncoderImpl implements HealthtechPasswordEncoder 
     public String encode(CharSequence rawPassword) {
         return passwordEncoder.encode(rawPassword);
     }
+
 }

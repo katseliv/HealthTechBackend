@@ -37,6 +37,14 @@ public class PatientEntity extends UserEntity {
     )
     private List<AllergyEntity> allergies;
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     public String getFirstName() {
         return firstName;
     }
@@ -61,30 +69,6 @@ public class PatientEntity extends UserEntity {
         this.lastName = lastName;
     }
 
-    public List<CommentEntity> getComments() {
-        return comments;
-    }
-
-    public void setComments(List<CommentEntity> comments) {
-        this.comments = comments;
-    }
-
-    public List<AllergyEntity> getAllergies() {
-        return allergies;
-    }
-
-    public void setAllergies(List<AllergyEntity> allergies) {
-        this.allergies = allergies;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
-
     public Character getSex() {
         return sex;
     }
@@ -99,6 +83,22 @@ public class PatientEntity extends UserEntity {
 
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    public List<CommentEntity> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentEntity> comments) {
+        this.comments = comments;
+    }
+
+    public List<AllergyEntity> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(List<AllergyEntity> allergies) {
+        this.allergies = allergies;
     }
 
 }

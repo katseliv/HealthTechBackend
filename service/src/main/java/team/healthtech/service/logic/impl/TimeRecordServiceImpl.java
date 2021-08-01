@@ -16,6 +16,7 @@ import java.util.Optional;
 
 @Service
 public class TimeRecordServiceImpl implements TimeRecordService {
+
     private final TimeRecordsRepository repository;
     private final TimeRecordMapper mapper;
 
@@ -61,4 +62,5 @@ public class TimeRecordServiceImpl implements TimeRecordService {
     public void deleteTimeRecord(int timeRecordId) {
         repository.deleteById(timeRecordId);
     }
+
 }

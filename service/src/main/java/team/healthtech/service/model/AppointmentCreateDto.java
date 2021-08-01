@@ -20,4 +20,5 @@ public class AppointmentCreateDto { // questionable
     public void setTimeRecordId(Integer timeRecordId) {
         this.timeRecordId = timeRecordId;
     }
+
 }
