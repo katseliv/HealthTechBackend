@@ -1,4 +1,4 @@
-package team.healthtech.db.entity.enums;
+package team.healthtech.db.entity;
 
 import team.healthtech.db.entity.DoctorEntity;
 import team.healthtech.db.entity.DoctorsSpecialitiesEntity;
@@ -8,7 +8,7 @@ import java.util.List;
 
 @Table(schema = "healthtech", name = "specialities")
 @Entity(name = "specialities")
-public class Speciality {
+public class SpecialityEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

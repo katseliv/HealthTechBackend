@@ -1,10 +1,10 @@
-package team.healthtech.db.entity.enums;
+package team.healthtech.db.entity;
 
 import javax.persistence.*;
 
 @Table(schema = "healthtech", name = "allergies")
 @Entity(name = "allergies")
-public class Allergy {
+public class AllergyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
