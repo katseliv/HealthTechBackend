@@ -1,6 +1,7 @@
 package team.healthtech.service.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import team.healthtech.db.repository.DiseaseRepository;
 import team.healthtech.service.logic.PatientDiseasesService;
 import team.healthtech.service.mapper.DiseaseCreateMapper;
@@ -12,6 +13,7 @@ import team.healthtech.service.model.PatientDto;
 import java.util.List;
 import java.util.Optional;
 
+@Service
 public class PatientDiseasesServiceImpl implements PatientDiseasesService {
     private final DiseaseCreateMapper createMapper;
     private final DiseaseUpdateMapper updateMapper;
@@ -43,14 +45,17 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
 
     @Override
     public void deleteDisease(int diseaseId) {
-
+        repository.deleteById(diseaseId);
     }
 
     @Override
     public DiseaseDto getDiseaseById(int diseaseId) {
-        return null;
+        return repository.findById(diseaseId)
+            .map(updateMapper::fromEntity)
+            .orElse(null);
     }
 
+    // make a question
     @Override
     public List<DiseaseDto> getAllDiseases(int patientId) {
         return null;
