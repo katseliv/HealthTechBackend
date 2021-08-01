@@ -1,4 +1,5 @@
 package team.healthtech.db.entity;
+import team.healthtech.db.entity.SpecialityEntity;
 
 import javax.persistence.*;
 import java.sql.Date;
@@ -29,7 +30,7 @@ public class DoctorsSpecialitiesEntity {
         insertable = false,
         updatable = false
     )
-    private SpecialityEntity specialityEntity;
+    private SpecialityEntity speciality;
 
     public DoctorSpecialityId getId() {
         return id;
