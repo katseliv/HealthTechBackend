@@ -1,6 +1,5 @@
 package team.healthtech;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,13 +23,13 @@ import team.healthtech.service.security.ProfileMapper;
 @EnableWebSecurity
 @Configuration
 @EnableGlobalMethodSecurity(securedEnabled = true)
-public class SecurityConfig extends WebSecurityConfigurerAdapter {
+public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
     private final UserSecurityProvider userSecurityProvider;
     private final ProfileMapper profileMapper;
 
     @Autowired
-    public SecurityConfig(
+    public SecurityConfiguration(
         UserSecurityProvider userSecurityProvider,
         ProfileMapper profileMapper
     ) {
