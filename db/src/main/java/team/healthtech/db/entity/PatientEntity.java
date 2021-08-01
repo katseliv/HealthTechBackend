@@ -1,5 +1,7 @@
 package team.healthtech.db.entity;
 
+import team.healthtech.db.entity.enums.Allergy;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -10,17 +12,72 @@ public class PatientEntity extends UserEntity {
     @Column(name = "age")
     private Integer age;
 
+    @Column(name = "first_name")
+    private String firstName;
+
+    @Column(name = "mid_name")
+    private String midName;
+
+    @Column(name = "last_name")
+    private String lastName;
+
     @Column(name = "sex")
     private Character sex;
-
-    @Column(name = "email")
-    private String email;
 
     @Column(name = "phone_number")
     private String phoneNumber;
 
     @OneToMany(mappedBy = "patient")
     private List<CommentEntity> comments;
+
+    @ManyToMany
+    @JoinTable(
+        joinColumns = @JoinColumn(name = "patient_id", referencedColumnName = "id"),
+        inverseJoinColumns = @JoinColumn(name = "allergy_id", referencedColumnName = "id"),
+        name = "patients_allergies",
+        schema = "healthtech"
+    )
+    private List<Allergy> allergies;
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getMidName() {
+        return midName;
+    }
+
+    public void setMidName(String midName) {
+        this.midName = midName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public List<CommentEntity> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<CommentEntity> comments) {
+        this.comments = comments;
+    }
+
+    public List<Allergy> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(List<Allergy> allergies) {
+        this.allergies = allergies;
+    }
 
     public Integer getAge() {
         return age;
@@ -36,14 +93,6 @@ public class PatientEntity extends UserEntity {
 
     public void setSex(Character sex) {
         this.sex = sex;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
     }
 
     public String getPhoneNumber() {
