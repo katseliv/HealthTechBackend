@@ -1,5 +1,6 @@
 package team.healthtech.service.mapper;
 
+import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import team.healthtech.db.entity.DiseaseEntity;
@@ -7,6 +8,7 @@ import team.healthtech.service.model.DiseaseDto;
 
 import java.util.List;
 
+@Mapper(componentModel = "spring")
 public interface DiseaseUpdateMapper {
     DiseaseDto fromEntity(DiseaseEntity entity);
 
@@ -15,8 +17,8 @@ public interface DiseaseUpdateMapper {
     List<DiseaseDto> fromEntities(Iterable<DiseaseDto> entities);
 
     @Mapping(target = "id", ignore = true)
-    @Mapping(target = "patient_id", ignore = true)
+    @Mapping(target = "patient", ignore = true)
     @Mapping(target = "name", ignore = true)
-    @Mapping(target = "start_date", ignore = true)
+    @Mapping(target = "startDate", ignore = true)
     void merge(DiseaseDto dto, @MappingTarget DiseaseEntity entity);
 }
