@@ -21,11 +21,6 @@ public class SpecialityEntity {
     @OneToMany(mappedBy = "speciality")
     private List<DoctorsSpecialitiesEntity> doctors;
 
-    public SpecialityEntity(int id, String name) {
-        this.id = id;
-        this.name = name;
-    }
-
     public int getId() {
         return id;
     }
@@ -34,4 +29,11 @@ public class SpecialityEntity {
         return name;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 }
