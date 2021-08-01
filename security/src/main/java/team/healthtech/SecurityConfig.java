@@ -1,26 +1,41 @@
 package team.healthtech;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.dao.DaoAuthenticationProvider;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import team.healthtech.db.repository.UserRepository;
+import team.healthtech.db.provider.UserSecurityProvider;
+import team.healthtech.handler.HealthtechAccessDeniedHandler;
+import team.healthtech.handler.HealthtechFailureHandler;
+import team.healthtech.handler.HealthtechSuccessHandler;
 import team.healthtech.impl.UserDetailsServiceImpl;
+import team.healthtech.service.security.ProfileMapper;
 
 @EnableWebSecurity
 @Configuration
+@EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private final UserRepository userRepository;
+    private final UserSecurityProvider userSecurityProvider;
+    private final ProfileMapper profileMapper;
 
-    public SecurityConfig(UserRepository userRepository) {
-        this.userRepository = userRepository;
+    @Autowired
+    public SecurityConfig(
+        UserSecurityProvider userSecurityProvider,
+        ProfileMapper profileMapper
+    ) {
+        this.userSecurityProvider = userSecurityProvider;
+        this.profileMapper = profileMapper;
     }
 
     @Override
@@ -29,6 +44,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         var daoAuthenticationProvider = new DaoAuthenticationProvider();
         daoAuthenticationProvider.setUserDetailsService(userDetailsService());
         daoAuthenticationProvider.setPasswordEncoder(passwordEncoder());
+
         auth.authenticationProvider(daoAuthenticationProvider);
     }
 
@@ -37,23 +53,33 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    @Bean
+    @Override
+    public UserDetailsService userDetailsServiceBean() {
+        return new UserDetailsServiceImpl(userSecurityProvider);
+    }
+
     public static void main(String[] args) {
         System.out.println(new BCryptPasswordEncoder().encode("admin"));
     }
 
-
-    @Override
-    public UserDetailsService userDetailsServiceBean() throws Exception {
-        return new UserDetailsServiceImpl(userRepository);
-    }
-
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        http.formLogin()
+        http
+            .cors().disable()
+            .csrf().disable()
+            .formLogin()
             .loginProcessingUrl("/auth/login")
-            /*.successHandler(null)
-            .failureHandler(null)
-            */;
+            .successHandler(new HealthtechSuccessHandler(userSecurityProvider, profileMapper))
+            .failureHandler(new HealthtechFailureHandler())
+
+            .and()
+            .authorizeRequests()
+            .mvcMatchers(HttpMethod.POST, "/auth/login").not().authenticated()
+            .anyRequest().fullyAuthenticated()
+            .and()
+            .exceptionHandling().accessDeniedHandler(new HealthtechAccessDeniedHandler())
+        ;
     }
 
 }
