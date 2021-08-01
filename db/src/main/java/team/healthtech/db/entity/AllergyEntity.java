@@ -4,7 +4,7 @@ import javax.persistence.*;
 
 @Table(schema = "healthtech", name = "allergies")
 @Entity(name = "allergies")
-public class AllergyEntity { // ?
+public class AllergyEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
