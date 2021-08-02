@@ -71,7 +71,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .and()
             .authorizeRequests()
             .mvcMatchers(HttpMethod.POST, "/auth/login").not().authenticated()
-            .anyRequest().fullyAuthenticated()
+            .anyRequest().permitAll()/*.fullyAuthenticated()*/
             .and()
             .exceptionHandling().accessDeniedHandler(new HealthtechAccessDeniedHandler())
         ;

@@ -6,6 +6,9 @@ public class UserDto {
     private String login;
     private String email;
 
+
+    private String password;
+
     public Integer getId() {
         return id;
     }
@@ -30,4 +33,11 @@ public class UserDto {
         this.email = email;
     }
 
+    public java.lang.String getPassword() {
+        return password;
+    }
+
+    public void setPassword(java.lang.String password) {
+        this.password = password;
+    }
 }

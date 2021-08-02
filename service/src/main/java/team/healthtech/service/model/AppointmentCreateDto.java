@@ -7,7 +7,6 @@ import java.time.Instant;
 public class AppointmentCreateDto { // questionable
 
     private Integer doctorId;
-    @JsonProperty("status")
     private boolean isTaken;
     private Instant datetime;
     private String result;

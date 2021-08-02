@@ -2,6 +2,8 @@ package team.healthtech.service.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import team.healthtech.db.entity.AppointmentEntity;
+import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.db.repository.AppointmentRepository;
 import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.db.repository.TimeRecordsRepository;
@@ -46,6 +48,17 @@ public class AppointmentServiceImpl implements AppointmentService {
     @Override
     public AppointmentDto createAppointment(AppointmentCreateDto appointmentCreateDto, int patientId) {
         AppointmentDto appointmentDto = appointmentCreateMapper.toAppointmentDto(appointmentCreateDto);
+
+//        AppointmentEntity e = new AppointmentEntity();
+//        var patient = new PatientEntity();
+//        patient.setId(patientId);
+//        e.setPatient(patient);
+//        e.setTimeRecord(timeRecordsRepository.getTimeRecordEntityByDoctorId(appointmentCreateDto.getDoctorId()));
+//
+//        e.setTaken(false);
+
+
+
         appointmentDto.setPatient(
             patientMapper.fromEntity(patientRepository.findById(patientId).orElseThrow())
         );
