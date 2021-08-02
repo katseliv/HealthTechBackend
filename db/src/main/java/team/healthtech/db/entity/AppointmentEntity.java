@@ -1,6 +1,7 @@
 package team.healthtech.db.entity;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 import java.time.Instant;
 
 @Table(schema = "healthtech", name = "appointments")

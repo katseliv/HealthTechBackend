@@ -27,7 +27,6 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientDto createPatient(PatientDto patientDto) {
-
         return Optional.of(patientDto)
             .map(patientMapper::toEntity)
             .map(patientRepository::save)

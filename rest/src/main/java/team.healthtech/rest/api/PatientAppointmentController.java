@@ -20,7 +20,9 @@ public class PatientAppointmentController {
     }
 
     @PostMapping
-    AppointmentDto createAppointment(@RequestBody AppointmentCreateDto appointmentCreateDto, @PathVariable int patientId){
+    AppointmentDto createAppointment(
+        @RequestBody AppointmentCreateDto appointmentCreateDto,
+        @PathVariable Integer patientId){
         return service.createAppointment(appointmentCreateDto, patientId);
     }
 

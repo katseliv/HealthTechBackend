@@ -2,15 +2,13 @@ package team.healthtech.service.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import team.healthtech.db.entity.AppointmentEntity;
 import team.healthtech.db.entity.PatientEntity;
+import team.healthtech.db.entity.TimeRecordEntity;
 import team.healthtech.db.repository.AppointmentRepository;
-import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.db.repository.TimeRecordsRepository;
-import team.healthtech.service.mapper.AppointmentCreateMapper;
 import team.healthtech.service.mapper.AppointmentMapper;
-import team.healthtech.service.mapper.PatientMapper;
-import team.healthtech.service.mapper.TimeRecordMapper;
 import team.healthtech.service.model.AppointmentCreateDto;
 import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.logic.AppointmentService;
@@ -21,62 +19,45 @@ import java.util.Optional;
 @Service
 public class AppointmentServiceImpl implements AppointmentService {
 
-    private final TimeRecordsRepository timeRecordsRepository;
     private final AppointmentRepository appointmentRepository;
-    private final PatientRepository patientRepository;
-    private final TimeRecordMapper timeRecordMapper;
-    private final AppointmentCreateMapper appointmentCreateMapper;
     private final AppointmentMapper appointmentMapper;
-    private final PatientMapper patientMapper;
 
     @Autowired
     public AppointmentServiceImpl(
-        TimeRecordsRepository timeRecordsRepository, AppointmentRepository appointmentRepository,
-        PatientRepository patientRepository,
-        TimeRecordMapper timeRecordMapper, AppointmentCreateMapper appointmentCreateMapper,
-        AppointmentMapper appointmentMapper, PatientMapper patientMapper) {
-        this.timeRecordsRepository = timeRecordsRepository;
+        AppointmentRepository appointmentRepository,
+        AppointmentMapper appointmentMapper) {
         this.appointmentRepository = appointmentRepository;
-        this.patientRepository = patientRepository;
-        this.timeRecordMapper = timeRecordMapper;
-        this.appointmentCreateMapper = appointmentCreateMapper;
         this.appointmentMapper = appointmentMapper;
-        this.patientMapper = patientMapper;
     }
 
-//    questionable
     @Override
-    public AppointmentDto createAppointment(AppointmentCreateDto appointmentCreateDto, int patientId) {
-        AppointmentDto appointmentDto = appointmentCreateMapper.toAppointmentDto(appointmentCreateDto);
+    public AppointmentDto createAppointment(AppointmentCreateDto appointmentCreateDto, Integer patientId) {
+// Когда мы создаём визит, то указывая patientId, будет ли он жаловаться на то, что пациента нет
 
-//        AppointmentEntity e = new AppointmentEntity();
-//        var patient = new PatientEntity();
-//        patient.setId(patientId);
-//        e.setPatient(patient);
-//        e.setTimeRecord(timeRecordsRepository.getTimeRecordEntityByDoctorId(appointmentCreateDto.getDoctorId()));
-//
-//        e.setTaken(false);
-
+//        1 Option
+//        TimeRecordEntity timeRecordEntity = timeRecordsRepository.getTimeRecordEntityByDoctorId(
+//            appointmentCreateDto.getDoctorId()
+//        );
+//        AppointmentEntity appointmentEntity =
+//            appointmentMapper.toEntity(appointmentCreateDto, timeRecordEntity);
 
 
-        appointmentDto.setPatient(
-            patientMapper.fromEntity(patientRepository.findById(patientId).orElseThrow())
-        );
-        appointmentDto.setTimeRecordDto(
-            timeRecordMapper.fromEntity(
-                timeRecordsRepository.getTimeRecordEntityByDoctorId(appointmentCreateDto.getDoctorId())
-            )
-        );
+        AppointmentEntity appointmentEntity =
+            appointmentRepository.save(
+                appointmentMapper.toEntity(appointmentCreateDto, patientId)
+            );
 
-        return Optional.of(appointmentDto)
-            .map(appointmentMapper::toEntity)
+
+//        return appointmentMapper.fromEntity(appointmentEntity);
+
+        return Optional.of(appointmentEntity)
             .map(appointmentRepository::save)
             .map(appointmentMapper::fromEntity)
             .orElseThrow();
     }
 
     @Override
-    public List<AppointmentDto> getAppointmentsOfPatientById(int patientId) {
+    public List<AppointmentDto> getAppointmentsOfPatientById(Integer patientId) {
         return appointmentMapper.fromEntities(appointmentRepository.getAllByPatientId(patientId));
     }
 

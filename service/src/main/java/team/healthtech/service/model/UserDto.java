@@ -5,8 +5,6 @@ public class UserDto {
     private Integer id;
     private String login;
     private String email;
-
-
     private String password;
 
     public Integer getId() {
@@ -33,11 +31,12 @@ public class UserDto {
         this.email = email;
     }
 
-    public java.lang.String getPassword() {
+    public String getPassword() {
         return password;
     }
 
-    public void setPassword(java.lang.String password) {
+    public void setPassword(String password) {
         this.password = password;
     }
+
 }
