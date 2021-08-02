@@ -44,3 +44,5 @@ team/healthtech/db/entity/DoctorEntity.java
  team.healthtech.db.entity.DoctorEntity
 team/healthtech/db/entity/DiseaseEntity.java
  team.healthtech.db.entity.DiseaseEntity
+team/healthtech/db/repository/AllergyRepository.java
+ team.healthtech.db.repository.AllergyRepository

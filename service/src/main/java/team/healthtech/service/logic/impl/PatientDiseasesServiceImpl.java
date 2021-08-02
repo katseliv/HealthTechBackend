@@ -63,6 +63,7 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
         // what's going on people?
         List<DiseaseDto> list = new ArrayList<>();
 
+        // pagination
         repository.findAll().forEach(diseaseEntity -> {
             if (diseaseEntity.getPatient().getId() == patientId)
                 list.add(updateMapper.fromEntity(diseaseEntity));

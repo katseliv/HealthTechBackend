@@ -3,22 +3,25 @@ package team.healthtech.service.logic.impl;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.entity.AllergyEntity;
 import team.healthtech.db.repository.AllergyRepository;
+import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.service.logic.PatientAllergiesService;
 
 import java.util.List;
 
 @Service
 public class PatientAllergiesServiceImpl implements PatientAllergiesService {
+    private final AllergyRepository allergyRepository;
+    private final PatientRepository patientRepository;
 
-    private final AllergyRepository repository;
-
-    public PatientAllergiesServiceImpl(AllergyRepository repository) {
-        this.repository = repository;
+    public PatientAllergiesServiceImpl(AllergyRepository allergyRepository,
+                                       PatientRepository patientRepository) {
+        this.allergyRepository = allergyRepository;
+        this.patientRepository = patientRepository;
     }
 
     @Override
     public void addAllergyToPatient(int allergyId, int patientId) {
-        // need to make a question
+
     }
 
     @Override
