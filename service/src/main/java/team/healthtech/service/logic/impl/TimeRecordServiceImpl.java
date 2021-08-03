@@ -41,24 +41,6 @@ public class TimeRecordServiceImpl implements TimeRecordService {
     }
 
     @Override
-    public void deleteTimeRecordsByDoctorId(int doctorId) {
-        // don't know what I'm actually doing
-        // cannot delete items of collection simultaneously with foreach
-        /*
-        repository.findAll().forEach(timeRecordEntity -> {
-            if (timeRecordEntity.getDoctor().getId() == doctorId)
-                repository.deleteById(timeRecordEntity.getId());
-        });
-         */
-        Iterator<TimeRecordEntity> iterator = repository.findAll().iterator();
-        while (iterator.hasNext()) {
-            var item = iterator.next();
-            if (item.getDoctor().getId() == doctorId)
-                repository.deleteById(item.getId());
-        }
-    }
-
-    @Override
     public void deleteTimeRecord(int timeRecordId) {
         repository.deleteById(timeRecordId);
     }

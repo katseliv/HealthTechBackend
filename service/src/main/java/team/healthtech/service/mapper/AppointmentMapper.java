@@ -11,8 +11,6 @@ import java.util.List;
 
 @Mapper(componentModel = "spring")
 public interface AppointmentMapper {
-
-
     AppointmentDto fromEntity(AppointmentEntity entity);
 
     AppointmentEntity toEntity(AppointmentDto dto);
@@ -21,7 +19,6 @@ public interface AppointmentMapper {
 //    @Mapping(target = "timeRecord", source = "timeRecordEntity")
 //    @Mapping(target = "taken", constant = "false")
 //    AppointmentEntity toEntity(AppointmentCreateDto appointmentCreateDto, TimeRecordEntity timeRecordEntity, Integer patientId);
-
 
     @Mapping(target = "patient.id", source = "patientId")
     @Mapping(target = "timeRecord.doctor.id", source = "appointmentCreateDto.doctorId")
