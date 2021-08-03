@@ -5,8 +5,8 @@ import java.time.Instant;
 public class AppointmentDto {
 
     private PatientDto patient;
-    private TimeRecordDto timeRecordDto;
-    private boolean isTaken;
+    private TimeRecordDto timeRecord;
+    private Boolean isTaken;
     private Instant datetime;
     private String result;
     private String recipe;
@@ -19,19 +19,19 @@ public class AppointmentDto {
         this.patient = patient;
     }
 
-    public TimeRecordDto getTimeRecordDto() {
-        return timeRecordDto;
+    public TimeRecordDto getTimeRecord() {
+        return timeRecord;
     }
 
-    public void setTimeRecordDto(TimeRecordDto timeRecordDto) {
-        this.timeRecordDto = timeRecordDto;
+    public void setTimeRecord(TimeRecordDto timeRecord) {
+        this.timeRecord = timeRecord;
     }
 
-    public boolean isTaken() {
+    public Boolean getTaken() {
         return isTaken;
     }
 
-    public void setTaken(boolean taken) {
+    public void setTaken(Boolean taken) {
         isTaken = taken;
     }
 

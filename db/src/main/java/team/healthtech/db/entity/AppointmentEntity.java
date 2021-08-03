@@ -13,19 +13,18 @@ public class AppointmentEntity {
     @Column(name = "id")
     private Integer id;
 
+    // remove insertable = false
     @ManyToOne
     @JoinColumn(
         name = "patient_id",
         referencedColumnName = "id",
-        insertable = false,
         updatable = false)
     private PatientEntity patient;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(
         name = "time_record_id",
         referencedColumnName = "id",
-        insertable = false,
         updatable = false)
     private TimeRecordEntity timeRecord;
 

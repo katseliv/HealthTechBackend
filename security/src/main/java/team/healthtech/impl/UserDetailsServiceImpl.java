@@ -1,6 +1,7 @@
 package team.healthtech.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -21,8 +22,8 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        UserEntity x = userSecurityProvider.findByLogin(username);
-        return new User(x.getLogin(), x.getPassword(), List.of());
+        UserEntity userEntity = userSecurityProvider.findByLogin(username);
+        return new User(userEntity.getLogin(), userEntity.getPassword(), List.of());
     }
 
 }

@@ -20,8 +20,8 @@ import team.healthtech.handler.HealthtechSuccessHandler;
 import team.healthtech.impl.UserDetailsServiceImpl;
 import team.healthtech.service.security.ProfileMapper;
 
-@EnableWebSecurity
 @Configuration
+@EnableWebSecurity
 @EnableGlobalMethodSecurity(securedEnabled = true)
 public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
@@ -48,14 +48,14 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     }
 
     @Bean
-    public PasswordEncoder passwordEncoder() {
-        return new BCryptPasswordEncoder();
-    }
-
-    @Bean
     @Override
     public UserDetailsService userDetailsServiceBean() {
         return new UserDetailsServiceImpl(userSecurityProvider);
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
     }
 
     @Override
@@ -64,7 +64,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .cors().disable()
             .csrf().disable()
             .formLogin()
-            .loginProcessingUrl("/auth/login")
+            .loginProcessingUrl("/user/login")
             .successHandler(new HealthtechSuccessHandler(userSecurityProvider, profileMapper))
             .failureHandler(new HealthtechFailureHandler())
 

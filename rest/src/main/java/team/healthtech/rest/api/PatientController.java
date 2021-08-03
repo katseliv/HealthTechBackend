@@ -39,7 +39,7 @@ public class PatientController {
     }
 
     @GetMapping("/{patientId}")
-    public PatientDto findPatient(
+    public PatientDto getPatient(
         @PathVariable int patientId
     ){
         return service.getPatientById(patientId);

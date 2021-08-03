@@ -4,20 +4,11 @@ import java.time.Instant;
 
 public class CommentDto {
 
-    private Integer id;
     private DoctorDto doctor;
     private PatientDto patient;
-    private Instant date;
     private Integer mark;
     private String comment;
-
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
+    private Instant date;
 
     public DoctorDto getDoctor() {
         return doctor;
@@ -33,14 +24,6 @@ public class CommentDto {
 
     public void setPatient(PatientDto patient) {
         this.patient = patient;
-    }
-
-    public Instant getDate() {
-        return date;
-    }
-
-    public void setDate(Instant date) {
-        this.date = date;
     }
 
     public Integer getMark() {
@@ -59,4 +42,11 @@ public class CommentDto {
         this.comment = comment;
     }
 
+    public Instant getDate() {
+        return date;
+    }
+
+    public void setDate(Instant date) {
+        this.date = date;
+    }
 }

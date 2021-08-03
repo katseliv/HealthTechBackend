@@ -14,11 +14,10 @@ public class TimeRecordEntity {
     @Column(name = "id")
     private Integer id;
 
-    @ManyToOne
+    @OneToOne
     @JoinColumn(
         name = "doctor_id",
         referencedColumnName = "id",
-        insertable = false,
         updatable = false)
     private DoctorEntity doctor;
 

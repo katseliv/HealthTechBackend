@@ -69,4 +69,5 @@ public class DiseaseEntity {
     public void setPatient(PatientEntity patient) {
         this.patient = patient;
     }
+
 }
