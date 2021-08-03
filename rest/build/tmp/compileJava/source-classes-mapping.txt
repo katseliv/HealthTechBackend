@@ -10,3 +10,5 @@ team.healthtech/rest/api/PatientAppointmentController.java
  team.healthtech.rest.api.PatientAppointmentController
 team.healthtech/rest/api/PatientController.java
  team.healthtech.rest.api.PatientController
+team.healthtech/rest/api/PatientAppointmentController.java
+ team.healthtech.rest.api.PatientAppointmentController
