@@ -21,10 +21,6 @@ public interface DiseaseMapper {
 
     DiseaseEntity toEntity(DiseaseDto createDto);
 
-    @Mapping(target = "patient.id", source = "patientId")
-    @Mapping(target = "timeRecord.doctor.id", source = "appointmentCreateDto.doctorId")
-    AppointmentEntity toEntity(AppointmentCreateDto appointmentCreateDto, Integer patientId);
-
     List<DiseaseDto> fromEntities(Iterable<DiseaseDto> entities);
 
     @Mapping(target = "id", ignore = true)

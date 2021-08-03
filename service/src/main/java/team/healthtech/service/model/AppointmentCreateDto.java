@@ -3,7 +3,6 @@ package team.healthtech.service.model;
 import java.time.Instant;
 
 public class AppointmentCreateDto {
-
     private Integer doctorId;
     private Boolean isTaken;
     private Instant datetime;

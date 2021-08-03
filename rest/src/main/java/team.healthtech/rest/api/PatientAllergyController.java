@@ -3,7 +3,10 @@ package team.healthtech.rest.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.PatientAllergiesService;
+import team.healthtech.service.model.AllergyDto;
 import team.healthtech.service.model.PatientDto;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/patients/{patientId}/allergies")

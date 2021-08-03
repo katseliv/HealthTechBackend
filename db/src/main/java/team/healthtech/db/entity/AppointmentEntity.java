@@ -17,16 +17,16 @@ public class AppointmentEntity {
     @JoinColumn(
         name = "patient_id",
         referencedColumnName = "id",
-        insertable = false,
-        updatable = false)
+        insertable = true,
+        updatable = true)
     private PatientEntity patient;
 
     @OneToOne
     @JoinColumn(
         name = "time_record_id",
         referencedColumnName = "id",
-        insertable = false,
-        updatable = false)
+        insertable = true,
+        updatable = true)
     private TimeRecordEntity timeRecord;
 
     @Column(name = "is_taken")

@@ -5,6 +5,7 @@ import team.healthtech.db.entity.AllergyEntity;
 import team.healthtech.db.repository.AllergyRepository;
 import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.service.logic.PatientAllergiesService;
+import team.healthtech.service.model.AllergyDto;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
     }
 
     @Override
-    public AllergyEntity getAllergyById(int allergyId) {
+    public AllergyDto getAllergyById(int allergyId) {
         /*
         return repository.findById(allergyId)
             .map(updateMapper::fromEntity)
