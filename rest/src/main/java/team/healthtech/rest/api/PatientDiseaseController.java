@@ -30,7 +30,7 @@ public class PatientDiseaseController {
         return service.getAllDiseases(patientId);
     }
 
-    @PutMapping
+    @PutMapping("/{diseaseId}")
     public void updateDisease(@RequestBody DiseaseDto dto,
                               @PathVariable int diseaseId){
         service.updateDisease(dto, diseaseId);

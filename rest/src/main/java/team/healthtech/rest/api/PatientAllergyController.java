@@ -18,7 +18,7 @@ public class PatientAllergyController {
         this.service = service;
     }
 
-    @PutMapping
+    @PutMapping("/{allergyId}")
     public void addAllergyToPatient(@PathVariable int allergyId,
                                     @PathVariable int patientId) {
         service.addAllergyToPatient(allergyId, patientId);
@@ -30,7 +30,7 @@ public class PatientAllergyController {
         return service.getAllAllergiesFromPatient(patientId);
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{allergyId}")
     public void deleteAllergyFromPatient(@PathVariable int allergyId,
                                          @PathVariable int patientId) {
         service.deleteAllergyFromPatient(allergyId, patientId);
