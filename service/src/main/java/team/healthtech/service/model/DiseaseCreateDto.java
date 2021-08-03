@@ -4,7 +4,6 @@ import java.sql.Date;
 import java.time.Instant;
 
 public class DiseaseCreateDto {
-
     private Integer id;
     private Integer patientId;
     private String name;

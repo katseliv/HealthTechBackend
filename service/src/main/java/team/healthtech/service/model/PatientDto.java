@@ -1,5 +1,7 @@
 package team.healthtech.service.model;
 
+import java.util.List;
+
 public class PatientDto extends UserDto {
 
     private String firstName;
@@ -8,6 +10,7 @@ public class PatientDto extends UserDto {
     private Integer age;
     private Character sex;
     private String phoneNumber;
+    private List<AllergyDto> allergies;
 
     public String getFirstName() {
         return firstName;
@@ -57,4 +60,11 @@ public class PatientDto extends UserDto {
         this.phoneNumber = phoneNumber;
     }
 
+    public List<AllergyDto> getAllergies() {
+        return allergies;
+    }
+
+    public void setAllergies(List<AllergyDto> allergies) {
+        this.allergies = allergies;
+    }
 }

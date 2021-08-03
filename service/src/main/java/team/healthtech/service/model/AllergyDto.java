@@ -1,7 +1,7 @@
 package team.healthtech.service.model;
 
 public class AllergyDto {
-    //private Integer id;
+    private Integer id;
     private String name;
 
     public String getName() {
@@ -10,5 +10,13 @@ public class AllergyDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 }
