@@ -10,5 +10,7 @@ public interface UserRepository extends JpaRepository<UserEntity, Integer>, JpaS
 
     UserEntity findByLoginEqualsIgnoreCase(String login);
     boolean existsByLoginIgnoreCase(String value);
+    boolean existsByEmailIgnoreCase(String value);
+    boolean existsByIdIsNotAndEmailIgnoreCase(Integer id, String login);
     boolean existsByIdIsNotAndLoginIgnoreCase(Integer id, String login);
 }
