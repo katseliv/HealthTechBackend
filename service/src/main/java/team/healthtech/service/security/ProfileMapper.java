@@ -8,5 +8,4 @@ import team.healthtech.db.entity.UserEntity;
 public interface ProfileMapper {
 
     Profile toProfile(UserEntity userEntity);
-
 }

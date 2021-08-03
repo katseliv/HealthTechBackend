@@ -19,7 +19,11 @@ public class PatientServiceImpl implements PatientService {
     private final UserRepository userRepository;
 
     @Autowired
-    public PatientServiceImpl(PatientRepository patientRepository, PatientMapper patientMapper, UserRepository userRepository) {
+    public PatientServiceImpl(
+        PatientRepository patientRepository,
+        PatientMapper patientMapper,
+        UserRepository userRepository
+    ) {
         this.patientRepository = patientRepository;
         this.patientMapper = patientMapper;
         this.userRepository = userRepository;

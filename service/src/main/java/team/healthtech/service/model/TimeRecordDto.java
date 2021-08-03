@@ -7,11 +7,8 @@ import java.util.Date;
 public class TimeRecordDto {
 
     private Integer id;
-
     private Integer doctorId;
-
     private Time startTime;
-
     private Time endTime;
 
     public Integer getId() {
