@@ -1,12 +1,21 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.Instant;
 
 public class AppointmentCreateDto {
+
+    @JsonProperty("doctor_id")
     private Integer doctorId;
+
+    @JsonProperty("is_taken")
     private Boolean isTaken;
+
     private Instant datetime;
+
     private String result;
+
     private String recipe;
 
     public Integer getDoctorId() {

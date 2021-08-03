@@ -13,7 +13,6 @@ public class AppointmentEntity {
     @Column(name = "id")
     private Integer id;
 
-    // remove insertable = false
     @ManyToOne
     @JoinColumn(
         name = "patient_id",

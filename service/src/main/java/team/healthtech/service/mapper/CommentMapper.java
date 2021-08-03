@@ -13,11 +13,13 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface CommentMapper {
 
+    @Mapping(target = "doctorId", source = "doctor.id")
+    @Mapping(target = "patientId", source = "patient.id")
     CommentDto fromEntity(CommentEntity entity);
 
+    @Mapping(target = "doctor.id", source = "doctorId")
+    @Mapping(target = "patient.id", source = "patientId")
     CommentEntity toEntity(CommentDto dto);
-
-    CommentEntity toEntity(CommentCreateDto commentCreateDto);
 
     @Mapping(target = "doctor.id", source = "doctorId")
     @Mapping(target = "patient.id", source = "commentCreateDto.patientId")

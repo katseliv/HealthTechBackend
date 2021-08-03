@@ -29,20 +29,13 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public CommentDto createComment(CommentCreateDto commentCreateDto, Integer doctorId) {
-//        1 option
         CommentEntity commentEntity = commentMapper.toEntity(commentCreateDto, doctorId);
         Instant datetime = Instant.now();
         commentEntity.setDate(datetime);
+
         return
             commentMapper.fromEntity(
                 commentRepository.save(commentEntity));
-
-//        2 option
-//        CommentEntity commentEntity = commentMapper.toEntity(commentCreateDto);
-//        commentEntity.setDoctor(doctorRepository.findById(doctorId).orElseThrow());
-//        commentEntity.setPatient(patientRepository.findById(commentCreateDto.getPatientId()).orElseThrow());
-//
-//        return commentMapper.fromEntity(commentRepository.save(commentEntity));
     }
 
     @Override

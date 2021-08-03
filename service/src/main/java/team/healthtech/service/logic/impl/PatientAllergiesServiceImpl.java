@@ -11,11 +11,14 @@ import java.util.List;
 
 @Service
 public class PatientAllergiesServiceImpl implements PatientAllergiesService {
+
     private final AllergyRepository allergyRepository;
     private final PatientRepository patientRepository;
 
-    public PatientAllergiesServiceImpl(AllergyRepository allergyRepository,
-                                       PatientRepository patientRepository) {
+    public PatientAllergiesServiceImpl(
+        AllergyRepository allergyRepository,
+        PatientRepository patientRepository
+    ) {
         this.allergyRepository = allergyRepository;
         this.patientRepository = patientRepository;
     }
@@ -47,4 +50,5 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
          */
         return null;
     }
+
 }

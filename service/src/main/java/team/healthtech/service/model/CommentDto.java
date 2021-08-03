@@ -1,29 +1,37 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.Instant;
 
 public class CommentDto {
 
-    private DoctorDto doctor;
-    private PatientDto patient;
+    @JsonProperty("doctor_id")
+    private Integer doctorId;
+
+    @JsonProperty("patient_id")
+    private Integer patientId;
+
     private Integer mark;
+
     private String comment;
+
     private Instant date;
 
-    public DoctorDto getDoctor() {
-        return doctor;
+    public Integer getDoctorId() {
+        return doctorId;
     }
 
-    public void setDoctor(DoctorDto doctor) {
-        this.doctor = doctor;
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
     }
 
-    public PatientDto getPatient() {
-        return patient;
+    public Integer getPatientId() {
+        return patientId;
     }
 
-    public void setPatient(PatientDto patient) {
-        this.patient = patient;
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
     }
 
     public Integer getMark() {
@@ -49,4 +57,5 @@ public class CommentDto {
     public void setDate(Instant date) {
         this.date = date;
     }
+
 }

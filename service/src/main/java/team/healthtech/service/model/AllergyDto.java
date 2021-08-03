@@ -1,7 +1,7 @@
 package team.healthtech.service.model;
 
 public class AllergyDto {
-    //private Integer id;
+
     private String name;
 
     public String getName() {

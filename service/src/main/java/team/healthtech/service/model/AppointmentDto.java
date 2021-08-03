@@ -1,30 +1,50 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.time.Instant;
 
 public class AppointmentDto {
 
-    private PatientDto patient;
-    private TimeRecordDto timeRecord;
+    private Integer id;
+
+    @JsonProperty("patient_id")
+    private Integer patientId;
+
+    @JsonProperty("doctor_id")
+    private Integer doctorId;
+
+    @JsonProperty("is_taken")
     private Boolean isTaken;
+
     private Instant datetime;
+
     private String result;
+
     private String recipe;
 
-    public PatientDto getPatient() {
-        return patient;
+    public Integer getId() {
+        return id;
     }
 
-    public void setPatient(PatientDto patient) {
-        this.patient = patient;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public TimeRecordDto getTimeRecord() {
-        return timeRecord;
+    public Integer getPatientId() {
+        return patientId;
     }
 
-    public void setTimeRecord(TimeRecordDto timeRecord) {
-        this.timeRecord = timeRecord;
+    public void setPatientId(Integer patientId) {
+        this.patientId = patientId;
+    }
+
+    public Integer getDoctorId() {
+        return doctorId;
+    }
+
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
     }
 
     public Boolean getTaken() {

@@ -1,9 +1,14 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class CommentCreateDto {
 
+    @JsonProperty("patient_id")
     private Integer patientId;
+
     private Integer mark;
+
     private String comment;
 
     public Integer getPatientId() {

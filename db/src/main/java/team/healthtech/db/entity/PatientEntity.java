@@ -7,9 +7,6 @@ import java.util.List;
 @Entity(name = "patients")
 public class PatientEntity extends UserEntity {
 
-    @Column(name = "age")
-    private Integer age;
-
     @Column(name = "first_name")
     private String firstName;
 
@@ -18,6 +15,9 @@ public class PatientEntity extends UserEntity {
 
     @Column(name = "last_name")
     private String lastName;
+
+    @Column(name = "age")
+    private Integer age;
 
     @Column(name = "sex")
     private Character sex;
@@ -36,14 +36,6 @@ public class PatientEntity extends UserEntity {
         schema = "healthtech"
     )
     private List<AllergyEntity> allergies;
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -67,6 +59,14 @@ public class PatientEntity extends UserEntity {
 
     public void setLastName(String lastName) {
         this.lastName = lastName;
+    }
+
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
     }
 
     public Character getSex() {
