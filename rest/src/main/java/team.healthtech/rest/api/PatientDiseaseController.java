@@ -21,9 +21,8 @@ public class PatientDiseaseController {
     }
 
     @PostMapping
-    public DiseaseCreateDto createDisease(@RequestBody DiseaseCreateDto dto,
-                                          @PathVariable int patientId) {
-        return service.createDisease(dto, patientId);
+    public DiseaseDto createDisease(@RequestBody DiseaseCreateDto dto) {
+        return service.createDisease(dto);
     }
 
     @GetMapping

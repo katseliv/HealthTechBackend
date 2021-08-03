@@ -19,5 +19,4 @@ public interface AllergyRepository extends CrudRepository<PatientEntity, Integer
         "JOIN p.allergies a " +
         "WHERE p.id = ?1")
     List<AllergyEntity> getAllByPatientId(Integer patientId);
-//    List<AllergyEntity> get();
 }

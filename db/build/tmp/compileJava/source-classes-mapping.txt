@@ -10,8 +10,8 @@ team/healthtech/db/entity/CommentEntity.java
  team.healthtech.db.entity.CommentEntity
 team/healthtech/db/repository/UserRepository.java
  team.healthtech.db.repository.UserRepository
-team/healthtech/db/repository/AllergyRepository.java
- team.healthtech.db.repository.AllergyRepository
+team/healthtech/db/repository/CommentRepository.java
+ team.healthtech.db.repository.CommentRepository
 team/healthtech/db/repository/DiseaseRepository.java
  team.healthtech.db.repository.DiseaseRepository
 team/healthtech/db/repository/PatientRepository.java
@@ -40,7 +40,7 @@ team/healthtech/db/entity/DoctorEntity.java
  team.healthtech.db.entity.DoctorEntity
 team/healthtech/db/entity/DoctorSpecialityId.java
  team.healthtech.db.entity.DoctorSpecialityId
-team/healthtech/db/repository/CommentRepository.java
- team.healthtech.db.repository.CommentRepository
 team/healthtech/db/entity/AppointmentEntity.java
  team.healthtech.db.entity.AppointmentEntity
+team/healthtech/db/repository/AllergyRepository.java
+ team.healthtech.db.repository.AllergyRepository

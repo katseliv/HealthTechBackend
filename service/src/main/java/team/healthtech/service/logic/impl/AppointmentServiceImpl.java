@@ -40,13 +40,10 @@ public class AppointmentServiceImpl implements AppointmentService {
 //        );
 //        AppointmentEntity appointmentEntity =
 //            appointmentMapper.toEntity(appointmentCreateDto, timeRecordEntity);
-
-
         AppointmentEntity appointmentEntity =
             appointmentRepository.save(
                 appointmentMapper.toEntity(appointmentCreateDto, patientId)
             );
-
 
 //        return appointmentMapper.fromEntity(appointmentEntity);
 
