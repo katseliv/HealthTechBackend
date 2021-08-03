@@ -1,13 +1,11 @@
 package team.healthtech.service.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import java.time.Instant;
 
-public class AppointmentCreateDto { // questionable
+public class AppointmentCreateDto {
 
     private Integer doctorId;
-    private boolean isTaken;
+    private Boolean isTaken;
     private Instant datetime;
     private String result;
     private String recipe;
@@ -20,11 +18,11 @@ public class AppointmentCreateDto { // questionable
         this.doctorId = doctorId;
     }
 
-    public boolean isTaken() {
+    public Boolean getTaken() {
         return isTaken;
     }
 
-    public void setTaken(boolean taken) {
+    public void setTaken(Boolean taken) {
         isTaken = taken;
     }
 
