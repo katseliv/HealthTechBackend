@@ -4,9 +4,9 @@ team.healthtech/rest/api/UserController.java
  team.healthtech.rest.api.UserController
 team.healthtech/rest/api/CommentController.java
  team.healthtech.rest.api.CommentController
-team.healthtech/rest/api/PatientController.java
- team.healthtech.rest.api.PatientController
 team.healthtech/rest/api/DoctorController.java
  team.healthtech.rest.api.DoctorController
 team.healthtech/rest/api/PatientAppointmentController.java
  team.healthtech.rest.api.PatientAppointmentController
+team.healthtech/rest/api/PatientController.java
+ team.healthtech.rest.api.PatientController
