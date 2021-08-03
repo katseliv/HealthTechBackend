@@ -7,7 +7,7 @@ import java.util.Date;
 public class TimeRecordDto {
 
     private Integer id;
-    private Integer doctorId;
+    private DoctorDto doctor;
     private Time startTime;
     private Time endTime;
 
@@ -19,12 +19,12 @@ public class TimeRecordDto {
         this.id = id;
     }
 
-    public Integer getDoctorId() {
-        return doctorId;
+    public DoctorDto getDoctor() {
+        return doctor;
     }
 
-    public void setDoctorId(Integer doctorId) {
-        this.doctorId = doctorId;
+    public void setDoctor(DoctorDto doctor) {
+        this.doctor = doctor;
     }
 
     public Time getStartTime() {

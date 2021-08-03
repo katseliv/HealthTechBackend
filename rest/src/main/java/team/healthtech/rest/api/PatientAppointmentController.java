@@ -20,14 +20,15 @@ public class PatientAppointmentController {
     }
 
     @PostMapping
-    AppointmentDto createAppointment(
+    public AppointmentDto createAppointment(
         @RequestBody AppointmentCreateDto appointmentCreateDto,
-        @PathVariable Integer patientId){
+        @PathVariable Integer patientId
+    ){
         return service.createAppointment(appointmentCreateDto, patientId);
     }
 
     @GetMapping
-    List<AppointmentDto> getAllAppointmentsOfPatient(@PathVariable int patientId){
+    public List<AppointmentDto> getAllAppointmentsOfPatient(@PathVariable int patientId){
         return service.getAppointmentsOfPatientById(patientId);
     }
 

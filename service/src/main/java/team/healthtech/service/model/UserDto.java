@@ -1,5 +1,7 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class UserDto {
 
     private Integer id;

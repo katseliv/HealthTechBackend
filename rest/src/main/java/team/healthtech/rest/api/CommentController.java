@@ -3,6 +3,7 @@ package team.healthtech.rest.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.CommentService;
+import team.healthtech.service.model.CommentCreateDto;
 import team.healthtech.service.model.CommentDto;
 
 import java.util.List;
@@ -20,10 +21,10 @@ public class CommentController {
 
     @PostMapping
     public CommentDto createComment(
-        @RequestBody CommentDto commentDto,
+        @RequestBody CommentCreateDto commentCreateDto,
         @PathVariable int doctorId
     ){
-        return service.createComment(commentDto, doctorId);
+        return service.createComment(commentCreateDto, doctorId);
     }
 
     @GetMapping

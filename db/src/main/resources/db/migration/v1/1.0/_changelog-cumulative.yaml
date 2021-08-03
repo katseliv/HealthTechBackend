@@ -77,28 +77,34 @@ databaseChangeLog:
             path: PHT-006-rename-column.sql
             relativeToChangelogFile: true
   - changeSet:
-      id: PPL-001-20210729173033
-      author: TODO
+      id: PHT-007-20210729173033
+      author: EkaterinaSelivanova
       comment: TODO
       changes:
         - sqlFile:
-            path: PPL-001-20210729173033.sql
+            path: PHT-007-20210729173033.sql
             relativeToChangelogFile: true
-
   - changeSet:
-      id: PPL-001-20210729173130
-      author: TODO
+      id: PHT-007-20210731230215
+      author: EkaterinaSelivanova
       comment: TODO
       changes:
         - sqlFile:
-            path: PPL-001-20210729173130.sql
+            path: PHT-007-20210731230215.sql
             relativeToChangelogFile: true
-
   - changeSet:
-      id: PPL-001-20210731230215
-      author: TODO
+      id: PHT-007-20210803115459
+      author: EkaterinaSelivanova
       comment: TODO
       changes:
         - sqlFile:
-            path: PPL-001-20210731230215.sql
+            path: PHT-007-20210803115459.sql
+            relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-007-20210803143400
+      author: EkaterinaSelivanova
+      comment: Rollback file
+      changes:
+        - sqlFile:
+            path: PHT-007-20210803143400.sql
             relativeToChangelogFile: true

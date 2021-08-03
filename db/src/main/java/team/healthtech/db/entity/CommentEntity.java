@@ -16,7 +16,6 @@ public class CommentEntity {
     @JoinColumn(
         name = "doctor_id",
         referencedColumnName = "id",
-        insertable = false,
         updatable = false)
     private DoctorEntity doctor;
 
@@ -24,7 +23,6 @@ public class CommentEntity {
     @JoinColumn(
         name = "patient_id",
         referencedColumnName = "id",
-        insertable = false,
         updatable = false)
     private PatientEntity patient;
 
