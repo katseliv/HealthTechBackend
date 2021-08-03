@@ -2,12 +2,14 @@ package team.healthtech.service.logic;
 
 import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.model.PatientDto;
+import team.healthtech.service.model.create_dto.PatientCreateDto;
 
+import javax.validation.Valid;
 import java.util.List;
 
 public interface PatientService {
 
-    PatientDto createPatient(PatientDto patientDto);
+    PatientDto createPatient(@Valid PatientCreateDto patientDto);
 
     void updatePatient(PatientDto patientDto, int patientId);
 

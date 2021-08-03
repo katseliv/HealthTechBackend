@@ -9,4 +9,6 @@ import team.healthtech.db.entity.UserEntity;
 public interface UserRepository extends JpaRepository<UserEntity, Integer>, JpaSpecificationExecutor<UserEntity> {
 
     UserEntity findByLoginEqualsIgnoreCase(String login);
+    boolean existsByLoginIgnoreCase(String value);
+    boolean existsByIdIsNotAndLoginIgnoreCase(Integer id, String login);
 }

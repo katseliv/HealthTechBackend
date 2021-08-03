@@ -12,7 +12,7 @@ import java.lang.annotation.*;
 @Constraint(validatedBy = {StringLoginUnique.class, LoginUniqueForUpdate.class})
 public @interface LoginUnique {
 
-    String message() default "username.already-exists";
+    String message() default "login.already-exists";
 
     Class<? extends Payload>[] payload() default {};
 

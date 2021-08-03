@@ -6,7 +6,7 @@ import team.healthtech.db.entity.DiseaseEntity;
 import team.healthtech.db.repository.DiseaseRepository;
 import team.healthtech.service.logic.PatientDiseasesService;
 import team.healthtech.service.mapper.DiseaseMapper;
-import team.healthtech.service.model.DiseaseCreateDto;
+import team.healthtech.service.model.create_dto.DiseaseCreateDto;
 import team.healthtech.service.model.DiseaseDto;
 
 import java.util.ArrayList;

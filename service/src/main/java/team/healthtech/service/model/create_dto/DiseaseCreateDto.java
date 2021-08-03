@@ -1,4 +1,4 @@
-package team.healthtech.service.model;
+package team.healthtech.service.model.create_dto;
 
 import java.sql.Date;
 import java.time.Instant;

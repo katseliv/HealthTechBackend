@@ -6,7 +6,7 @@ import team.healthtech.db.entity.CommentEntity;
 import team.healthtech.db.repository.CommentRepository;
 import team.healthtech.service.logic.CommentService;
 import team.healthtech.service.mapper.CommentMapper;
-import team.healthtech.service.model.CommentCreateDto;
+import team.healthtech.service.model.create_dto.CommentCreateDto;
 import team.healthtech.service.model.CommentDto;
 
 import java.time.Instant;

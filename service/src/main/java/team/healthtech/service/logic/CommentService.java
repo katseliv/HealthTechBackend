@@ -1,6 +1,6 @@
 package team.healthtech.service.logic;
 
-import team.healthtech.service.model.CommentCreateDto;
+import team.healthtech.service.model.create_dto.CommentCreateDto;
 import team.healthtech.service.model.CommentDto;
 
 import java.util.List;
