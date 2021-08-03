@@ -31,9 +31,8 @@ public class PatientController {
     }
 
     @PutMapping("/{patientId}")
-    public void updatePatient(
-        @RequestBody PatientDto patientDto,
-        @PathVariable int patientId
+    public void updatePatient(@RequestBody PatientDto patientDto,
+                              @PathVariable int patientId
     ) {
         service.updatePatient(patientDto, patientId);
     }
@@ -41,14 +40,14 @@ public class PatientController {
     @GetMapping("/{patientId}")
     public PatientDto findPatient(
         @PathVariable int patientId
-    ){
+    ) {
         return service.getPatientById(patientId);
     }
 
     @DeleteMapping("/{patientId}")
     public void deletePatient(
         @PathVariable int patientId
-    ){
+    ) {
         service.deletePatientById(patientId);
     }
 

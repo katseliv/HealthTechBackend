@@ -12,6 +12,6 @@ public interface PatientAllergiesService {
 
     List<AllergyEntity> getAllAllergiesFromPatient(int patientId);
 
-    AllergyEntity getAllergyById(int allergyId);
+    AllergyDto getAllergyById(int allergyId);
 
 }

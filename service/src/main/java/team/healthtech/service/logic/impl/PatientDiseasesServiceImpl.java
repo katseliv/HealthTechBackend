@@ -32,7 +32,7 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
     }
 
     @Override
-    public DiseaseCreateDto createDisease(DiseaseCreateDto disease) {
+    public DiseaseCreateDto createDisease(DiseaseCreateDto disease, int patientId) {
         return Optional.ofNullable(disease)
             .map(createMapper::toEntity)
             .map(repository::save)

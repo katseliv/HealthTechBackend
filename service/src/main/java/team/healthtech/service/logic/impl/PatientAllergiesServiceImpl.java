@@ -30,7 +30,7 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
     }
 
     @Override
-    public List<AllergyEntity> getAllAllergiesFromPatient(int patientId) {
+    public List<AllergyDto> getAllAllergiesFromPatient(int patientId) {
         return null;
     }
 
