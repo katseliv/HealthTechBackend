@@ -3,11 +3,9 @@ package team.healthtech.service.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import team.healthtech.db.entity.CommentEntity;
-import team.healthtech.service.model.CommentCreateDto;
+import team.healthtech.service.model.create_dto.CommentCreateDto;
 import team.healthtech.service.model.CommentDto;
 
-import javax.persistence.criteria.CriteriaBuilder;
-import java.time.Instant;
 import java.util.List;
 
 @Mapper(componentModel = "spring")

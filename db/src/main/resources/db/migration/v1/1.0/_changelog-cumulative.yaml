@@ -78,7 +78,7 @@ databaseChangeLog:
             relativeToChangelogFile: true
   - changeSet:
       id: PHT-007-20210729173033
-      author: EkaterinaSelivanova
+      author: TODO
       comment: TODO
       changes:
         - sqlFile:
@@ -86,19 +86,11 @@ databaseChangeLog:
             relativeToChangelogFile: true
   - changeSet:
       id: PHT-007-20210731230215
-      author: EkaterinaSelivanova
+      author: TODO
       comment: TODO
       changes:
         - sqlFile:
             path: PHT-007-20210731230215.sql
-            relativeToChangelogFile: true
-  - changeSet:
-      id: PHT-007-20210803115459
-      author: EkaterinaSelivanova
-      comment: TODO
-      changes:
-        - sqlFile:
-            path: PHT-007-20210803115459.sql
             relativeToChangelogFile: true
   - changeSet:
       id: PHT-007-20210803143400

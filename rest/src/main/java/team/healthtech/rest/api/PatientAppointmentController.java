@@ -3,7 +3,7 @@ package team.healthtech.rest.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.AppointmentService;
-import team.healthtech.service.model.AppointmentCreateDto;
+import team.healthtech.service.model.create_dto.AppointmentCreateDto;
 import team.healthtech.service.model.AppointmentDto;
 
 import java.util.List;

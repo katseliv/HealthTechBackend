@@ -3,7 +3,7 @@ package team.healthtech.rest.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.CommentService;
-import team.healthtech.service.model.CommentCreateDto;
+import team.healthtech.service.model.create_dto.CommentCreateDto;
 import team.healthtech.service.model.CommentDto;
 
 import java.util.List;

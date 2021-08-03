@@ -1,9 +1,12 @@
 package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.PatientService;
 import team.healthtech.service.model.PatientDto;
+import team.healthtech.service.model.create_dto.PatientCreateDto;
 
 import java.util.List;
 
@@ -18,9 +21,10 @@ public class PatientController {
         this.service = service;
     }
 
-    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED) // возвращаем 201 как в каноничномъ REST
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public PatientDto createPatient(
-        @RequestBody PatientDto patientDto
+        @RequestBody PatientCreateDto patientDto
     ) {
         return service.createPatient(patientDto);
     }

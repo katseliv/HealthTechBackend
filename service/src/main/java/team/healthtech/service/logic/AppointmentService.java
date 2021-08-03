@@ -1,6 +1,6 @@
 package team.healthtech.service.logic;
 
-import team.healthtech.service.model.AppointmentCreateDto;
+import team.healthtech.service.model.create_dto.AppointmentCreateDto;
 import team.healthtech.service.model.AppointmentDto;
 
 import java.util.List;

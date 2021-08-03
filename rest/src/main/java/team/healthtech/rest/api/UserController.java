@@ -8,19 +8,19 @@ import team.healthtech.service.model.UserDto;
 @RestController
 @RequestMapping("/users")
 public class UserController {
-
-    private final UserService userService;
-
-    @Autowired
-    public UserController(UserService userService) {
-        this.userService = userService;
-    }
-
-    @PostMapping
-    public UserDto createUser(@RequestBody UserDto userDto){
-        return userService.createUser(userDto);
-    }
-
+//
+//    private final UserService userService;
+//
+//    @Autowired
+//    public UserController(UserService userService) {
+//        this.userService = userService;
+//    }
+//
+//    @PostMapping
+//    public UserDto createUser(@RequestBody UserDto userDto){
+//        return userService.createUser(userDto);
+//    }
+//
 //    private final UserRepository userRepository;
 //
 //    @Autowired
