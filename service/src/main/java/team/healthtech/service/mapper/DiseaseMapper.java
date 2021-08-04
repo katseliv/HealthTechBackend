@@ -20,7 +20,7 @@ public interface DiseaseMapper {
 
     DiseaseEntity toEntity(DiseaseDto createDto);
 
-    List<DiseaseDto> fromEntities(Iterable<DiseaseDto> entities);
+    List<DiseaseDto> fromEntities(Iterable<DiseaseEntity> entities);
 
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "patient", ignore = true)

@@ -56,15 +56,7 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
 
     @Override
     public List<DiseaseDto> getAllDiseases(int patientId) {
-        // what's going on people?
-        List<DiseaseDto> list = new ArrayList<>();
-
-        // pagination
-        repository.findAll().forEach(diseaseEntity -> {
-            if (diseaseEntity.getPatient().getId() == patientId)
-                list.add(mapper.fromEntity(diseaseEntity));
-        });
-        return list;
+        return mapper.fromEntities(repository.getAllDiseasesByPatientId(patientId));
     }
 
 }
