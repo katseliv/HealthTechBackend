@@ -3,6 +3,25 @@ package team.healthtech.db.entity;
 import javax.persistence.*;
 import java.util.List;
 
+@NamedEntityGraph(
+    name = "patients-with-allergies",
+    attributeNodes = {
+        @NamedAttributeNode("id"),
+        @NamedAttributeNode("login"),
+        @NamedAttributeNode("firstName"),
+        @NamedAttributeNode("midName"),
+        @NamedAttributeNode("lastName"),
+        @NamedAttributeNode(value = "allergies", subgraph = "allergies")
+    },
+    subgraphs = {
+        @NamedSubgraph(
+            name = "allergies",
+            attributeNodes = {
+                @NamedAttributeNode("name")
+            }
+        )
+    }
+)
 @Table(schema = "healthtech", name = "patients")
 @Entity(name = "patients")
 public class PatientEntity extends UserEntity {
