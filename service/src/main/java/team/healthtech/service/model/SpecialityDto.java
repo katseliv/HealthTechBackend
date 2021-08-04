@@ -1,6 +1,6 @@
 package team.healthtech.service.model;
 
-public class AllergyDto {
+public class SpecialityDto {
 
     private String name;
 
