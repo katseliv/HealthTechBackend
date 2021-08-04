@@ -3,6 +3,7 @@ package team.healthtech.rest.api;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.PatientService;
 import team.healthtech.service.model.PatientDto;
@@ -21,7 +22,7 @@ public class PatientController {
         this.service = service;
     }
 
-    @ResponseStatus(HttpStatus.CREATED) // возвращаем 201 как в каноничномъ REST
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public PatientDto createPatient(
         @RequestBody PatientCreateDto patientDto
@@ -34,9 +35,11 @@ public class PatientController {
         return service.getAllPatients();
     }
 
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{patientId}")
-    public void updatePatient(@RequestBody PatientDto patientDto,
-                              @PathVariable int patientId
+    public void updatePatient(
+        @RequestBody PatientDto patientDto,
+        @PathVariable int patientId
     ) {
         service.updatePatient(patientDto, patientId);
     }
@@ -48,6 +51,7 @@ public class PatientController {
         return service.getPatientById(patientId);
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{patientId}")
     public void deletePatient(
         @PathVariable int patientId

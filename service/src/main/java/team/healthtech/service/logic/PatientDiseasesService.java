@@ -1,8 +1,8 @@
 package team.healthtech.service.logic;
 
 import org.mapstruct.Mapping;
-import team.healthtech.service.model.DiseaseCreateDto;
 import team.healthtech.service.model.DiseaseDto;
+import team.healthtech.service.model.create_dto.DiseaseCreateDto;
 
 import java.util.List;
 

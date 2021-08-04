@@ -7,14 +7,15 @@ import team.healthtech.service.validation.LoginUnique;
 import javax.validation.constraints.*;
 
 public class UserCreateDto {
+
     @LoginUnique
     @Pattern(regexp = "^[a-zA-Z\\d]{5,32}$", message = "login.invalid")
     @NotNull(message = "login.is-null")
     private String login;
 
     @EmailUnique
-    @Email(message = "email.ne-email")
-    @NotNull(message = "login.is-null")
+    @Email(message = "email.invalid")
+    @NotNull(message = "email.is-null")
     private String email;
 
     @NotBlank(message = "password.is-blank")

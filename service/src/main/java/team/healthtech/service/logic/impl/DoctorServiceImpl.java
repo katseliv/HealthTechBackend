@@ -60,4 +60,5 @@ public class DoctorServiceImpl implements DoctorService {
     public List<DoctorDto> getAllDoctors() {
         return doctorMapper.fromEntities(doctorRepository.findAll());
     }
+
 }

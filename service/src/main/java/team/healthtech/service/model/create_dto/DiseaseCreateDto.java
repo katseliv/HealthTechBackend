@@ -1,12 +1,20 @@
 package team.healthtech.service.model.create_dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Date;
 import java.time.Instant;
 
 public class DiseaseCreateDto {
+
     private Integer id;
+
+    @JsonProperty("patient_id")
     private Integer patientId;
+
     private String name;
+
+    @JsonProperty("start_date")
     private Date startDate;
 
     public Integer getId() {

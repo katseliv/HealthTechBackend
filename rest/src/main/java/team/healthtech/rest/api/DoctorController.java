@@ -1,6 +1,9 @@
 package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.DoctorService;
 import team.healthtech.service.model.DoctorDto;
@@ -19,7 +22,9 @@ public class DoctorController {
         this.service = service;
     }
 
-    @PostMapping
+    @Secured("ROLE_ADMIN")
+    @ResponseStatus(HttpStatus.CREATED)
+    @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public DoctorDto createDoctor(
         @RequestBody DoctorCreateDto doctorDto
     ) {
@@ -31,6 +36,7 @@ public class DoctorController {
         return service.getAllDoctors();
     }
 
+    @Secured("ROLE_ADMIN")
     @PutMapping("/{doctorId}")
     public void updateDoctor(
         @RequestBody DoctorDto doctorDto,
@@ -46,6 +52,7 @@ public class DoctorController {
         return service.getDoctorById(doctorId);
     }
 
+    @Secured("ROLE_ADMIN")
     @DeleteMapping("/{doctorId}")
     public void deleteDoctor(
         @PathVariable int doctorId

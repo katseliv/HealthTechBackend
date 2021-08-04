@@ -1,5 +1,7 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Time;
 import java.time.Instant;
 import java.util.Date;
@@ -7,8 +9,13 @@ import java.util.Date;
 public class TimeRecordDto {
 
     private Integer id;
+
     private DoctorDto doctor;
+
+    @JsonProperty("start_time")
     private Time startTime;
+
+    @JsonProperty("end_time")
     private Time endTime;
 
     public Integer getId() {

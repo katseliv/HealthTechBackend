@@ -3,7 +3,9 @@ package team.healthtech.service.model;
 public class UserDto {
 
     private Integer id;
+
     private String login;
+
     private String email;
 
     public Integer getId() {
@@ -29,4 +31,5 @@ public class UserDto {
     public void setEmail(String email) {
         this.email = email;
     }
+
 }

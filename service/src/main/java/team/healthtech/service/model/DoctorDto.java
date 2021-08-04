@@ -1,10 +1,18 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class DoctorDto extends UserDto {
 
+    @JsonProperty("first_name")
     private String firstName;
+
+    @JsonProperty("mid_name")
     private String midName;
+
+    @JsonProperty("last_name")
     private String lastName;
+
     private Double rating;
 
     public String getFirstName() {

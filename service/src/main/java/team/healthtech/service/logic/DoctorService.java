@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import java.util.List;
 
 public interface DoctorService {
+
     DoctorDto createDoctor(@Valid DoctorCreateDto doctorDto);
 
     void updateDoctor(DoctorDto doctorDto, int doctorId);
@@ -16,4 +17,5 @@ public interface DoctorService {
     void deleteDoctorById(int doctorId);
 
     List<DoctorDto> getAllDoctors();
+
 }

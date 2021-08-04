@@ -21,17 +21,14 @@ public class PatientServiceImpl implements PatientService {
 
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
-    private final UserRepository userRepository;
 
     @Autowired
     public PatientServiceImpl(
         PatientRepository patientRepository,
-        PatientMapper patientMapper,
-        UserRepository userRepository
+        PatientMapper patientMapper
     ) {
         this.patientRepository = patientRepository;
         this.patientMapper = patientMapper;
-        this.userRepository = userRepository;
     }
 
     @Override

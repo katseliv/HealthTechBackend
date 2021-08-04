@@ -11,6 +11,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/patients/{patientId}/allergies")
 public class PatientAllergyController {
+
     private final PatientAllergiesService service;
 
     @Autowired
@@ -35,4 +36,5 @@ public class PatientAllergyController {
                                          @PathVariable int patientId) {
         service.deleteAllergyFromPatient(allergyId, patientId);
     }
+
 }

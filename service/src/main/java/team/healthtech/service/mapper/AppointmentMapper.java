@@ -3,8 +3,8 @@ package team.healthtech.service.mapper;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import team.healthtech.db.entity.AppointmentEntity;
-import team.healthtech.service.model.AppointmentCreateDto;
 import team.healthtech.service.model.AppointmentDto;
+import team.healthtech.service.model.create_dto.AppointmentCreateDto;
 
 import java.util.List;
 

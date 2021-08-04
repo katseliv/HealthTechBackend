@@ -5,10 +5,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import javax.validation.constraints.*;
 
 public class DoctorCreateDto extends UserCreateDto {
-    @JsonProperty("rating")
-    @Min(value = 0, message = "rating.is-lower-than-minimum")
-    @Max(value = 5, message = "rating.is-higher-than-maximum")
-    private Double rating;
 
     @JsonProperty("first_name")
     @NotBlank(message = "firstName.is-blank")
@@ -25,13 +21,9 @@ public class DoctorCreateDto extends UserCreateDto {
     @NotBlank(message = "lastName.is-blank")
     private String lastName;
 
-    public Double getRating() {
-        return rating;
-    }
-
-    public void setRating(Double rating) {
-        this.rating = rating;
-    }
+    @Min(value = 0, message = "rating.is-lower-than-minimum")
+    @Max(value = 5, message = "rating.is-higher-than-maximum")
+    private Double rating;
 
     public String getFirstName() {
         return firstName;
@@ -56,4 +48,13 @@ public class DoctorCreateDto extends UserCreateDto {
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
+
+    public Double getRating() {
+        return rating;
+    }
+
+    public void setRating(Double rating) {
+        this.rating = rating;
+    }
+
 }

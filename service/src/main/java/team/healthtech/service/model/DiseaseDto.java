@@ -1,14 +1,23 @@
 package team.healthtech.service.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.sql.Date;
 import java.time.Instant;
 
 public class DiseaseDto {
 
     private Integer id;
+
+    @JsonProperty("patient_id")
     private Integer patientId;
+
     private String name;
+
+    @JsonProperty("start_date")
     private Date startDate;
+
+    @JsonProperty("end_date")
     private Date endDate;
 
     public Integer getId() {
