@@ -10,8 +10,8 @@ team/healthtech/rest/api/PatientAppointmentController.java
  team.healthtech.rest.api.PatientAppointmentController
 team/healthtech/rest/api/PatientController.java
  team.healthtech.rest.api.PatientController
-team/healthtech/rest/api/PatientAllergyController.java
- team.healthtech.rest.api.PatientAllergyController
+team/healthtech/rest/RestConfiguration.java
+ team.healthtech.rest.RestConfiguration
 team/healthtech/rest/api/DoctorSpecialitiesController.java
  team.healthtech.rest.api.DoctorSpecialitiesController
 team/healthtech/rest/api/CommentController.java
@@ -22,5 +22,5 @@ team/healthtech/rest/api/UserController.java
  team.healthtech.rest.api.UserController
 team/healthtech/rest/handler/HealthtechExceptionHandlers.java
  team.healthtech.rest.handler.HealthtechExceptionHandlers
-team/healthtech/rest/RestConfiguration.java
- team.healthtech.rest.RestConfiguration
+team/healthtech/rest/api/PatientAllergyController.java
+ team.healthtech.rest.api.PatientAllergyController
