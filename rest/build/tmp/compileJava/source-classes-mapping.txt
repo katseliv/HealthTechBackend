@@ -1,3 +1,5 @@
+team/healthtech/rest/RestConfiguration.java
+ team.healthtech.rest.RestConfiguration
 team/healthtech/rest/model/ModelError.java
  team.healthtech.rest.model.ModelError
 team/healthtech/rest/api/CommentController.java
@@ -14,9 +16,9 @@ team/healthtech/rest/handler/HealthtechExceptionHandlers.java
  team.healthtech.rest.handler.HealthtechExceptionHandlers
 team/healthtech/rest/api/PatientAppointmentController.java
  team.healthtech.rest.api.PatientAppointmentController
-team/healthtech/rest/RestConfiguration.java
- team.healthtech.rest.RestConfiguration
-team/healthtech/rest/api/DoctorController.java
- team.healthtech.rest.api.DoctorController
 team/healthtech/rest/api/PatientController.java
  team.healthtech.rest.api.PatientController
+team/healthtech/rest/api/DoctorController.java
+ team.healthtech.rest.api.DoctorController
+team/healthtech/rest/api/AdminController.java
+ team.healthtech.rest.api.AdminController
