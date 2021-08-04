@@ -1,6 +1,7 @@
 package team.healthtech.service.model.create_dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import team.healthtech.service.validation.EmailUnique;
 import team.healthtech.service.validation.LoginUnique;
 
 import javax.validation.constraints.*;
@@ -11,6 +12,7 @@ public class UserCreateDto {
     @NotNull(message = "login.is-null")
     private String login;
 
+    @EmailUnique
     @Email(message = "email.ne-email")
     @NotNull(message = "login.is-null")
     private String email;

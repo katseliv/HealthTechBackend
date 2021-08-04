@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.DoctorService;
 import team.healthtech.service.model.DoctorDto;
+import team.healthtech.service.model.create_dto.DoctorCreateDto;
 
 import java.util.List;
 
@@ -20,9 +21,9 @@ public class DoctorController {
 
     @PostMapping
     public DoctorDto createDoctor(
-        @RequestBody DoctorDto DoctorDto
+        @RequestBody DoctorCreateDto doctorDto
     ) {
-        return service.createDoctor(DoctorDto);
+        return service.createDoctor(doctorDto);
     }
 
     @GetMapping

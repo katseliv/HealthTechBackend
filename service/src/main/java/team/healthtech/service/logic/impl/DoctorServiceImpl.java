@@ -2,14 +2,19 @@ package team.healthtech.service.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import team.healthtech.db.repository.DoctorRepository;
 import team.healthtech.service.logic.DoctorService;
 import team.healthtech.service.mapper.DoctorMapper;
 import team.healthtech.service.model.DoctorDto;
+import team.healthtech.service.model.create_dto.DoctorCreateDto;
+
+import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Validated
 public class DoctorServiceImpl implements DoctorService {
 
     private final DoctorRepository doctorRepository;
@@ -25,7 +30,7 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public DoctorDto createDoctor(DoctorDto doctorDto) {
+    public DoctorDto createDoctor(@Valid DoctorCreateDto doctorDto) {
         return Optional.of(doctorDto)
             .map(doctorMapper::toEntity)
             .map(doctorRepository::save)

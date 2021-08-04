@@ -11,5 +11,7 @@ public interface UserRepository extends CrudRepository<UserEntity, Integer>, Jpa
 
     UserEntity findByLoginEqualsIgnoreCase(String login);
     boolean existsByLoginIgnoreCase(String value);
+    boolean existsByEmailIgnoreCase(String value);
+    boolean existsByIdIsNotAndEmailIgnoreCase(Integer id, String login);
     boolean existsByIdIsNotAndLoginIgnoreCase(Integer id, String login);
 }

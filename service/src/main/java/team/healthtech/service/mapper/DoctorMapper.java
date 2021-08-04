@@ -5,6 +5,7 @@ import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import team.healthtech.db.entity.DoctorEntity;
 import team.healthtech.service.model.DoctorDto;
+import team.healthtech.service.model.create_dto.DoctorCreateDto;
 
 import java.util.List;
 
@@ -14,6 +15,8 @@ public interface DoctorMapper {
     DoctorDto fromEntity(DoctorEntity entity);
 
     DoctorEntity toEntity(DoctorDto dto);
+
+    DoctorEntity toEntity(DoctorCreateDto dto);
 
     List<DoctorDto> fromEntities(Iterable<DoctorEntity> entities);
 
