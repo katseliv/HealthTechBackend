@@ -12,7 +12,7 @@ import java.util.List;
 
 @Repository
 public interface DiseaseRepository extends CrudRepository<DiseaseEntity, Integer>, JpaRepository<DiseaseEntity, Integer>, JpaSpecificationExecutor<DiseaseEntity> {
-    @Query("SELECT p " +
+    @Query("SELECT d " +
         "FROM diseases d " +
         "JOIN d.patient p " +
         "WHERE p.id = ?1 ")
