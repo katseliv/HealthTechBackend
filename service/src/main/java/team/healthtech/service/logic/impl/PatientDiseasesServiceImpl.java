@@ -8,6 +8,7 @@ import team.healthtech.service.logic.PatientDiseasesService;
 import team.healthtech.service.mapper.DiseaseMapper;
 import team.healthtech.service.model.create_dto.DiseaseCreateDto;
 import team.healthtech.service.model.DiseaseDto;
+import team.healthtech.service.model.update_dto.DiseaseUpdateDto;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,9 +38,10 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
     }
 
     @Override
-    public void updateDisease(DiseaseDto diseaseDto, int diseaseId) {
-        mapper.merge(diseaseDto, repository.findById(diseaseId).orElseThrow());
-        repository.save(mapper.toEntity(diseaseDto));
+    public void updateDisease(DiseaseUpdateDto diseaseDto, int diseaseId) {
+        DiseaseEntity entity = repository.findById(diseaseId).orElseThrow();
+        mapper.merge(diseaseDto, entity);
+        repository.save(entity);
     }
 
     @Override
@@ -56,15 +58,8 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
 
     @Override
     public List<DiseaseDto> getAllDiseases(int patientId) {
-        // what's going on people?
-        List<DiseaseDto> list = new ArrayList<>();
-
-        // pagination
-        repository.findAll().forEach(diseaseEntity -> {
-            if (diseaseEntity.getPatient().getId() == patientId)
-                list.add(mapper.fromEntity(diseaseEntity));
-        });
-        return list;
+        List<DiseaseEntity> list = repository.getAllDiseasesByPatientId(patientId);
+        return mapper.fromEntities(list);
     }
 
 }

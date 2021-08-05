@@ -25,7 +25,6 @@ public class PatientAllergyController {
         service.addAllergyToPatient(allergyId, patientId);
     }
 
-    // AllergyDto?
     @GetMapping
     public List<AllergyDto> getAllAllergiesFromPatient(@PathVariable int patientId) {
         return service.getAllAllergiesFromPatient(patientId);

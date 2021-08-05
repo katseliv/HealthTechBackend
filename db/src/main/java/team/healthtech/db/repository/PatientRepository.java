@@ -17,5 +17,4 @@ public interface PatientRepository extends CrudRepository<PatientEntity, Integer
     @Override
     @EntityGraph(value = "patients-with-allergies")
     Iterable<PatientEntity> findAll();
-
 }

@@ -13,12 +13,17 @@ import java.util.List;
 
 @Repository
 public interface AllergyRepository extends CrudRepository<AllergyEntity, Integer>, JpaRepository<AllergyEntity, Integer>, JpaSpecificationExecutor<AllergyEntity> {
-
     @Query("" +
         "SELECT a " +
         "FROM patients p " +
         "JOIN p.allergies a " +
         "WHERE p.id = ?1")
-    List<AllergyEntity> getAllByPatientId(Integer patientId);
+    List<AllergyEntity> getAllAllergiesByPatientId(Integer patientId);
 
+    @Query("" +
+        "SELECT a " +
+        "FROM patients p " +
+        "JOIN p.allergies a " +
+        "WHERE p.id = ?2 AND a.id = ?1")
+    AllergyEntity getAllergyFromPatientById(Integer allergyId, Integer patientId);
 }
