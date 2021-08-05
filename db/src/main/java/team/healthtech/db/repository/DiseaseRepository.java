@@ -12,11 +12,10 @@ import java.util.List;
 
 @Repository
 public interface DiseaseRepository extends CrudRepository<DiseaseEntity, Integer>, JpaRepository<DiseaseEntity, Integer>, JpaSpecificationExecutor<DiseaseEntity> {
-    @Query("" +
-        "SELECT d " +
-        "FROM patients p " +
-        "JOIN p.diseases d " +
-        "WHERE p.id = ?1")
+    @Query("SELECT p " +
+        "FROM diseases d " +
+        "JOIN d.patient p " +
+        "WHERE p.id = ?1 ")
     List<DiseaseEntity> getAllDiseasesByPatientId(Integer patientId);
 
 }

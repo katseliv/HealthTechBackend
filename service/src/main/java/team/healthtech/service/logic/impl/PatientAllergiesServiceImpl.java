@@ -2,6 +2,8 @@ package team.healthtech.service.logic.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import team.healthtech.db.entity.AllergyEntity;
+import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.db.repository.AllergyRepository;
 import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.service.EntityNotFoundException;
@@ -53,13 +55,12 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
 
     @Override
     public void deleteAllergyFromPatient(int allergyId, int patientId) {
-        AllergyDto allergyDto = allergyMapper.fromEntity(allergyRepository.getById(allergyId));
-        PatientDto patientDto = patientRepository.findById(patientId).map(patientMapper::fromEntity).orElseThrow();
-
-        List<AllergyDto> list = patientDto.getAllergies();
-        list.remove(allergyDto);
-        patientDto.setAllergies(list);
-        patientRepository.save(patientMapper.toEntity(patientDto));
+        AllergyEntity entity = allergyRepository.getAllergyFromPatientById(allergyId, patientId);
+        var patientEntity = patientRepository.findById(patientId).orElseThrow(
+            () -> new EntityNotFoundException(patientId, "User")
+        );
+        patientEntity.getAllergies().remove(entity);
+        patientRepository.save(patientEntity);
     }
 
     @Override

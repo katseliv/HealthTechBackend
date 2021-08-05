@@ -26,12 +26,12 @@ team/healthtech/db/entity/CommentEntity.java
  team.healthtech.db.entity.CommentEntity
 team/healthtech/db/repository/UserRepository.java
  team.healthtech.db.repository.UserRepository
-team/healthtech/db/repository/AllergyRepository.java
- team.healthtech.db.repository.AllergyRepository
+team/healthtech/db/repository/DiseaseRepository.java
+ team.healthtech.db.repository.DiseaseRepository
 team/healthtech/db/entity/DiseaseEntity.java
  team.healthtech.db.entity.DiseaseEntity
-team/healthtech/db/repository/PatientRepository.java
- team.healthtech.db.repository.PatientRepository
+team/healthtech/db/repository/AllergyRepository.java
+ team.healthtech.db.repository.AllergyRepository
 team/healthtech/db/repository/DoctorsSpecialitiesRepository.java
  team.healthtech.db.repository.DoctorsSpecialitiesRepository
 team/healthtech/db/provider/impl/UserSecurityProviderImpl.java
@@ -46,5 +46,5 @@ team/healthtech/db/entity/DoctorEntity.java
  team.healthtech.db.entity.DoctorEntity
 team/healthtech/db/entity/AdminEntity.java
  team.healthtech.db.entity.AdminEntity
-team/healthtech/db/repository/DiseaseRepository.java
- team.healthtech.db.repository.DiseaseRepository
+team/healthtech/db/repository/PatientRepository.java
+ team.healthtech.db.repository.PatientRepository
