@@ -36,21 +36,23 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
 
     @Override
     public void addAllergyToPatient(int allergyId, int patientId) {
-        var patientEntity = patientRepository.findById(patientId).orElseThrow(
-            () -> new EntityNotFoundException(patientId, "User")
-        );
-        var patientDto = patientRepository.findById(patientId).map(patientMapper::fromEntity).orElseThrow();
         var allergyDto = allergyMapper.fromEntity(allergyRepository.getById(allergyId));
-        List<AllergyDto> list = patientDto.getAllergies();
-        list.add(allergyDto);
-        patientDto.setAllergies(list);
+        if (allergyRepository.getAllAllergiesByPatientId(patientId).contains(allergyMapper.toEntity(allergyDto))) {
+            var patientEntity = patientRepository.findById(patientId).orElseThrow(
+                () -> new EntityNotFoundException(patientId, "User")
+            );
+            var patientDto = patientRepository.findById(patientId).map(patientMapper::fromEntity).orElseThrow();
+            List<AllergyDto> list = patientDto.getAllergies();
+            list.add(allergyDto);
+            patientDto.setAllergies(list);
 
-        patientMapper.merge(patientDto, patientEntity);
-        patientRepository.save(patientEntity);
+            patientMapper.merge(patientDto, patientEntity);
+            patientRepository.save(patientEntity);
+        }
+        // мы молчим, когда идет попытка присвоить уже существующую аллергию
 
         //patientMapper.toEntity(patientDto, patientEntity);
         //patientRepository.save(patientEntity);
-
     }
 
     @Override
