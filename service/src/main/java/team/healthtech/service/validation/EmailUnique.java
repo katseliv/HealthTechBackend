@@ -1,9 +1,7 @@
 package team.healthtech.service.validation;
 
 import team.healthtech.service.validation.for_update.EmailUniqueForUpdate;
-import team.healthtech.service.validation.for_update.LoginUniqueForUpdate;
 import team.healthtech.service.validation.validator.StringEmailUnique;
-import team.healthtech.service.validation.validator.StringLoginUnique;
 
 import javax.validation.Constraint;
 import javax.validation.Payload;

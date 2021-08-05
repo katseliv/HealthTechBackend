@@ -1,10 +1,11 @@
 package team.healthtech.service.logic.impl;
 
 import org.springframework.stereotype.Service;
-import team.healthtech.db.entity.AllergyEntity;
 import team.healthtech.db.repository.AllergyRepository;
 import team.healthtech.db.repository.PatientRepository;
+import team.healthtech.service.EntityNotFoundException;
 import team.healthtech.service.logic.PatientAllergiesService;
+import team.healthtech.service.mapper.PatientMapper;
 import team.healthtech.service.model.AllergyDto;
 
 import java.util.List;

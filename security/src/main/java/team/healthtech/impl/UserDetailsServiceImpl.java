@@ -6,11 +6,13 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 import team.healthtech.db.entity.UserEntity;
 import team.healthtech.db.provider.UserSecurityProvider;;
 
 import java.util.List;
 
+@Service
 public class UserDetailsServiceImpl implements UserDetailsService {
 
     private final UserSecurityProvider userSecurityProvider;
@@ -23,7 +25,11 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         UserEntity userEntity = userSecurityProvider.findByLogin(username);
-        return new User(userEntity.getLogin(), userEntity.getPassword(), List.of());
+        return new User(
+            userEntity.getLogin(),
+            userEntity.getPassword(),
+            List.of(new SimpleGrantedAuthority("ROLE_" + userEntity.getRole().name()))
+        );
     }
 
 }

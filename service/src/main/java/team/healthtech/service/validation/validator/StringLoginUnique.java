@@ -24,5 +24,4 @@ public class StringLoginUnique implements ConstraintValidator<LoginUnique, Strin
 
         return !userRepository.existsByLoginIgnoreCase(value);
     }
-
 }

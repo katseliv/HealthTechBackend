@@ -3,7 +3,6 @@ package team.healthtech.service.validation.validator;
 import org.springframework.beans.factory.annotation.Autowired;
 import team.healthtech.db.repository.UserRepository;
 import team.healthtech.service.validation.EmailUnique;
-import team.healthtech.service.validation.LoginUnique;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;

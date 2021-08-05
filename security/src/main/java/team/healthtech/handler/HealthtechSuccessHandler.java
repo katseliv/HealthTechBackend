@@ -18,7 +18,10 @@ public class HealthtechSuccessHandler implements AuthenticationSuccessHandler {
     private final ProfileMapper profileMapper;
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
-    public HealthtechSuccessHandler(UserSecurityProvider userProvider, ProfileMapper profileMapper) {
+    public HealthtechSuccessHandler(
+        UserSecurityProvider userProvider,
+        ProfileMapper profileMapper
+    ) {
         this.userProvider = userProvider;
         this.profileMapper = profileMapper;
     }
