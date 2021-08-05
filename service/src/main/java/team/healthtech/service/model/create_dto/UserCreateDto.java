@@ -1,6 +1,5 @@
 package team.healthtech.service.model.create_dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import team.healthtech.service.validation.EmailUnique;
 import team.healthtech.service.validation.LoginUnique;
 

@@ -63,6 +63,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         http
             .cors().disable()
             .csrf().disable()
+            .logout()
+            .logoutUrl("/user/logout")
+            .and()
             .formLogin()
             .loginProcessingUrl("/user/login")
             .successHandler(new HealthtechSuccessHandler(userSecurityProvider, profileMapper))
@@ -70,7 +73,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
             .and()
             .authorizeRequests()
-            .mvcMatchers(HttpMethod.POST, "/auth/login").not().authenticated()
+            .mvcMatchers(HttpMethod.POST, "/user/login").not().authenticated()
             .anyRequest().permitAll()/*.fullyAuthenticated()*/
             .and()
             .exceptionHandling().accessDeniedHandler(new HealthtechAccessDeniedHandler())

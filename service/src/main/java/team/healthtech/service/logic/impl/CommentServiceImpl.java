@@ -2,6 +2,7 @@ package team.healthtech.service.logic.impl;
 
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import team.healthtech.db.entity.CommentEntity;
 import team.healthtech.db.repository.CommentRepository;
 import team.healthtech.service.logic.CommentService;
@@ -9,10 +10,12 @@ import team.healthtech.service.mapper.CommentMapper;
 import team.healthtech.service.model.create_dto.CommentCreateDto;
 import team.healthtech.service.model.CommentDto;
 
+import javax.validation.Valid;
 import java.time.Instant;
 import java.util.List;
 
 @Service
+@Validated
 public class CommentServiceImpl implements CommentService {
 
     private final CommentRepository commentRepository;
@@ -28,7 +31,7 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public CommentDto createComment(CommentCreateDto commentCreateDto, Integer doctorId) {
+    public CommentDto createComment(@Valid CommentCreateDto commentCreateDto, Integer doctorId) {
         CommentEntity commentEntity = commentMapper.toEntity(commentCreateDto, doctorId);
         Instant datetime = Instant.now();
         commentEntity.setDate(datetime);
