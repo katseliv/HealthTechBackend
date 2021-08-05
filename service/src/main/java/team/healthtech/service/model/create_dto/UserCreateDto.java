@@ -1,6 +1,5 @@
 package team.healthtech.service.model.create_dto;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import team.healthtech.service.validation.EmailUnique;
 import team.healthtech.service.validation.LoginUnique;
 
@@ -19,9 +18,8 @@ public class UserCreateDto {
     private String email;
 
     @NotBlank(message = "password.is-blank")
-    //@Size(min = 8, max = 10, message = "password.out-of-bounds")
-    //@Min(value = 8, message = "password.too-short")
-    //@Max(value = 60, message = "password.too-long")
+    @Size(min = 8, message = "password.too-short")
+    @Size(max = 60, message = "password.long")
     private String password;
 
     public String getLogin() {
