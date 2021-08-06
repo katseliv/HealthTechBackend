@@ -14,12 +14,24 @@ public interface DoctorMapper {
 
     DoctorDto fromEntity(DoctorEntity entity);
 
+    @Mapping(target = "password", ignore = true)
+    @Mapping(target = "comments", ignore = true)
+    @Mapping(target = "role", ignore = true)
+    @Mapping(target = "specialities", ignore = true)
     DoctorEntity toEntity(DoctorDto dto);
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "comments", ignore = true)
+    @Mapping(target = "role", ignore = true)
+    @Mapping(target = "specialities", ignore = true)
     DoctorEntity toEntity(DoctorCreateDto dto);
 
     List<DoctorDto> fromEntities(Iterable<DoctorEntity> entities);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "password", ignore = true)
+    @Mapping(target = "comments", ignore = true)
+    @Mapping(target = "role", ignore = true)
+    @Mapping(target = "specialities", ignore = true)
     void merge(DoctorDto dto, @MappingTarget DoctorEntity entity);
 }

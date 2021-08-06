@@ -15,11 +15,13 @@ public interface TimeRecordMapper {
 
     TimeRecordDto fromEntity(TimeRecordEntity entity);
 
+    @Mapping(target = "date", ignore = true)
     TimeRecordEntity toEntity(TimeRecordDto dto);
 
     List<TimeRecordDto> fromEntities(Iterable<TimeRecordEntity> entities);
 
     @Mapping(target = "doctor", ignore = true)
+    @Mapping(target = "date", ignore = true)
     void merge(TimeRecordDto dto, @MappingTarget TimeRecordEntity entity);
 
 }
