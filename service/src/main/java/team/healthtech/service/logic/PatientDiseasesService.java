@@ -5,13 +5,14 @@ import team.healthtech.service.model.DiseaseDto;
 import team.healthtech.service.model.create_dto.DiseaseCreateDto;
 import team.healthtech.service.model.update_dto.DiseaseUpdateDto;
 
+import javax.validation.Valid;
 import java.util.List;
 
 public interface PatientDiseasesService {
 
-    DiseaseDto createDisease(DiseaseCreateDto dto);
+    DiseaseDto createDisease(@Valid DiseaseCreateDto dto);
 
-    void updateDisease(DiseaseUpdateDto diseaseDto, int diseaseId);
+    void updateDisease(@Valid DiseaseUpdateDto diseaseDto, int diseaseId);
 
     void deleteDisease(int diseaseId);
 
