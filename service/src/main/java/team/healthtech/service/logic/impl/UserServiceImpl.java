@@ -27,5 +27,4 @@ public class UserServiceImpl implements UserService {
             .map(userMapper::fromEntity)
             .orElseThrow();
     }
-
 }

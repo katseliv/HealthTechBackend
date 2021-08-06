@@ -14,12 +14,17 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import team.healthtech.db.provider.UserSecurityProvider;
 import team.healthtech.security.handler.HealthtechAccessDeniedHandler;
 import team.healthtech.security.handler.HealthtechFailureHandler;
 import team.healthtech.security.handler.HealthtechSuccessHandler;
 import team.healthtech.security.impl.UserDetailsServiceImpl;
 import team.healthtech.service.security.ProfileMapper;
+
+import java.util.List;
 
 @Configuration
 @EnableWebSecurity
@@ -59,10 +64,24 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         return new BCryptPasswordEncoder();
     }
 
+    private CorsConfigurationSource corsConfigurationSource() {
+        final var urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
+        final var config = new CorsConfiguration();
+        config.setAllowCredentials(true); //разрешаем передавать ключи
+        config.addAllowedOrigin("*"); // разрешашем запросы с любого домена
+        config.addAllowedHeader("*"); // разрешаем передавать любые заголовки
+        for (var method: List.of(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE, HttpMethod.HEAD))
+            config.addAllowedMethod(method); // разрешаем http-методы
+
+        config.addExposedHeader("*"); // разрешаем возвращать все заголовки
+        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", config); // разрешаем на любой API
+        return urlBasedCorsConfigurationSource;
+    }
+
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .cors().disable()
+            .cors().configurationSource(corsConfigurationSource()).and()
             .csrf().disable()
             .logout()
             .logoutUrl("/user/logout")

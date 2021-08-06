@@ -19,7 +19,6 @@ public class PatientDiseaseController {
     @Autowired
     public PatientDiseaseController(PatientDiseasesService service) {
         this.service = service;
-
     }
 
     @PostMapping
