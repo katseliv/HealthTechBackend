@@ -13,6 +13,7 @@ import java.util.List;
 
 @Repository
 public interface AllergyRepository extends CrudRepository<AllergyEntity, Integer>, JpaRepository<AllergyEntity, Integer>, JpaSpecificationExecutor<AllergyEntity> {
+
     @Query("" +
         "SELECT a " +
         "FROM patients p " +

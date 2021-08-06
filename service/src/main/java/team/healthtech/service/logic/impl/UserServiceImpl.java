@@ -21,7 +21,6 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDto createUser(UserDto userDto) {
-
         return Optional.of(userDto)
             .map(userMapper::toEntity)
             .map(userRepository::save)
