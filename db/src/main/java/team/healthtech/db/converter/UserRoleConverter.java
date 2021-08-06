@@ -1,4 +1,4 @@
-package team.healthtech.db;
+package team.healthtech.db.converter;
 
 import team.healthtech.common.Role;
 

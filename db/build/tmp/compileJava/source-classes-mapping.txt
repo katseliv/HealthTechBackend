@@ -44,9 +44,9 @@ team/healthtech/db/provider/UserSecurityProvider.java
  team.healthtech.db.provider.UserSecurityProvider
 team/healthtech/db/entity/DoctorEntity.java
  team.healthtech.db.entity.DoctorEntity
-team/healthtech/db/UserRoleConverter.java
- team.healthtech.db.UserRoleConverter
-team/healthtech/db/entity/AdminEntity.java
- team.healthtech.db.entity.AdminEntity
 team/healthtech/db/entity/DiseaseEntity.java
  team.healthtech.db.entity.DiseaseEntity
+team/healthtech/db/entity/AdminEntity.java
+ team.healthtech.db.entity.AdminEntity
+team/healthtech/db/converter/UserRoleConverter.java
+ team.healthtech.db.converter.UserRoleConverter
