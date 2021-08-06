@@ -20,7 +20,8 @@ public interface AppointmentMapper {
     AppointmentEntity toEntity(AppointmentDto dto);
 
     @Mapping(target = "patient.id", source = "patientId")
-    @Mapping(target = "timeRecord.doctor.id", source = "appointmentCreateDto.doctorId")
+    @Mapping(target = "timeRecord", ignore = true)
+//    @Mapping(target = "timeRecord.doctor.id", source = "appointmentCreateDto.doctorId")
     AppointmentEntity toEntity(AppointmentCreateDto appointmentCreateDto, Integer patientId);
 
     List<AppointmentDto> fromEntities(Iterable<AppointmentEntity> entities);
