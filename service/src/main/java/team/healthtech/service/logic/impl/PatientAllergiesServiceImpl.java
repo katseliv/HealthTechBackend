@@ -13,6 +13,7 @@ import team.healthtech.service.mapper.PatientMapper;
 import team.healthtech.service.model.AllergyDto;
 import team.healthtech.service.model.PatientDto;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Service
@@ -35,7 +36,7 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
     }
 
     @Override
-    public void addAllergyToPatient(int allergyId, int patientId) {
+    public void addAllergyToPatient(@Valid int allergyId, int patientId) {
         var allergyDto = allergyMapper.fromEntity(allergyRepository.getById(allergyId));
         if (allergyRepository.getAllAllergiesByPatientId(patientId).contains(allergyMapper.toEntity(allergyDto))) {
             var patientEntity = patientRepository.findById(patientId).orElseThrow(

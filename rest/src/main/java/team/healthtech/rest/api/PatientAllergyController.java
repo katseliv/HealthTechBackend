@@ -6,6 +6,7 @@ import team.healthtech.service.logic.PatientAllergiesService;
 import team.healthtech.service.model.AllergyDto;
 import team.healthtech.service.model.PatientDto;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -20,7 +21,7 @@ public class PatientAllergyController {
     }
 
     @PutMapping("/{allergyId}")
-    public void addAllergyToPatient(@PathVariable int allergyId,
+    public void addAllergyToPatient(@Valid @PathVariable int allergyId,
                                     @PathVariable int patientId) {
         service.addAllergyToPatient(allergyId, patientId);
     }

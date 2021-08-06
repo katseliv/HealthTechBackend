@@ -2,6 +2,7 @@ package team.healthtech.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.FutureOrPresent;
 import java.sql.Date;
 import java.time.Instant;
 
@@ -18,6 +19,7 @@ public class DiseaseDto {
     private Date startDate;
 
     @JsonProperty("end_date")
+    @FutureOrPresent(message = "end_date.is-past")
     private Date endDate;
 
     public Integer getId() {
