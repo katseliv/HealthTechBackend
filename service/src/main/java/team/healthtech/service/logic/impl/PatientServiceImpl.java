@@ -6,6 +6,7 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
+import team.healthtech.common.Role;
 import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.service.logic.PatientService;
@@ -53,6 +54,7 @@ public class PatientServiceImpl implements PatientService {
 
         String encodePassword = passwordEncoder.encode(patientDto.getPassword());
         patientDto.setPassword(encodePassword);
+        patientDto.setRole(Role.PATIENT);
 
         return Optional.of(patientDto)
             .map(patientMapper::toEntity)

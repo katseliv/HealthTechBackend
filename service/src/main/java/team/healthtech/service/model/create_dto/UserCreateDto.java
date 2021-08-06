@@ -1,5 +1,6 @@
 package team.healthtech.service.model.create_dto;
 
+import team.healthtech.common.Role;
 import team.healthtech.service.validation.EmailUnique;
 import team.healthtech.service.validation.LoginUnique;
 
@@ -21,6 +22,8 @@ public class UserCreateDto {
     @Size(min = 8, message = "password.too-short")
     @Size(max = 60, message = "password.long")
     private String password;
+
+    private Role role;
 
     public String getLogin() {
         return login;
@@ -45,4 +48,13 @@ public class UserCreateDto {
     public void setPassword(String password) {
         this.password = password;
     }
+
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
 }

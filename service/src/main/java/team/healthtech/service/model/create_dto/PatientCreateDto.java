@@ -1,6 +1,7 @@
 package team.healthtech.service.model.create_dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import team.healthtech.common.Role;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -78,4 +79,5 @@ public class PatientCreateDto extends UserCreateDto {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+
 }

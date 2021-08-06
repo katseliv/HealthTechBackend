@@ -10,4 +10,5 @@ public interface Profile {
     String getLogin();
     String getEmail();
     Role getRole();
+
 }
