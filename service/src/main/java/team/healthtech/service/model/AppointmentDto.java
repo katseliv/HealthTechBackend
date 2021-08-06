@@ -18,7 +18,6 @@ public class AppointmentDto {
     @JsonProperty("is_taken")
     private Boolean isTaken;
 
-    @Future
     private Instant datetime;
 
     private String result;

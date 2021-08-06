@@ -7,6 +7,7 @@ import team.healthtech.db.entity.DoctorEntity;
 import team.healthtech.service.model.DoctorDto;
 import team.healthtech.service.model.create_dto.DoctorCreateDto;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @Mapper(componentModel = "spring", uses = TimeRecordMapper.class)
@@ -16,7 +17,7 @@ public interface DoctorMapper {
 
     DoctorEntity toEntity(DoctorDto dto);
 
-    DoctorEntity toEntity(DoctorCreateDto dto);
+    DoctorEntity toEntity(@Valid DoctorCreateDto dto);
 
     List<DoctorDto> fromEntities(Iterable<DoctorEntity> entities);
 

@@ -1,6 +1,7 @@
 package team.healthtech.service.logic.impl;
 
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 import team.healthtech.db.entity.TimeRecordEntity;
 import team.healthtech.db.repository.TimeRecordsRepository;
 import team.healthtech.service.logic.TimeRecordService;
@@ -9,12 +10,14 @@ import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.model.DiseaseDto;
 import team.healthtech.service.model.TimeRecordDto;
 
+import javax.validation.Valid;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Optional;
 
 @Service
+@Validated
 public class TimeRecordServiceImpl implements TimeRecordService {
 
     private final TimeRecordsRepository repository;
@@ -26,7 +29,7 @@ public class TimeRecordServiceImpl implements TimeRecordService {
     }
 
     @Override
-    public TimeRecordDto createTimeRecord(TimeRecordDto dto) {
+    public TimeRecordDto createTimeRecord(@Valid TimeRecordDto dto) {
         return Optional.ofNullable(dto)
             .map(mapper::toEntity)
             .map(repository::save)

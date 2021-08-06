@@ -2,6 +2,7 @@ package team.healthtech.service.model.create_dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Future;
 import java.time.Instant;
 
 public class AppointmentCreateDto {
@@ -12,6 +13,7 @@ public class AppointmentCreateDto {
     @JsonProperty("is_taken")
     private Boolean isTaken;
 
+    @Future(message = "datetime.invalid")
     private Instant datetime;
 
     private String result;
