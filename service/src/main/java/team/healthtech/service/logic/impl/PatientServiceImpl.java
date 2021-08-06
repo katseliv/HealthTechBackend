@@ -83,7 +83,8 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<PatientDto> getAllPatients() {
-        return patientMapper.fromEntities(patientRepository.findAll());
+        List<PatientDto> patients = patientMapper.fromEntities(patientRepository.findAll());
+        return patients;
     }
 
 }
