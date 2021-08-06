@@ -6,6 +6,7 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
+import team.healthtech.common.Role;
 import team.healthtech.db.repository.AdminRepository;
 import team.healthtech.service.logic.AdminService;
 import team.healthtech.service.mapper.AdminMapper;
@@ -51,6 +52,7 @@ public class AdminServiceImpl implements AdminService {
 
         String encodePassword = passwordEncoder.encode(adminDto.getPassword());
         adminDto.setPassword(encodePassword);
+        adminDto.setRole(Role.ADMIN);
 
         return Optional.of(adminDto)
             .map(adminMapper::toEntity)
