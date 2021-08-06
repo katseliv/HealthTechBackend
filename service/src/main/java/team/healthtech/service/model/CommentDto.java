@@ -2,6 +2,8 @@ package team.healthtech.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Future;
+import javax.validation.constraints.NotBlank;
 import java.time.Instant;
 
 public class CommentDto {
@@ -16,6 +18,8 @@ public class CommentDto {
 
     private String comment;
 
+    @NotBlank(message = "date.is-null")
+    @Future(message = "date.invalid")
     private Instant date;
 
     public Integer getDoctorId() {

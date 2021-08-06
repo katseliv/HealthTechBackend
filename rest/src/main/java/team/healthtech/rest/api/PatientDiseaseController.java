@@ -8,6 +8,7 @@ import team.healthtech.service.model.DiseaseDto;
 import team.healthtech.service.model.PatientDto;
 import team.healthtech.service.model.update_dto.DiseaseUpdateDto;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -31,8 +32,8 @@ public class PatientDiseaseController {
         return service.getAllDiseases(patientId);
     }
 
-    @PutMapping("/{diseaseId}")
-    public void updateDisease(@RequestBody DiseaseUpdateDto dto,
+    @PatchMapping("/{diseaseId}")
+    public void updateDisease(@Valid @RequestBody DiseaseUpdateDto dto,
                               @PathVariable int diseaseId){
         service.updateDisease(dto, diseaseId);
     }

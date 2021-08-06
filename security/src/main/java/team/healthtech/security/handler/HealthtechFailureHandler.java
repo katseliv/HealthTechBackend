@@ -1,4 +1,4 @@
-package team.healthtech.handler;
+package team.healthtech.security.handler;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;

@@ -2,6 +2,7 @@ package team.healthtech.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Future;
 import java.time.Instant;
 
 public class AppointmentDto {
@@ -47,10 +48,12 @@ public class AppointmentDto {
         this.doctorId = doctorId;
     }
 
+    @JsonProperty("is_taken")
     public Boolean getTaken() {
         return isTaken;
     }
 
+    @JsonProperty("is_taken")
     public void setTaken(Boolean taken) {
         isTaken = taken;
     }

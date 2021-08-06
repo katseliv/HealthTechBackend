@@ -7,6 +7,7 @@ import javax.persistence.Converter;
 
 @Converter(autoApply = true)
 public class UserRoleConverter implements AttributeConverter<Role, Integer> {
+
     @Override
     public Integer convertToDatabaseColumn(Role attribute) {
         return attribute == null ? null : attribute.getId();
@@ -16,4 +17,5 @@ public class UserRoleConverter implements AttributeConverter<Role, Integer> {
     public Role convertToEntityAttribute(Integer dbData) {
         return Role.of(dbData).orElse(null);
     }
+
 }
