@@ -6,6 +6,7 @@ import team.healthtech.service.logic.PatientDiseasesService;
 import team.healthtech.service.model.create_dto.DiseaseCreateDto;
 import team.healthtech.service.model.DiseaseDto;
 import team.healthtech.service.model.PatientDto;
+import team.healthtech.service.model.update_dto.DiseaseUpdateDto;
 
 import java.util.List;
 
@@ -31,7 +32,7 @@ public class PatientDiseaseController {
     }
 
     @PutMapping("/{diseaseId}")
-    public void updateDisease(@RequestBody DiseaseDto dto,
+    public void updateDisease(@RequestBody DiseaseUpdateDto dto,
                               @PathVariable int diseaseId){
         service.updateDisease(dto, diseaseId);
     }
