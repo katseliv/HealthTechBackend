@@ -48,10 +48,12 @@ public class AppointmentDto {
         this.doctorId = doctorId;
     }
 
+    @JsonProperty("is_taken")
     public Boolean getTaken() {
         return isTaken;
     }
 
+    @JsonProperty("is_taken")
     public void setTaken(Boolean taken) {
         isTaken = taken;
     }

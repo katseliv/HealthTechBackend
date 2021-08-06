@@ -13,7 +13,7 @@ public class AppointmentCreateDto {
     @JsonProperty("is_taken")
     private Boolean isTaken;
 
-//    @Future(message = "datetime.invalid")
+    @Future(message = "datetime.invalid")
     private Instant datetime;
 
     private String result;
