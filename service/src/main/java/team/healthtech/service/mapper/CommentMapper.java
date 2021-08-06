@@ -15,10 +15,13 @@ public interface CommentMapper {
     @Mapping(target = "patientId", source = "patient.id")
     CommentDto fromEntity(CommentEntity entity);
 
+    @Mapping(target = "id", ignore = true)
     @Mapping(target = "doctor.id", source = "doctorId")
     @Mapping(target = "patient.id", source = "patientId")
     CommentEntity toEntity(CommentDto dto);
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "date", ignore = true)
     @Mapping(target = "doctor.id", source = "doctorId")
     @Mapping(target = "patient.id", source = "commentCreateDto.patientId")
     CommentEntity toEntity(CommentCreateDto commentCreateDto, Integer doctorId);

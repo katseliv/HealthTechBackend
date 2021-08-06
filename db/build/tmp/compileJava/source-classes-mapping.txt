@@ -8,8 +8,8 @@ team/healthtech/db/entity/DoctorSpecialityId.java
  team.healthtech.db.entity.DoctorSpecialityId
 team/healthtech/db/repository/CommentRepository.java
  team.healthtech.db.repository.CommentRepository
-team/healthtech/db/repository/PatientRepository.java
- team.healthtech.db.repository.PatientRepository
+team/healthtech/db/repository/AllergyRepository.java
+ team.healthtech.db.repository.AllergyRepository
 team/healthtech/db/DatabaseConfiguration.java
  team.healthtech.db.DatabaseConfiguration
 team/healthtech/db/repository/DoctorRepository.java
@@ -20,8 +20,8 @@ team/healthtech/db/repository/AdminRepository.java
  team.healthtech.db.repository.AdminRepository
 team/healthtech/db/repository/DoctorsSpecialitiesRepository.java
  team.healthtech.db.repository.DoctorsSpecialitiesRepository
-team/healthtech/db/repository/AllergyRepository.java
- team.healthtech.db.repository.AllergyRepository
+team/healthtech/db/repository/PatientRepository.java
+ team.healthtech.db.repository.PatientRepository
 team/healthtech/db/entity/DoctorsSpecialitiesEntity.java
  team.healthtech.db.entity.DoctorsSpecialitiesEntity
 team/healthtech/db/entity/AppointmentEntity.java
@@ -44,6 +44,8 @@ team/healthtech/db/provider/UserSecurityProvider.java
  team.healthtech.db.provider.UserSecurityProvider
 team/healthtech/db/entity/DoctorEntity.java
  team.healthtech.db.entity.DoctorEntity
+team/healthtech/db/UserRoleConverter.java
+ team.healthtech.db.UserRoleConverter
 team/healthtech/db/entity/AdminEntity.java
  team.healthtech.db.entity.AdminEntity
 team/healthtech/db/entity/DiseaseEntity.java

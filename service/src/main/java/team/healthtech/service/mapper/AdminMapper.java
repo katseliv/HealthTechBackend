@@ -14,13 +14,19 @@ public interface AdminMapper {
 
     AdminDto fromEntity(AdminEntity entity);
 
+    @Mapping(target = "role", ignore = true)
+    @Mapping(target = "password", ignore = true)
     AdminEntity toEntity(AdminDto dto);
 
+    @Mapping(target = "id", ignore = true)
+    @Mapping(target = "role", ignore = true)
     AdminEntity toEntity(AdminCreateDto dto);
 
     List<AdminDto> fromEntities(Iterable<AdminEntity> entities);
 
     @Mapping(target = "id", ignore = true)
+    @Mapping(target = "password", ignore = true)
+    @Mapping(target = "role", ignore = true)
     void merge(AdminDto dto, @MappingTarget AdminEntity entity);
 
 }

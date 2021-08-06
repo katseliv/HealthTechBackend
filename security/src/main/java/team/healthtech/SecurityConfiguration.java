@@ -62,8 +62,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .cors().disable()
-            .csrf().disable()
+            .cors().disable() // какие сайты вообще смогут обращаться к приложению, без нее 403
+            .csrf().disable() // защита от Cross-Site Request Forgery
             .formLogin()
             .loginProcessingUrl("/user/login")
             .successHandler(new HealthtechSuccessHandler(userSecurityProvider, profileMapper))

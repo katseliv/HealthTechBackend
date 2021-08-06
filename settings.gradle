@@ -1,10 +1,7 @@
 rootProject.name = 'HealthTech'
+
 include 'rest'
-include 'security'
 include 'security'
 include 'service'
 include 'db'
-include 'db'
-include 'test'
 includeBuild 'commons'
-
