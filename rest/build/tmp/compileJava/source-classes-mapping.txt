@@ -14,13 +14,13 @@ team/healthtech/rest/api/DoctorSpecialitiesController.java
  team.healthtech.rest.api.DoctorSpecialitiesController
 team/healthtech/rest/api/CommentController.java
  team.healthtech.rest.api.CommentController
+team/healthtech/rest/api/PatientAllergyController.java
+ team.healthtech.rest.api.PatientAllergyController
+team/healthtech/rest/api/PatientDiseaseController.java
+ team.healthtech.rest.api.PatientDiseaseController
 team/healthtech/rest/api/AdminController.java
  team.healthtech.rest.api.AdminController
 team/healthtech/rest/api/DoctorController.java
  team.healthtech.rest.api.DoctorController
 team/healthtech/rest/api/PatientController.java
  team.healthtech.rest.api.PatientController
-team/healthtech/rest/api/PatientDiseaseController.java
- team.healthtech.rest.api.PatientDiseaseController
-team/healthtech/rest/api/PatientAllergyController.java
- team.healthtech.rest.api.PatientAllergyController
