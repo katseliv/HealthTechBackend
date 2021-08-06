@@ -1,14 +1,19 @@
 package team.healthtech.service.logic.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
+import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.db.repository.PatientRepository;
-import team.healthtech.db.repository.UserRepository;
 import team.healthtech.service.logic.PatientService;
 import team.healthtech.service.mapper.PatientMapper;
 import team.healthtech.service.model.PatientDto;
 import team.healthtech.service.model.create_dto.PatientCreateDto;
+import team.healthtech.service.security.HealthtechPasswordEncoder;
+import team.healthtech.service.security.Profile;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
@@ -19,20 +24,36 @@ import java.util.Optional;
 @Validated
 public class PatientServiceImpl implements PatientService {
 
+    private static final Logger logger = LoggerFactory.getLogger(PatientServiceImpl.class);
+    private final ObjectProvider<Profile> profileProvider;
+    private final HealthtechPasswordEncoder passwordEncoder;
     private final PatientRepository patientRepository;
     private final PatientMapper patientMapper;
 
     @Autowired
     public PatientServiceImpl(
+        ObjectProvider<Profile> profileProvider,
+        HealthtechPasswordEncoder passwordEncoder,
         PatientRepository patientRepository,
         PatientMapper patientMapper
     ) {
+        this.profileProvider = profileProvider;
+        this.passwordEncoder = passwordEncoder;
         this.patientRepository = patientRepository;
         this.patientMapper = patientMapper;
     }
 
     @Override
     public PatientDto createPatient(@Valid PatientCreateDto patientDto) {
+        if (profileProvider.getIfAvailable() == null) {
+            logger.info("Create new Patient by anonymous");
+        } else {
+            logger.info("Create new Patient by {}", profileProvider.getIfAvailable());
+        }
+
+        String encodePassword = passwordEncoder.encode(patientDto.getPassword());
+        patientDto.setPassword(encodePassword);
+
         return Optional.of(patientDto)
             .map(patientMapper::toEntity)
             .map(patientRepository::save)
@@ -43,8 +64,9 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Transactional
     public void updatePatient(PatientDto patientDto, int patientId) {
-        patientMapper.merge(patientDto, patientRepository.findById(patientId).orElseThrow());
-        patientRepository.save(patientMapper.toEntity(patientDto));
+        PatientEntity entity = patientRepository.findById(patientId).orElseThrow();
+        patientMapper.merge(patientDto, entity);
+        patientRepository.save(entity);
     }
 
     @Override

@@ -27,4 +27,5 @@ public interface DiseaseMapper {
     @Mapping(target = "name", ignore = true)
     @Mapping(target = "startDate", ignore = true)
     void merge(DiseaseDto dto, @MappingTarget DiseaseEntity entity);
+
 }

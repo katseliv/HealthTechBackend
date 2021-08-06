@@ -2,6 +2,7 @@ package team.healthtech.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.Future;
 import java.time.Instant;
 
 public class AppointmentDto {
@@ -17,6 +18,7 @@ public class AppointmentDto {
     @JsonProperty("is_taken")
     private Boolean isTaken;
 
+    @Future
     private Instant datetime;
 
     private String result;
