@@ -85,8 +85,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<PatientDto> getAllPatients() {
-        List<PatientDto> patients = patientMapper.fromEntities(patientRepository.findAll());
-        return patients;
+        return patientMapper.fromEntities(patientRepository.findAll());
     }
 
 }
