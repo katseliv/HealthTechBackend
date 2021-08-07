@@ -26,7 +26,7 @@ public class TimeRecordController {
     //@Secured("ROLE_DOCTOR")
     //@ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public TimeRecordDto createTimeRecord(@RequestBody TimeRecordDto timeRecordDto) {
+    public TimeRecordDto createTimeRecord(@RequestBody TimeRecordDto timeRecordDto) throws Exception {
         return service.createTimeRecord(timeRecordDto);
     }
 
@@ -34,9 +34,10 @@ public class TimeRecordController {
     public TimeRecordDto getLastTimeRecordByDoctorId(@RequestBody Date date, @PathVariable int doctorId) {
         return service.getTimeRecordByDoctorId(date, doctorId);
     }
+
     @GetMapping("/schedule")
     public List<TimeRecordDto> getScheduleByDatesAndDoctorId(@RequestBody List<Date> dates,
-                                                             @PathVariable int doctorId){
+                                                             @PathVariable int doctorId) {
         return service.getScheduleByDatesAndDoctorId(dates, doctorId);
     }
 
@@ -48,7 +49,7 @@ public class TimeRecordController {
 
     //@Secured("ROLE_DOCTOR")
     @DeleteMapping("/{timeRecordId}")
-    public void deleteTimeRecordId(@PathVariable int timeRecordId){
+    public void deleteTimeRecordId(@PathVariable int timeRecordId) {
         service.deleteTimeRecord(timeRecordId);
     }
 

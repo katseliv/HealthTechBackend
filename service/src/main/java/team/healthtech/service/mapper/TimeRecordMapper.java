@@ -22,6 +22,7 @@ public interface TimeRecordMapper {
 
     @Mapping(target = "doctor", ignore = true)
     @Mapping(target = "date", ignore = true)
+    @Mapping(target = "id", ignore = true)
     void merge(TimeRecordDto dto, @MappingTarget TimeRecordEntity entity);
 
 }

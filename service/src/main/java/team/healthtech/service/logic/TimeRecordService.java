@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface TimeRecordService {
 
-    TimeRecordDto createTimeRecord(TimeRecordDto dto);
+    TimeRecordDto createTimeRecord(TimeRecordDto dto) throws Exception;
 
     void updateTimeRecord(TimeRecordDto timeRecordDto, int timeRecordsId);
 

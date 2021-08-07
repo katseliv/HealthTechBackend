@@ -1,5 +1,6 @@
 package team.healthtech.service.logic.impl;
 
+import org.springframework.boot.autoconfigure.cassandra.CassandraProperties;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.entity.DoctorEntity;
 import team.healthtech.db.entity.TimeRecordEntity;
@@ -9,7 +10,9 @@ import team.healthtech.service.logic.TimeRecordService;
 import team.healthtech.service.mapper.TimeRecordMapper;
 import team.healthtech.service.model.TimeRecordDto;
 
+import javax.swing.text.html.Option;
 import java.sql.Date;
+import java.sql.Time;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,11 +30,18 @@ public class TimeRecordServiceImpl implements TimeRecordService {
     }
 
     @Override
-    public TimeRecordDto createTimeRecord(TimeRecordDto dto) {
-        TimeRecordEntity entity = mapper.toEntity(dto);
+    public TimeRecordDto createTimeRecord(TimeRecordDto dto) throws Exception {
+        TimeRecordEntity targetEntity = mapper.toEntity(dto);
+
         DoctorEntity doctor = doctorRepository.findById(dto.getDoctorId()).orElseThrow();
-        entity.setDoctor(doctor);
-        TimeRecordEntity result = repository.save(entity);
+        targetEntity.setDoctor(doctor);
+
+        for (TimeRecordEntity tr :
+            repository.getTimeRecordEntitiesByDoctorId(doctor.getId())) {
+            if (tr.getDate().compareTo(targetEntity.getDate()) < 0)
+                throw new Exception();
+        }
+        TimeRecordEntity result = repository.save(targetEntity);
         TimeRecordDto timeRecordDto = mapper.fromEntity(result);
         timeRecordDto.setDoctorId(doctor.getId());
         return timeRecordDto;
@@ -39,8 +49,13 @@ public class TimeRecordServiceImpl implements TimeRecordService {
 
     @Override
     public void updateTimeRecord(TimeRecordDto timeRecordDto, int timeRecordsId) {
-        mapper.merge(timeRecordDto, repository.findById(timeRecordsId).orElseThrow());
-        repository.save(mapper.toEntity(timeRecordDto));
+        //timeRecordDto.setId(repository.findById(timeRecordsId).orElseThrow().getId());
+        TimeRecordEntity entity = repository.findById(timeRecordsId).orElseThrow();
+        mapper.merge(timeRecordDto, entity);
+        entity.setId(timeRecordsId);
+        entity.setDoctor(doctorRepository.findById(timeRecordDto.getDoctorId()).orElseThrow());
+
+        repository.save(entity);
     }
 
     @Override
@@ -51,7 +66,9 @@ public class TimeRecordServiceImpl implements TimeRecordService {
     @Override
     public TimeRecordDto getTimeRecordByDoctorId(Date date, Integer doctorId) {
         TimeRecordEntity e = repository.getTimeRecordEntityByDateAndDoctorId(date, doctorId);
-        return mapper.fromEntity(e);
+        TimeRecordDto timeRecordDto = mapper.fromEntity(e);
+        timeRecordDto.setDoctorId(doctorId);
+        return timeRecordDto;
     }
 
     @Override
@@ -61,6 +78,11 @@ public class TimeRecordServiceImpl implements TimeRecordService {
             TimeRecordEntity e = repository.getTimeRecordEntityByDateAndDoctorId(d, doctorId);
             list.add(e);
         }
-        return mapper.fromEntities(list);
+        List<TimeRecordDto> resultList = mapper.fromEntities(list);
+        for (TimeRecordDto dto :
+            resultList) {
+            dto.setDoctorId(doctorId);
+        }
+        return resultList;
     }
 }
