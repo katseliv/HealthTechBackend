@@ -68,7 +68,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
         final var urlBasedCorsConfigurationSource = new UrlBasedCorsConfigurationSource();
         final var config = new CorsConfiguration();
         config.setAllowCredentials(true); //разрешаем передавать ключи
-        config.addAllowedOrigin("*"); // разрешашем запросы с любого домена
+        config.addAllowedOrigin("*"); // разрешаем запросы с любого домена
         config.addAllowedHeader("*"); // разрешаем передавать любые заголовки
         for (var method: List.of(HttpMethod.GET, HttpMethod.POST, HttpMethod.PUT, HttpMethod.DELETE, HttpMethod.HEAD))
             config.addAllowedMethod(method); // разрешаем http-методы
