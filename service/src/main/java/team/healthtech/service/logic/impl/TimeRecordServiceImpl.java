@@ -45,4 +45,9 @@ public class TimeRecordServiceImpl implements TimeRecordService {
         repository.deleteById(timeRecordId);
     }
 
+    @Override
+    public TimeRecordDto getTimeRecordByDoctorId(Integer doctorId) {
+        return null;
+    }
+
 }

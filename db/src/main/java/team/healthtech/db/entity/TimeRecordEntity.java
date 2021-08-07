@@ -17,8 +17,7 @@ public class TimeRecordEntity {
     @OneToOne
     @JoinColumn(
         name = "doctor_id",
-        referencedColumnName = "id",
-        updatable = false)
+        referencedColumnName = "id")
     private DoctorEntity doctor;
 
     @Column(name = "date")

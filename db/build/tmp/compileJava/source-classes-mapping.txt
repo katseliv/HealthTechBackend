@@ -32,10 +32,10 @@ team/healthtech/db/entity/CommentEntity.java
  team.healthtech.db.entity.CommentEntity
 team/healthtech/db/repository/UserRepository.java
  team.healthtech.db.repository.UserRepository
-team/healthtech/db/converter/UserRoleConverter.java
- team.healthtech.db.converter.UserRoleConverter
-team/healthtech/db/provider/impl/UserSecurityProviderImpl.java
- team.healthtech.db.provider.impl.UserSecurityProviderImpl
+team/healthtech/db/entity/AdminEntity.java
+ team.healthtech.db.entity.AdminEntity
+team/healthtech/db/entity/DoctorEntity.java
+ team.healthtech.db.entity.DoctorEntity
 team/healthtech/db/entity/PatientEntity.java
  team.healthtech.db.entity.PatientEntity
 team/healthtech/db/repository/TimeRecordsRepository.java
@@ -44,9 +44,9 @@ team/healthtech/db/entity/UserEntity.java
  team.healthtech.db.entity.UserEntity
 team/healthtech/db/provider/UserSecurityProvider.java
  team.healthtech.db.provider.UserSecurityProvider
-team/healthtech/db/entity/DoctorEntity.java
- team.healthtech.db.entity.DoctorEntity
-team/healthtech/db/entity/AdminEntity.java
- team.healthtech.db.entity.AdminEntity
+team/healthtech/db/provider/impl/UserSecurityProviderImpl.java
+ team.healthtech.db.provider.impl.UserSecurityProviderImpl
+team/healthtech/db/converter/UserRoleConverter.java
+ team.healthtech.db.converter.UserRoleConverter
 team/healthtech/db/entity/DiseaseEntity.java
  team.healthtech.db.entity.DiseaseEntity

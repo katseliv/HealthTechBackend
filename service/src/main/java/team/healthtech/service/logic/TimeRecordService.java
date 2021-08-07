@@ -13,4 +13,6 @@ public interface TimeRecordService {
 
     void deleteTimeRecord(int timeRecordId);
 
+    TimeRecordDto getTimeRecordByDoctorId(Integer doctorId);
+
 }
