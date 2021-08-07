@@ -35,15 +35,15 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
     @Override
     public DiseaseDto createDisease(@Valid DiseaseCreateDto dto) {
         DiseaseEntity entity = mapper.toEntity(dto);
-        var patient = patientRepository.findById(1).orElseThrow();
-        //Optional<PatientEntity> patient = patientRepository.findById(dto.getPatientId());//.orElseThrow();
+        //Optional<PatientEntity> patient = patientRepository.findById(1);//.orElseThrow();
+        PatientEntity patient = patientRepository.findById(dto.getPatientId()).orElseThrow();
         entity.setPatient(patient);
-        repository.save(entity);
+        DiseaseEntity e = repository.save(entity);
         /*return Optional.of(entity)
             .map(repository::save)
             .map(mapper::fromEntity)
             .orElseThrow();*/
-        return mapper.fromEntity(entity);
+        return mapper.fromEntity(e);
     }
 
     @Override

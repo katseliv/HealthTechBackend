@@ -26,7 +26,6 @@ public class DiseaseEntity {
     @JoinColumn(
         name = "patient_id",
         referencedColumnName = "id",
-        insertable = false,
         updatable = false)
     private PatientEntity patient;
 
