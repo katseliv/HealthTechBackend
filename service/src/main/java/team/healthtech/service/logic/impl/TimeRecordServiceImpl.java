@@ -38,7 +38,7 @@ public class TimeRecordServiceImpl implements TimeRecordService {
         for (TimeRecordEntity tr :
             repository.getTimeRecordEntitiesByDoctorId(doctor.getId())) {
             if (tr.getDate().compareTo(targetEntity.getDate()) < 0)
-                throw new Exception();
+                throw new Exception("this timetable already exists");
         }
         TimeRecordEntity result = repository.save(targetEntity);
         TimeRecordDto timeRecordDto = mapper.fromEntity(result);
