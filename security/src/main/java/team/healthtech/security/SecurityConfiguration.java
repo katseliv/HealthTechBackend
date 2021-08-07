@@ -1,4 +1,4 @@
-package team.healthtech;
+package team.healthtech.security;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -15,10 +15,10 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import team.healthtech.db.provider.UserSecurityProvider;
-import team.healthtech.handler.HealthtechAccessDeniedHandler;
-import team.healthtech.handler.HealthtechFailureHandler;
-import team.healthtech.handler.HealthtechSuccessHandler;
-import team.healthtech.impl.UserDetailsServiceImpl;
+import team.healthtech.security.handler.HealthtechAccessDeniedHandler;
+import team.healthtech.security.handler.HealthtechFailureHandler;
+import team.healthtech.security.handler.HealthtechSuccessHandler;
+import team.healthtech.security.impl.UserDetailsServiceImpl;
 import team.healthtech.service.security.ProfileMapper;
 
 @Configuration
