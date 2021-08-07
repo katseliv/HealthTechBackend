@@ -17,7 +17,6 @@ public interface DiseaseMapper {
     @Mapping(target = "patientId", source = "patient.id")
     DiseaseDto fromEntity(DiseaseEntity entity);
 
-    //@Mapping(target = "endDate", source = "createDto.endDate")
     @Mapping(target = "patient.id", source = "patientId")
     DiseaseEntity toEntity(DiseaseCreateDto createDto);
 
