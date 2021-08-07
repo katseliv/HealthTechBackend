@@ -35,7 +35,6 @@ public class TimeRecordServiceImpl implements TimeRecordService {
 
         DoctorEntity doctor = doctorRepository.findById(dto.getDoctorId()).orElseThrow();
         targetEntity.setDoctor(doctor);
-/*
         for (TimeRecordEntity tr :
             repository.getTimeRecordEntitiesByDoctorId(doctor.getId())) {
             if (tr.getDate().compareTo(targetEntity.getDate()) < 0)
@@ -45,17 +44,6 @@ public class TimeRecordServiceImpl implements TimeRecordService {
         TimeRecordDto timeRecordDto = mapper.fromEntity(result);
         timeRecordDto.setDoctorId(doctor.getId());
         return timeRecordDto;
-        */
-        for (TimeRecordEntity tr :
-            repository.getTimeRecordEntitiesByDoctorId(doctor.getId())) {
-            if (tr.getDate().compareTo(targetEntity.getDate()) > 0) {
-                TimeRecordEntity result = repository.save(targetEntity);
-                TimeRecordDto timeRecordDto = mapper.fromEntity(result);
-                timeRecordDto.setDoctorId(doctor.getId());
-                return timeRecordDto;
-            }
-        }
-        return new TimeRecordDto();
     }
 
     @Override
