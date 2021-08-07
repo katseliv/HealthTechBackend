@@ -22,7 +22,7 @@ import java.util.Optional;
 @Validated
 public class AdminServiceImpl implements AdminService {
 
-    private static final Logger logger = LoggerFactory.getLogger(PatientServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(AdminServiceImpl.class);
     private final ObjectProvider<Profile> profileProvider;
     private final HealthtechPasswordEncoder passwordEncoder;
     private final AdminRepository adminRepository;
@@ -43,11 +43,6 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public AdminDto createAdmin(@Valid AdminCreateDto adminDto) {
-        if (profileProvider.getIfAvailable() == null) {
-            logger.info("Create new Admin by anonymous");
-        } else {
-            logger.info("Create new Admin by {}", profileProvider.getIfAvailable());
-        }
 
         String encodePassword = passwordEncoder.encode(adminDto.getPassword());
         adminDto.setPassword(encodePassword);

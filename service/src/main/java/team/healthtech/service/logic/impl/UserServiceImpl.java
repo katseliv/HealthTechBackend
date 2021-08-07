@@ -1,5 +1,7 @@
 package team.healthtech.service.logic.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.repository.UserRepository;
 import team.healthtech.service.logic.UserService;
@@ -10,7 +12,6 @@ import java.util.Optional;
 
 @Service
 public class UserServiceImpl implements UserService {
-
     private final UserRepository userRepository;
     private final UserMapper userMapper;
 
