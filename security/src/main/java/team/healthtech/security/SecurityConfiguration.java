@@ -81,8 +81,8 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
-            .cors().configurationSource(corsConfigurationSource()).and()
-            .csrf().disable()
+            .cors().configurationSource(corsConfigurationSource()).and()// какие сайты вообще смогут обращаться к приложению, без нее 403
+            .csrf().disable() // защита от Cross-Site Request Forgery
             .logout()
             .logoutUrl("/user/logout")
             .and()
