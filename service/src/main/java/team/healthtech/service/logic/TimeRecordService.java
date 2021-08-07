@@ -3,6 +3,7 @@ package team.healthtech.service.logic;
 import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.model.TimeRecordDto;
 
+import java.sql.Date;
 import java.util.List;
 
 public interface TimeRecordService {
@@ -13,6 +14,7 @@ public interface TimeRecordService {
 
     void deleteTimeRecord(int timeRecordId);
 
-    TimeRecordDto getTimeRecordByDoctorId(Integer doctorId);
+    TimeRecordDto getTimeRecordByDoctorId(Date date, Integer doctorId);
 
+    List<TimeRecordDto> getScheduleByDatesAndDoctorId(List<Date> dates, Integer doctorId);
 }

@@ -15,7 +15,7 @@ public interface TimeRecordMapper {
 
     TimeRecordDto fromEntity(TimeRecordEntity entity);
 
-    @Mapping(target = "date", ignore = true)
+    //@Mapping(target = "date", ignore = true)
     TimeRecordEntity toEntity(TimeRecordDto dto);
 
     List<TimeRecordDto> fromEntities(Iterable<TimeRecordEntity> entities);

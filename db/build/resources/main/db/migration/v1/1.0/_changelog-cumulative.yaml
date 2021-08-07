@@ -125,3 +125,11 @@ databaseChangeLog:
         - sqlFile:
             path: PHT-008-202108061405.sql
             relativeToChangelogFile: true
+  - changeSet:
+      id: PHT-009-202108071933
+      author: ObukhovaEV
+      comment: Make id in table time_records serial instead of integer
+      changes:
+        - sqlFile:
+            path: PHT-009-202108071933.sql
+            relativeToChangelogFile: true
