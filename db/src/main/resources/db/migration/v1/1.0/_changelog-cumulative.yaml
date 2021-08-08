@@ -133,3 +133,13 @@ databaseChangeLog:
         - sqlFile:
             path: PHT-007-20210808172439.sql
             relativeToChangelogFile: true
+
+  - changeSet:
+      id: PHT-009-20210808195802
+      author: PaulRobinson
+      comment: TODO
+      changes:
+        - sqlFile:
+            path: PHT-009-20210808195802.sql
+            relativeToChangelogFile: true
+

@@ -1,19 +1,19 @@
-team/healthtech/db/entity/DiseaseEntity.java
- team.healthtech.db.entity.DiseaseEntity
-team/healthtech/db/entity/AppointmentEntity.java
- team.healthtech.db.entity.AppointmentEntity
+team/healthtech/db/repository/AdminRepository.java
+ team.healthtech.db.repository.AdminRepository
+team/healthtech/db/entity/DoctorEntity.java
+ team.healthtech.db.entity.DoctorEntity
 team/healthtech/db/entity/TimeRecordEntity.java
  team.healthtech.db.entity.TimeRecordEntity
-team/healthtech/db/entity/CommentEntity.java
- team.healthtech.db.entity.CommentEntity
+team/healthtech/db/entity/AllergyEntity.java
+ team.healthtech.db.entity.AllergyEntity
 team/healthtech/db/repository/UserRepository.java
  team.healthtech.db.repository.UserRepository
 team/healthtech/db/repository/DiseaseRepository.java
  team.healthtech.db.repository.DiseaseRepository
 team/healthtech/db/provider/impl/UserSecurityProviderImpl.java
  team.healthtech.db.provider.impl.UserSecurityProviderImpl
-team/healthtech/db/entity/PatientEntity.java
- team.healthtech.db.entity.PatientEntity
+team/healthtech/db/entity/DoctorsSpecialitiesEntity.java
+ team.healthtech.db.entity.DoctorsSpecialitiesEntity
 team/healthtech/db/repository/TimeRecordsRepository.java
  team.healthtech.db.repository.TimeRecordsRepository
 team/healthtech/db/entity/SpecialityEntity.java
@@ -42,11 +42,11 @@ team/healthtech/db/converter/UserRoleConverter.java
  team.healthtech.db.converter.UserRoleConverter
 team/healthtech/db/repository/DoctorsSpecialitiesRepository.java
  team.healthtech.db.repository.DoctorsSpecialitiesRepository
-team/healthtech/db/repository/AdminRepository.java
- team.healthtech.db.repository.AdminRepository
-team/healthtech/db/entity/AllergyEntity.java
- team.healthtech.db.entity.AllergyEntity
-team/healthtech/db/entity/DoctorEntity.java
- team.healthtech.db.entity.DoctorEntity
-team/healthtech/db/entity/DoctorsSpecialitiesEntity.java
- team.healthtech.db.entity.DoctorsSpecialitiesEntity
+team/healthtech/db/entity/PatientEntity.java
+ team.healthtech.db.entity.PatientEntity
+team/healthtech/db/entity/AppointmentEntity.java
+ team.healthtech.db.entity.AppointmentEntity
+team/healthtech/db/entity/CommentEntity.java
+ team.healthtech.db.entity.CommentEntity
+team/healthtech/db/entity/DiseaseEntity.java
+ team.healthtech.db.entity.DiseaseEntity
