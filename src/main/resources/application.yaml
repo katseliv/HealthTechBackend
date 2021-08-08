@@ -4,7 +4,7 @@ spring:
   banner:
     location: classpath:banner.txt
   datasource:
-    url: jdbc:postgresql://servachok2021.ddns.net:5432/vita
+    url: jdbc:postgresql://servachok2021.ddns.net:35432/postgres
     username: postgres
     password: password
   jpa:
