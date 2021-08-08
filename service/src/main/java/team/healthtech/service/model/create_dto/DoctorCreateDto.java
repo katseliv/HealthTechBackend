@@ -1,8 +1,10 @@
 package team.healthtech.service.model.create_dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import team.healthtech.service.model.SpecialityDto;
 
 import javax.validation.constraints.*;
+import java.util.List;
 
 public class DoctorCreateDto extends UserCreateDto {
 
@@ -21,9 +23,13 @@ public class DoctorCreateDto extends UserCreateDto {
     @NotBlank(message = "lastName.is-blank")
     private String lastName;
 
-    @Min(value = 0, message = "rating.is-lower-than-minimum")
-    @Max(value = 5, message = "rating.is-higher-than-maximum")
-    private Double rating;
+//    @Min(value = 0, message = "rating.is-lower-than-minimum")
+//    @Max(value = 5, message = "rating.is-higher-than-maximum")
+//    private Double rating;
+
+    @JsonProperty("specialities")
+    @NotBlank(message = "specialities.is-blank")
+    private List<SpecialityDto> specialities;
 
     public String getFirstName() {
         return firstName;
@@ -49,12 +55,19 @@ public class DoctorCreateDto extends UserCreateDto {
         this.lastName = lastName;
     }
 
-    public Double getRating() {
-        return rating;
+//    public Double getRating() {
+//        return rating;
+//    }
+//
+//    public void setRating(Double rating) {
+//        this.rating = rating;
+//    }
+
+    public List<SpecialityDto> getSpecialities() {
+        return specialities;
     }
 
-    public void setRating(Double rating) {
-        this.rating = rating;
+    public void setSpecialities(List<SpecialityDto> specialities) {
+        this.specialities = specialities;
     }
-
 }

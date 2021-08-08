@@ -7,6 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import team.healthtech.common.Role;
+import team.healthtech.db.entity.CommentEntity;
+import team.healthtech.db.entity.DoctorEntity;
+import team.healthtech.db.repository.CommentRepository;
 import team.healthtech.db.repository.DoctorRepository;
 import team.healthtech.service.logic.DoctorService;
 import team.healthtech.service.mapper.DoctorMapper;
@@ -26,17 +29,21 @@ public class DoctorServiceImpl implements DoctorService {
     private static final Logger logger = LoggerFactory.getLogger(PatientServiceImpl.class);
     private final ObjectProvider<Profile> profileProvider;
     private final HealthtechPasswordEncoder passwordEncoder;
+    private final CommentRepository commentRepository;
     private final DoctorRepository doctorRepository;
     private final DoctorMapper doctorMapper;
 
     @Autowired
     public DoctorServiceImpl(
         ObjectProvider<Profile> profileProvider,
-        HealthtechPasswordEncoder passwordEncoder, DoctorRepository doctorRepository,
+        HealthtechPasswordEncoder passwordEncoder,
+        CommentRepository commentRepository,
+        DoctorRepository doctorRepository,
         DoctorMapper doctorMapper
     ) {
         this.profileProvider = profileProvider;
         this.passwordEncoder = passwordEncoder;
+        this.commentRepository = commentRepository;
         this.doctorRepository = doctorRepository;
         this.doctorMapper = doctorMapper;
     }
@@ -62,9 +69,21 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDto getDoctorById(int doctorId) {
-        return doctorRepository.findById(doctorId)
-            .map(doctorMapper::fromEntity)
-            .orElse(null);
+        DoctorDto doctorDto = doctorMapper
+            .fromEntity(
+                doctorRepository
+                .findById(doctorId)
+                .orElseThrow()
+            );
+
+        List<CommentEntity> comments = commentRepository.getAllByDoctorId(doctorId);
+        Double ratingSum = .0;
+        for(var comment: comments) {
+            ratingSum += comment.getMark();
+        }
+        doctorDto.setRating(ratingSum / comments.size());
+
+        return doctorDto;
     }
 
     @Override
