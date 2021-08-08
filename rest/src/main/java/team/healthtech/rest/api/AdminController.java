@@ -38,6 +38,7 @@ public class AdminController {
     }
 
     @Secured("ROLE_ADMIN")
+    @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{adminId}")
     public void updateAdmin(
         @RequestBody AdminDto adminDto,
@@ -46,6 +47,7 @@ public class AdminController {
         service.updateAdmin(adminDto, adminId);
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{adminId}")
     public AdminDto findAdmin(
         @PathVariable int adminId
@@ -54,6 +56,7 @@ public class AdminController {
     }
 
     @Secured("ROLE_ADMIN")
+    @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/{adminId}")
     public void deleteAdmin(
         @PathVariable int adminId

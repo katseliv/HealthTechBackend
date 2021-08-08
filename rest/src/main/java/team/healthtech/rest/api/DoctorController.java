@@ -37,6 +37,7 @@ public class DoctorController {
     }
 
     @Secured("ROLE_ADMIN")
+    @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{doctorId}")
     public void updateDoctor(
         @RequestBody DoctorDto doctorDto,
@@ -45,6 +46,7 @@ public class DoctorController {
         service.updateDoctor(doctorDto, doctorId);
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{doctorId}")
     public DoctorDto findDoctor(
         @PathVariable int doctorId
@@ -53,6 +55,7 @@ public class DoctorController {
     }
 
     @Secured("ROLE_ADMIN")
+    @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/{doctorId}")
     public void deleteDoctor(
         @PathVariable int doctorId

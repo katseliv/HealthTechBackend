@@ -1,6 +1,7 @@
 package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.PatientDiseasesService;
 import team.healthtech.service.model.create_dto.DiseaseCreateDto;
@@ -21,16 +22,19 @@ public class PatientDiseaseController {
         this.service = service;
     }
 
+    @Secured({"ROLE_DOCTOR", "ROLE_ADMIN"})
     @PostMapping
     public DiseaseDto createDisease(@RequestBody DiseaseCreateDto dto) {
         return service.createDisease(dto);
     }
 
+    @Secured({"ROLE_DOCTOR", "ROLE_ADMIN"})
     @GetMapping
     public List<DiseaseDto> getAllDiseasesOfPatient(@PathVariable int patientId) {
         return service.getAllDiseases(patientId);
     }
 
+    @Secured({"ROLE_DOCTOR", "ROLE_ADMIN"})
     @PatchMapping("/{diseaseId}")
     public void updateDisease(@Valid @RequestBody DiseaseUpdateDto dto,
                               @PathVariable int diseaseId){
