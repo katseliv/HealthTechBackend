@@ -23,8 +23,8 @@ public class TimeRecordController {
         this.service = service;
     }
 
-    //@Secured("ROLE_DOCTOR")
-    //@ResponseStatus(HttpStatus.CREATED)
+    @Secured("ROLE_DOCTOR")
+    @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public TimeRecordDto createTimeRecord(@RequestBody TimeRecordDto timeRecordDto) throws Exception {
         return service.createTimeRecord(timeRecordDto);
@@ -41,13 +41,13 @@ public class TimeRecordController {
         return service.getScheduleByDatesAndDoctorId(dates, doctorId);
     }
 
-    //@Secured("ROLE_DOCTOR")
+    @Secured("ROLE_DOCTOR")
     @PutMapping("/{timeRecordId}")
     public void updateTimeRecord(@RequestBody TimeRecordDto timeRecordDto, @PathVariable int timeRecordId) {
         service.updateTimeRecord(timeRecordDto, timeRecordId);
     }
 
-    //@Secured("ROLE_DOCTOR")
+    @Secured("ROLE_DOCTOR")
     @DeleteMapping("/{timeRecordId}")
     public void deleteTimeRecordId(@PathVariable int timeRecordId) {
         service.deleteTimeRecord(timeRecordId);

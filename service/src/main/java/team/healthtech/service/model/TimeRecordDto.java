@@ -2,25 +2,22 @@ package team.healthtech.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import javax.validation.constraints.Future;
-import javax.validation.constraints.NotBlank;
+import java.sql.Date;
 import java.sql.Time;
 import java.time.Instant;
-import java.util.Date;
 
 public class TimeRecordDto {
 
     private Integer id;
 
-    private DoctorDto doctor;
+    @JsonProperty("doctor_id")
+    private Integer doctorId;
 
-    @NotBlank(message = "startTime.is-null")
-    @Future(message = "startTime.invalid")
+    private Date date;
+
     @JsonProperty("start_time")
     private Time startTime;
 
-    @NotBlank(message = "endTime.is-null")
-    @Future(message = "endTime.invalid")
     @JsonProperty("end_time")
     private Time endTime;
 
@@ -32,12 +29,20 @@ public class TimeRecordDto {
         this.id = id;
     }
 
-    public DoctorDto getDoctor() {
-        return doctor;
+    public Integer getDoctorId() {
+        return doctorId;
     }
 
-    public void setDoctor(DoctorDto doctor) {
-        this.doctor = doctor;
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public Date getDate() {
+        return date;
+    }
+
+    public void setDate(Date date) {
+        this.date = date;
     }
 
     public Time getStartTime() {
