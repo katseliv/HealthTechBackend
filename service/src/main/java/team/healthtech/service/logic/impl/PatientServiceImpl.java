@@ -59,12 +59,15 @@ public class PatientServiceImpl implements PatientService {
         String encodePassword = passwordEncoder.encode(patientDto.getPassword());
         patientDto.setPassword(encodePassword);
         patientDto.setRole(Role.PATIENT);
-
-        return Optional.of(patientDto)
+        PatientDto dto = Optional.of(patientDto)
             .map(patientMapper::toEntity)
             .map(patientRepository::save)
             .map(patientMapper::fromEntity)
             .orElseThrow();
+
+        dto.setAge(getAgeOfPatient(patientMapper.toEntity(patientDto).getId()));
+
+        return dto;
     }
 
     @Override
