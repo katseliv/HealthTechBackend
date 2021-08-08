@@ -15,8 +15,9 @@ public interface PatientService {
 
     PatientDto getPatientById(int patientId);
 
+    Integer getLastAppointment(int patientId);
+
     void deletePatientById(int patientId);
 
     List<PatientDto> getAllPatients();
-
 }

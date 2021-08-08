@@ -6,6 +6,7 @@ import org.springframework.http.MediaType;
 import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.PatientService;
+import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.model.PatientDto;
 import team.healthtech.service.model.create_dto.PatientCreateDto;
 
@@ -35,7 +36,7 @@ public class PatientController {
         return service.getAllPatients();
     }
 
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @PutMapping("/{patientId}")
     public void updatePatient(
         @RequestBody PatientDto patientDto,
@@ -51,7 +52,14 @@ public class PatientController {
         return service.getPatientById(patientId);
     }
 
-    @Secured("ROLE_ADMIN")
+    @GetMapping("/{patientId}/last_appointment")
+    public Integer getLastAppointment(
+        @PathVariable int patientId
+    ) {
+        return service.getLastAppointment(patientId);
+    }
+
+    //@Secured("ROLE_ADMIN")
     @DeleteMapping("/{patientId}")
     public void deletePatient(
         @PathVariable int patientId

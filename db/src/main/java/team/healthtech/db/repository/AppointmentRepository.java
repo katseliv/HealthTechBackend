@@ -13,6 +13,8 @@ public interface AppointmentRepository extends CrudRepository<AppointmentEntity,
 
     List<AppointmentEntity> getAllByPatientId(Integer patientId);
 
+    AppointmentEntity findFirstByPatientIdOrderByDatetimeDesc(Integer patientId);
+
 }
 
 
