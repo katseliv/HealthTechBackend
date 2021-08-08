@@ -39,9 +39,10 @@ public class DoctorSpecialitiesServiceImpl implements DoctorSpecialitiesService 
         id.setSpecialityId(specialityId);
         entity.setId(id);
         entity.setReceiveDate(receiveDate);
+        repository.save(entity);
 
 //        mapper.toEntity(dto, doctorId)
-        repository.save(entity);
+//        repository.save(entity);
     }
 
     @Override
