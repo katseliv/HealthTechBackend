@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import team.healthtech.common.Role;
 import team.healthtech.db.entity.CommentEntity;
-import team.healthtech.db.entity.DoctorEntity;
 import team.healthtech.db.repository.CommentRepository;
 import team.healthtech.db.repository.DoctorRepository;
 import team.healthtech.service.logic.DoctorService;
@@ -75,13 +74,7 @@ public class DoctorServiceImpl implements DoctorService {
                 .findById(doctorId)
                 .orElseThrow()
             );
-
-        List<CommentEntity> comments = commentRepository.getAllByDoctorId(doctorId);
-        Double ratingSum = .0;
-        for(var comment: comments) {
-            ratingSum += comment.getMark();
-        }
-        doctorDto.setRating(ratingSum / comments.size());
+        doctorDto.setRating(getRatingOfDoctor(doctorId));
 
         return doctorDto;
     }
@@ -96,4 +89,12 @@ public class DoctorServiceImpl implements DoctorService {
         return doctorMapper.fromEntities(doctorRepository.findAll());
     }
 
+    private Double getRatingOfDoctor(Integer doctorId) {
+        List<CommentEntity> comments = commentRepository.getAllByDoctorId(doctorId);
+        Double ratingSum = .0;
+        for(var comment: comments) {
+            ratingSum += comment.getMark();
+        }
+        return ratingSum / comments.size();
+    }
 }

@@ -1,5 +1,5 @@
-team/healthtech/db/entity/DoctorsSpecialitiesEntity.java
- team.healthtech.db.entity.DoctorsSpecialitiesEntity
+team/healthtech/db/entity/DiseaseEntity.java
+ team.healthtech.db.entity.DiseaseEntity
 team/healthtech/db/entity/AppointmentEntity.java
  team.healthtech.db.entity.AppointmentEntity
 team/healthtech/db/entity/TimeRecordEntity.java
@@ -48,5 +48,5 @@ team/healthtech/db/entity/AllergyEntity.java
  team.healthtech.db.entity.AllergyEntity
 team/healthtech/db/entity/DoctorEntity.java
  team.healthtech.db.entity.DoctorEntity
-team/healthtech/db/entity/DiseaseEntity.java
- team.healthtech.db.entity.DiseaseEntity
+team/healthtech/db/entity/DoctorsSpecialitiesEntity.java
+ team.healthtech.db.entity.DoctorsSpecialitiesEntity

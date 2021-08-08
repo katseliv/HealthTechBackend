@@ -6,17 +6,29 @@ import java.sql.Date;
 
 public class DoctorSpecialitiesDto {
 
-    private String name;
+    @JsonProperty("doctor_id")
+    private Integer doctorId;
+
+    @JsonProperty("speciality_id")
+    private Integer specialityId;
 
     @JsonProperty("receive_date")
     private Date receiveDate;
 
-    public String getName() {
-        return name;
+    public Integer getDoctorId() {
+        return doctorId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setDoctorId(Integer doctorId) {
+        this.doctorId = doctorId;
+    }
+
+    public Integer getSpecialityId() {
+        return specialityId;
+    }
+
+    public void setSpecialityId(Integer specialityId) {
+        this.specialityId = specialityId;
     }
 
     public Date getReceiveDate() {

@@ -28,7 +28,7 @@ public class DoctorCreateDto extends UserCreateDto {
 //    private Double rating;
 
     @JsonProperty("specialities")
-    @NotBlank(message = "specialities.is-blank")
+    //@NotBlank(message = "specialities.is-blank")
     private List<SpecialityDto> specialities;
 
     public String getFirstName() {

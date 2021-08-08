@@ -10,10 +10,10 @@ import java.util.List;
 @Mapper(componentModel = "spring")
 public interface DoctorSpecialitiesMapper {
 
-    @Mapping(target = "name", source = "speciality.name")
+    //@Mapping(target = "name", source = "speciality.name")
     DoctorSpecialitiesDto fromEntity(DoctorsSpecialitiesEntity entity);
 
-    @Mapping(target = "speciality.name", source = "name")
+    //@Mapping(target = "speciality.name", source = "name")
     DoctorsSpecialitiesEntity toEntity(DoctorSpecialitiesDto dto);
 
     List<DoctorSpecialitiesDto> fromEntities(Iterable<DoctorsSpecialitiesEntity> entities);

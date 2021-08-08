@@ -18,9 +18,9 @@ team/healthtech/rest/api/DoctorSpecialitiesController.java
  team.healthtech.rest.api.DoctorSpecialitiesController
 team/healthtech/rest/api/CommentController.java
  team.healthtech.rest.api.CommentController
-team/healthtech/rest/api/AdminController.java
- team.healthtech.rest.api.AdminController
 team/healthtech/rest/api/TimeRecordController.java
  team.healthtech.rest.api.TimeRecordController
+team/healthtech/rest/api/AdminController.java
+ team.healthtech.rest.api.AdminController
 team/healthtech/rest/api/DoctorController.java
  team.healthtech.rest.api.DoctorController
