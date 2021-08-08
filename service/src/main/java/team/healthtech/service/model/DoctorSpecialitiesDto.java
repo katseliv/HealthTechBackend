@@ -2,21 +2,23 @@ package team.healthtech.service.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import javax.validation.constraints.NotBlank;
 import java.sql.Date;
 
 public class DoctorSpecialitiesDto {
 
-    private String name;
+    private Integer specialityId;
 
+    @NotBlank(message = "receive_date.is-blank")
     @JsonProperty("receive_date")
     private Date receiveDate;
 
-    public String getName() {
-        return name;
+    public Integer getSpecialityId() {
+        return specialityId;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setSpecialityId(Integer specialityId) {
+        this.specialityId = specialityId;
     }
 
     public Date getReceiveDate() {

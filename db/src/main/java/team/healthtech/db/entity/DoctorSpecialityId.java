@@ -4,7 +4,7 @@ import javax.persistence.Column;
 import java.io.Serializable;
 import java.util.Objects;
 
-public class DoctorSpecialityId  implements Serializable {
+public class DoctorSpecialityId implements Serializable {
 
     @Column(name = "doctor_id")
     private Integer doctorId;

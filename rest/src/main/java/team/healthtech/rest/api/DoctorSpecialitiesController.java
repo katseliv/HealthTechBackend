@@ -1,10 +1,7 @@
 package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.DoctorSpecialitiesService;
 import team.healthtech.service.model.DoctorSpecialitiesDto;
 
@@ -19,6 +16,11 @@ public class DoctorSpecialitiesController {
     @Autowired
     public DoctorSpecialitiesController(DoctorSpecialitiesService service) {
         this.service = service;
+    }
+
+    @PostMapping
+    public void addSpecialityToDoctor(DoctorSpecialitiesDto dto, @PathVariable int doctorId){
+        service.addSpecialityByDoctorId(dto, doctorId);
     }
 
     @GetMapping
