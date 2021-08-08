@@ -19,7 +19,7 @@ public class DoctorSpecialitiesController {
     }
 
     @PostMapping
-    public void addSpecialityToDoctor(DoctorSpecialitiesDto dto, @PathVariable int doctorId){
+    public void addSpecialityToDoctor(@RequestBody DoctorSpecialitiesDto dto, @PathVariable int doctorId){
         service.addSpecialityByDoctorId(dto, doctorId);
     }
 

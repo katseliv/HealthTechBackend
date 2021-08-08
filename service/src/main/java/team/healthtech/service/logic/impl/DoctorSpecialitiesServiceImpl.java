@@ -30,19 +30,8 @@ public class DoctorSpecialitiesServiceImpl implements DoctorSpecialitiesService 
 
     @Override
     public void addSpecialityByDoctorId(DoctorSpecialitiesDto dto, Integer doctorId) {
-        Integer specialityId = dto.getSpecialityId();
-        Date receiveDate = dto.getReceiveDate();
-
-        DoctorsSpecialitiesEntity entity = new DoctorsSpecialitiesEntity();
-        DoctorSpecialityId id = new DoctorSpecialityId();
-        id.setDoctorId(doctorId);
-        id.setSpecialityId(specialityId);
-        entity.setId(id);
-        entity.setReceiveDate(receiveDate);
+        var entity = mapper.toEntity(dto, doctorId);
         repository.save(entity);
-
-//        mapper.toEntity(dto, doctorId)
-//        repository.save(entity);
     }
 
     @Override

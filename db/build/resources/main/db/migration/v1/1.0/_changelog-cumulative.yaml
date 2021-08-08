@@ -126,6 +126,15 @@ databaseChangeLog:
             relativeToChangelogFile: true
 
   - changeSet:
+      id: PHT-007-20210808220438
+      author: EkaterinaSelivanova
+      comment: TODO
+      changes:
+        - sqlFile:
+            path: PHT-007-20210808220438.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
       id: PHT-007-20210808172439
       author: PaulRobinson
       comment: drop column rating in doctor
@@ -142,4 +151,3 @@ databaseChangeLog:
         - sqlFile:
             path: PHT-009-20210808195802.sql
             relativeToChangelogFile: true
-
