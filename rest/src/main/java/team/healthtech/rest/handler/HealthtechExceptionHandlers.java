@@ -4,6 +4,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import team.healthtech.rest.model.ModelError;
 import team.healthtech.rest.model.ValidationError;
@@ -16,7 +17,6 @@ import java.util.stream.Collectors;
 @ControllerAdvice
 public class HealthtechExceptionHandlers {
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(HealthtechExceptionHandlers.class);
-
 
     @ExceptionHandler(ConstraintViolationException.class)
     public ResponseEntity<ModelError> handleCvl(ConstraintViolationException e) {
