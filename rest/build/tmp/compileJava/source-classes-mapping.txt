@@ -24,3 +24,5 @@ team/healthtech/rest/api/PatientController.java
  team.healthtech.rest.api.PatientController
 team/healthtech/rest/api/DoctorSpecialitiesController.java
  team.healthtech.rest.api.DoctorSpecialitiesController
+team/healthtech/rest/api/SpecialityController.java
+ team.healthtech.rest.api.SpecialityController
