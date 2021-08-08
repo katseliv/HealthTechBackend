@@ -42,6 +42,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDto createDoctor(@Valid DoctorCreateDto doctorDto) {
+        logger.info("New doctor create request by {}", profileProvider.getIfAvailable());
         String encodePassword = passwordEncoder.encode(doctorDto.getPassword());
         doctorDto.setPassword(encodePassword);
 
@@ -54,12 +55,14 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public void updateDoctor(DoctorDto doctorDto, int doctorId) {
+        logger.info("Doctor update with id {} request by {}", doctorId, profileProvider.getIfAvailable());
         doctorMapper.merge(doctorDto, doctorRepository.findById(doctorId).orElseThrow());
         doctorRepository.save(doctorMapper.toEntity(doctorDto));
     }
 
     @Override
     public DoctorDto getDoctorById(int doctorId) {
+        logger.info("Doctor with id {} get request by {}", doctorId, profileProvider.getIfAvailable());
         return doctorRepository.findById(doctorId)
             .map(doctorMapper::fromEntity)
             .orElse(null);
@@ -67,11 +70,13 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public void deleteDoctorById(int doctorId) {
+        logger.info("Doctor with id {} delete request by {}", doctorId, profileProvider.getIfAvailable());
         doctorRepository.deleteById(doctorId);
     }
 
     @Override
     public List<DoctorDto> getAllDoctors() {
+        logger.info("Doctors list get request by {}", profileProvider.getIfAvailable());
         return doctorMapper.fromEntities(doctorRepository.findAll());
     }
 
