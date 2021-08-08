@@ -7,6 +7,7 @@ import java.sql.Date;
 
 public class DoctorSpecialitiesDto {
 
+    @JsonProperty("speciality_id")
     private Integer specialityId;
 
     @NotBlank(message = "receive_date.is-blank")

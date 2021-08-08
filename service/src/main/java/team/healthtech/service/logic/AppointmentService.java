@@ -11,6 +11,8 @@ public interface AppointmentService {
 
     AppointmentDto createAppointment(@Valid AppointmentCreateDto appointmentCreateDto, Integer patientId);
 
+    void updateAppointment(AppointmentCreateDto appointmentCreateDto, Integer appointmentId);
+
     List<AppointmentDto> getAppointmentsOfPatientById(Integer patientId);
 
 }

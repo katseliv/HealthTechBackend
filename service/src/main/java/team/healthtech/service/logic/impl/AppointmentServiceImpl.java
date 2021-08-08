@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import team.healthtech.db.entity.AppointmentEntity;
+import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.db.repository.AppointmentRepository;
 import team.healthtech.db.repository.TimeRecordsRepository;
 import team.healthtech.service.mapper.AppointmentMapper;
@@ -46,6 +47,13 @@ public class AppointmentServiceImpl implements AppointmentService {
         entity.setTimeRecord(timeRecordsRepository.getTimeRecordEntityByDoctorId(doctorId));
 
         return appointmentMapper.fromEntity(appointmentRepository.save(entity));
+    }
+
+    @Override
+    public void updateAppointment(AppointmentCreateDto appointmentCreateDto, Integer appointmentId) {
+        AppointmentEntity entity = appointmentRepository.findById(appointmentId).orElseThrow();
+        appointmentMapper.merge(appointmentCreateDto, entity);
+        appointmentRepository.save(appointmentMapper.toEntity(appointmentCreateDto));
     }
 
     @Override
