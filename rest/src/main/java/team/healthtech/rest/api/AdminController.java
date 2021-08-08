@@ -23,7 +23,7 @@ public class AdminController {
         this.service = service;
     }
 
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public AdminDto createAdmin(
@@ -37,7 +37,7 @@ public class AdminController {
         return service.getAllAdmins();
     }
 
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @PutMapping("/{adminId}")
     public void updateAdmin(
         @RequestBody AdminDto adminDto,
@@ -53,7 +53,7 @@ public class AdminController {
         return service.getAdminById(adminId);
     }
 
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @DeleteMapping("/{adminId}")
     public void deleteAdmin(
         @PathVariable int adminId
