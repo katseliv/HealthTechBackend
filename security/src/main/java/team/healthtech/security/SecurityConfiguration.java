@@ -74,7 +74,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             config.addAllowedMethod(method); // разрешаем http-методы
 
         config.addExposedHeader("*"); // разрешаем возвращать все заголовки
-        urlBasedCorsConfigurationSource.registerCorsConfiguration("/**", config); // разрешаем на любой API
+        urlBasedCorsConfigurationSource.registerCorsConfiguration("*", config); // разрешаем на любой API
         return urlBasedCorsConfigurationSource;
     }
 
