@@ -44,7 +44,6 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public AdminDto createAdmin(@Valid AdminCreateDto adminDto) {
-
         String encodePassword = passwordEncoder.encode(adminDto.getPassword());
         adminDto.setPassword(encodePassword);
         adminDto.setRole(Role.ADMIN);

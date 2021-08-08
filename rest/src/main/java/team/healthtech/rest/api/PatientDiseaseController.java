@@ -14,6 +14,7 @@ import java.util.List;
 @RestController
 @RequestMapping("patients/{patientId}/diseases")
 public class PatientDiseaseController {
+
     private final PatientDiseasesService service;
 
     @Autowired
@@ -36,4 +37,5 @@ public class PatientDiseaseController {
                               @PathVariable int diseaseId){
         service.updateDisease(dto, diseaseId);
     }
+
 }

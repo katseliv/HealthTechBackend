@@ -27,4 +27,5 @@ public interface DiseaseMapper {
     List<DiseaseDto> fromEntities(Iterable<DiseaseEntity> entities);
 
     void merge(DiseaseUpdateDto dto, @MappingTarget DiseaseEntity entity);
+
 }

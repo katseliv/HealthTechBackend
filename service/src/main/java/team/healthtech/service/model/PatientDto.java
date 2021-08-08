@@ -78,4 +78,5 @@ public class PatientDto extends UserDto {
     public void setAllergies(List<AllergyDto> allergies) {
         this.allergies = allergies;
     }
+
 }

@@ -16,6 +16,7 @@ import java.util.stream.Collectors;
 
 @ControllerAdvice
 public class HealthtechExceptionHandlers {
+
     private static final org.slf4j.Logger logger = org.slf4j.LoggerFactory.getLogger(HealthtechExceptionHandlers.class);
 
     @ExceptionHandler(ConstraintViolationException.class)
@@ -33,4 +34,5 @@ public class HealthtechExceptionHandlers {
     public void handleEnf(EntityNotFoundException e) {
         logger.error("Failed to find entity in DB", e);
     }
+
 }

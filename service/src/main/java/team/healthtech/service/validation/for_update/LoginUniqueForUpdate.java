@@ -25,4 +25,5 @@ public class LoginUniqueForUpdate implements ConstraintValidator<LoginUnique, Us
 
         return !userRepository.existsByIdIsNotAndLoginIgnoreCase(value.getId(), value.getLogin());
     }
+
 }

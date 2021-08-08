@@ -23,4 +23,5 @@ public interface DoctorMapper {
 
     @Mapping(target = "id", ignore = true)
     void merge(DoctorDto dto, @MappingTarget DoctorEntity entity);
+
 }

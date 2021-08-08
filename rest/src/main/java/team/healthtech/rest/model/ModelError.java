@@ -17,4 +17,5 @@ public class ModelError {
     public void setErrors(List<ValidationError> errors) {
         this.errors = errors;
     }
+
 }

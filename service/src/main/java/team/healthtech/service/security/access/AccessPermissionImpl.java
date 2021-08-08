@@ -53,4 +53,5 @@ public final class AccessPermissionImpl implements AccessPermission {
         return adminRepository.existsById(userId) ||
               doctorRepository.existsById(userId);
     }
+
 }

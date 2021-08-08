@@ -25,4 +25,5 @@ public class EmailUniqueForUpdate implements ConstraintValidator<EmailUnique, Us
 
         return !userRepository.existsByIdIsNotAndEmailIgnoreCase(value.getId(), value.getLogin());
     }
+
 }

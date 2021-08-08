@@ -7,8 +7,11 @@ import team.healthtech.common.Role;
 public interface Profile {
 
     Integer getId();
+
     String getLogin();
+
     String getEmail();
+
     Role getRole();
 
 }

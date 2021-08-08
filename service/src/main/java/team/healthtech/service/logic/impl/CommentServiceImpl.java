@@ -17,6 +17,7 @@ import java.util.List;
 @Service
 @Validated
 public class CommentServiceImpl implements CommentService {
+
     private final CommentRepository commentRepository;
     private final CommentMapper commentMapper;
 

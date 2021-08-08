@@ -12,9 +12,11 @@ import java.util.List;
 
 @Repository
 public interface TimeRecordsRepository extends CrudRepository<TimeRecordEntity, Integer>, JpaRepository<TimeRecordEntity, Integer>, JpaSpecificationExecutor<TimeRecordEntity> {
+
     TimeRecordEntity getTimeRecordEntityByDoctorId(Integer doctorId);
 
     List<TimeRecordEntity> getTimeRecordEntitiesByDoctorId(Integer doctorId);
 
     TimeRecordEntity getTimeRecordEntityByDateAndDoctorId(Date date, Integer doctor_id);
+
 }

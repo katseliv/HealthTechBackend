@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.sql.Date;
 
 public class DiseaseUpdateDto {
+
     @JsonProperty("end_date")
     private Date endDate;
 
@@ -15,4 +16,5 @@ public class DiseaseUpdateDto {
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
+
 }

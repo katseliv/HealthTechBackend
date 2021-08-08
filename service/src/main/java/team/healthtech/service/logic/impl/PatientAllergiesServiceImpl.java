@@ -18,6 +18,7 @@ import java.util.List;
 
 @Service
 public class PatientAllergiesServiceImpl implements PatientAllergiesService {
+
     private final AllergyRepository allergyRepository;
     private final PatientRepository patientRepository;
     private final AllergyMapper allergyMapper;
@@ -77,5 +78,6 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
             .map(allergyMapper::fromEntity)
             .orElse(null);
     }
+
 }
 

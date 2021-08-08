@@ -18,4 +18,5 @@ public class UserSecurityProviderImpl implements UserSecurityProvider {
     public UserEntity findByLogin(String username) {
         return repository.findByLoginEqualsIgnoreCase(username);
     }
+
 }

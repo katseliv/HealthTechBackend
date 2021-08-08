@@ -24,4 +24,5 @@ public class StringEmailUnique implements ConstraintValidator<EmailUnique, Strin
 
         return !userRepository.existsByEmailIgnoreCase(value);
     }
+
 }
