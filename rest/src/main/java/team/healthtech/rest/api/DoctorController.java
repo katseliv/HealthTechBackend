@@ -36,7 +36,7 @@ public class DoctorController {
         return service.getAllDoctors();
     }
 
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @PutMapping("/{doctorId}")
     public void updateDoctor(
         @RequestBody DoctorDto doctorDto,
@@ -52,7 +52,7 @@ public class DoctorController {
         return service.getDoctorById(doctorId);
     }
 
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @DeleteMapping("/{doctorId}")
     public void deleteDoctor(
         @PathVariable int doctorId

@@ -5,6 +5,7 @@ import team.healthtech.common.Role;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
+import java.sql.Date;
 
 public class PatientCreateDto extends UserCreateDto {
 
@@ -23,7 +24,8 @@ public class PatientCreateDto extends UserCreateDto {
     @Size(min = 1, max = 100, message = "lastName.out-of-range")
     private String lastName;
 
-    private Integer age;
+    @JsonProperty("birthdate")
+    private Date birthdate;
 
     private Character sex;
 
@@ -56,12 +58,12 @@ public class PatientCreateDto extends UserCreateDto {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
-        return age;
+    public Date getBirthdate() {
+        return birthdate;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
 
     public Character getSex() {

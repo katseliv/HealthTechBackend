@@ -5,9 +5,11 @@ services:
     environment:
       POSTGRES_PASSWORD: password
     volumes:
-    - type: volume
-      source: pgdata
-      target: /var/lib/postgresql/data
+      - type: volume
+        source: pgdata
+        target: /var/lib/postgresql/data
+    ports:
+      - 35432:5432
   backend:
     image: healthtech-backend:latest
     depends_on:

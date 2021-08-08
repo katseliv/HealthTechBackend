@@ -17,5 +17,4 @@ public interface TimeRecordService {
     TimeRecordDto getTimeRecordByDoctorId(Date date, Integer doctorId);
 
     List<TimeRecordDto> getScheduleByDatesAndDoctorId(List<Date> dates, Integer doctorId);
-
 }

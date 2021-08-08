@@ -1,6 +1,7 @@
 package team.healthtech.db.entity;
 
 import javax.persistence.*;
+import java.sql.Date;
 import java.util.List;
 
 @NamedEntityGraph(
@@ -35,8 +36,8 @@ public class PatientEntity extends UserEntity {
     @Column(name = "last_name")
     private String lastName;
 
-    @Column(name = "age")
-    private Integer age;
+    @Column(name = "birthdate")
+    private Date birthdate;
 
     @Column(name = "sex")
     private Character sex;
@@ -80,12 +81,12 @@ public class PatientEntity extends UserEntity {
         this.lastName = lastName;
     }
 
-    public Integer getAge() {
-        return age;
+    public Date getBirthdate() {
+        return birthdate;
     }
 
-    public void setAge(Integer age) {
-        this.age = age;
+    public void setBirthdate(Date birthdate) {
+        this.birthdate = birthdate;
     }
 
     public Character getSex() {

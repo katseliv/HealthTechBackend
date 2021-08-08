@@ -18,6 +18,10 @@ import team.healthtech.service.security.Profile;
 
 import javax.transaction.Transactional;
 import javax.validation.Valid;
+import java.sql.Date;
+import java.time.LocalDate;
+import java.time.Period;
+import java.time.Year;
 import java.util.List;
 import java.util.Optional;
 
@@ -55,12 +59,15 @@ public class PatientServiceImpl implements PatientService {
         String encodePassword = passwordEncoder.encode(patientDto.getPassword());
         patientDto.setPassword(encodePassword);
         patientDto.setRole(Role.PATIENT);
-
-        return Optional.of(patientDto)
+        PatientDto dto = Optional.of(patientDto)
             .map(patientMapper::toEntity)
             .map(patientRepository::save)
             .map(patientMapper::fromEntity)
             .orElseThrow();
+
+        dto.setAge(getAgeOfPatient(patientMapper.toEntity(patientDto).getId()));
+
+        return dto;
     }
 
     @Override
@@ -73,9 +80,9 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientDto getPatientById(int patientId) {
-        return patientRepository.findById(patientId)
-            .map(patientMapper::fromEntity)
-            .orElse(null);
+        PatientDto patientDto = patientMapper.fromEntity(patientRepository.findById(patientId).orElse(null));
+        patientDto.setAge(getAgeOfPatient(patientId));
+        return patientDto;
     }
 
     @Override
@@ -85,7 +92,18 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public List<PatientDto> getAllPatients() {
-        return patientMapper.fromEntities(patientRepository.findAll());
+        List<PatientDto> patients = patientMapper.fromEntities(patientRepository.findAll());
+        for (var patient : patients) {
+            patient.setAge(getAgeOfPatient(patient.getId()));
+        }
+        return patients;
     }
 
+    private Integer getAgeOfPatient(Integer patientId) {
+        PatientEntity patient = patientRepository.findById(patientId).orElseThrow();
+        return Period.between(
+            patient.getBirthdate().toLocalDate(),
+            new Date(System.currentTimeMillis()).toLocalDate()
+        ).getYears();
+    }
 }
