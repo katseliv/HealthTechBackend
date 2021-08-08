@@ -66,6 +66,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Transactional
     public void updatePatient(PatientDto patientDto, int patientId) {
+        logger.info("Patient with id {} update request by {}", patientId, profileProvider.getIfAvailable());
         PatientEntity entity = patientRepository.findById(patientId).orElseThrow();
         patientMapper.merge(patientDto, entity);
         patientRepository.save(entity);
@@ -73,6 +74,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientDto getPatientById(int patientId) {
+        logger.info("Patient with id {} get request by {}", patientId, profileProvider.getIfAvailable());
         return patientRepository.findById(patientId)
             .map(patientMapper::fromEntity)
             .orElse(null);
@@ -80,11 +82,13 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public void deletePatientById(int patientId) {
+        logger.info("Patient with id {} delete request by {}", patientId, profileProvider.getIfAvailable());
         patientRepository.deleteById(patientId);
     }
 
     @Override
     public List<PatientDto> getAllPatients() {
+        logger.info("Patients list get request by {}", profileProvider.getIfAvailable());
         return patientMapper.fromEntities(patientRepository.findAll());
     }
 
