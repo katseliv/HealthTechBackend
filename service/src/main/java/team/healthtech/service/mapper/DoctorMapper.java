@@ -4,6 +4,7 @@ import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.MappingTarget;
 import team.healthtech.db.entity.DoctorEntity;
+import team.healthtech.db.entity.DoctorSpecialityId;
 import team.healthtech.service.model.DoctorDto;
 import team.healthtech.service.model.create_dto.DoctorCreateDto;
 
@@ -18,6 +19,8 @@ public interface DoctorMapper {
     DoctorEntity toEntity(DoctorDto dto);
 
     DoctorEntity toEntity(@Valid DoctorCreateDto dto);
+
+    DoctorSpecialityId map(Integer value);
 
     List<DoctorDto> fromEntities(Iterable<DoctorEntity> entities);
 

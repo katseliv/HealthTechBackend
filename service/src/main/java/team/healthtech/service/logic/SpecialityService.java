@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface SpecialityService {
 
-    SpecialityDto createSpeciality(SpecialityDto specialityDto);
+    void createSpeciality(SpecialityDto specialityDto);
 
     List<SpecialityDto> getAllSpecialities();
 }

@@ -20,10 +20,10 @@ public class SpecialityController {
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
-    public SpecialityDto createSpeciality(
+    public void createSpeciality(
         @RequestBody SpecialityDto specialityDto
     ) {
-        return specialityService.createSpeciality(specialityDto);
+        specialityService.createSpeciality(specialityDto);
     }
 
     @GetMapping
