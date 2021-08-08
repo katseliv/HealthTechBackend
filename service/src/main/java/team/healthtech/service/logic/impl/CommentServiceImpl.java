@@ -17,7 +17,6 @@ import java.util.List;
 @Service
 @Validated
 public class CommentServiceImpl implements CommentService {
-
     private final CommentRepository commentRepository;
     private final CommentMapper commentMapper;
 
@@ -35,7 +34,6 @@ public class CommentServiceImpl implements CommentService {
         CommentEntity commentEntity = commentMapper.toEntity(commentCreateDto, doctorId);
         Instant datetime = Instant.now();
         commentEntity.setDate(datetime);
-
         return
             commentMapper.fromEntity(
                 commentRepository.save(commentEntity));

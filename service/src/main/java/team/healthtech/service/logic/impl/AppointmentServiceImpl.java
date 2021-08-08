@@ -1,5 +1,8 @@
 package team.healthtech.service.logic.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
@@ -10,6 +13,7 @@ import team.healthtech.service.mapper.AppointmentMapper;
 import team.healthtech.service.model.create_dto.AppointmentCreateDto;
 import team.healthtech.service.model.AppointmentDto;
 import team.healthtech.service.logic.AppointmentService;
+import team.healthtech.service.security.Profile;
 
 import javax.validation.Valid;
 import java.util.List;
@@ -18,6 +22,7 @@ import java.util.List;
 @Validated
 public class AppointmentServiceImpl implements AppointmentService {
 
+    private static final Logger logger = LoggerFactory.getLogger(AppointmentServiceImpl.class);
     private final AppointmentRepository appointmentRepository;
     private final TimeRecordsRepository timeRecordsRepository;
     private final AppointmentMapper appointmentMapper;
@@ -26,7 +31,8 @@ public class AppointmentServiceImpl implements AppointmentService {
     public AppointmentServiceImpl(
         AppointmentRepository appointmentRepository,
         TimeRecordsRepository timeRecordsRepository,
-        AppointmentMapper appointmentMapper) {
+        AppointmentMapper appointmentMapper
+    ) {
         this.appointmentRepository = appointmentRepository;
         this.timeRecordsRepository = timeRecordsRepository;
         this.appointmentMapper = appointmentMapper;

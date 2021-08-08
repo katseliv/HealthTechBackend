@@ -43,12 +43,6 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDto createDoctor(@Valid DoctorCreateDto doctorDto) {
-        if (profileProvider.getIfAvailable() == null) {
-            logger.info("Create new Doctor by anonymous");
-        } else {
-            logger.info("Create new Doctor by {}", profileProvider.getIfAvailable());
-        }
-
         String encodePassword = passwordEncoder.encode(doctorDto.getPassword());
         doctorDto.setPassword(encodePassword);
         doctorDto.setRole(Role.DOCTOR);
