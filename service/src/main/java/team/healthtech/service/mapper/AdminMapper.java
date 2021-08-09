@@ -22,4 +22,6 @@ public interface AdminMapper {
 
     void merge(AdminDto dto, @MappingTarget AdminEntity entity);
 
+    void merge(AdminCreateDto dto, @MappingTarget AdminEntity entity);
+
 }

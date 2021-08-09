@@ -38,7 +38,7 @@ public class PatientController {
     @Secured("ROLE_ADMIN")
     @PutMapping("/{patientId}")
     public void updatePatient(
-        @RequestBody PatientDto patientDto,
+        @RequestBody PatientCreateDto patientDto,
         @PathVariable int patientId
     ) {
         service.updatePatient(patientDto, patientId);

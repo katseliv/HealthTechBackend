@@ -16,6 +16,8 @@ public interface PatientMapper {
 
     void merge(PatientDto dto, @MappingTarget PatientEntity entity);
 
+    void merge(PatientCreateDto dto, @MappingTarget PatientEntity entity);
+
     void toEntity(PatientDto dto, @MappingTarget PatientEntity original);
 
     PatientEntity toEntity(PatientCreateDto dto);

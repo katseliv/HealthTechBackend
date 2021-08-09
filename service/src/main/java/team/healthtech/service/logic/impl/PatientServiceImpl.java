@@ -72,9 +72,14 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     @Transactional
-    public void updatePatient(PatientDto patientDto, int patientId) {
+    public void updatePatient(PatientCreateDto patientCreateDto, int patientId) {
         PatientEntity entity = patientRepository.findById(patientId).orElseThrow();
-        patientMapper.merge(patientDto, entity);
+
+        if (patientCreateDto.getPassword().isBlank()) {
+            patientCreateDto.setPassword(entity.getPassword());
+        }
+
+        patientMapper.merge(patientCreateDto, entity);
         patientRepository.save(entity);
     }
 
@@ -86,6 +91,7 @@ public class PatientServiceImpl implements PatientService {
     }
 
     @Override
+    @Transactional
     public void deletePatientById(int patientId) {
         patientRepository.deleteById(patientId);
     }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import team.healthtech.common.Role;
 import team.healthtech.db.entity.AdminEntity;
+import team.healthtech.db.entity.DoctorEntity;
 import team.healthtech.db.repository.AdminRepository;
 import team.healthtech.service.logic.AdminService;
 import team.healthtech.service.mapper.AdminMapper;
@@ -57,10 +58,15 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public void updateAdmin(AdminDto adminDto, int adminId) {
+    public void updateAdmin(AdminCreateDto adminCreateDto, int adminId) {
         AdminEntity entity = adminRepository.findById(adminId).orElseThrow();
-        adminMapper.merge(adminDto, entity);
-        adminRepository.save(adminMapper.toEntity(adminDto));
+
+        if (adminCreateDto.getPassword().isBlank()) {
+            adminCreateDto.setPassword(entity.getPassword());
+        }
+
+        adminMapper.merge(adminCreateDto, entity);
+        adminRepository.save(entity);
     }
 
     @Override
