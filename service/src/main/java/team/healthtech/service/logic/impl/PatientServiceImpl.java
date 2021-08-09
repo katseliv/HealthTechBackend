@@ -84,10 +84,11 @@ public class PatientServiceImpl implements PatientService {
         logger.info("Patient with id {} update request by {}", patientId, profileProvider.getIfAvailable());
         PatientEntity entity = patientRepository.findById(patientId).orElseThrow();
 
-        if (patientCreateDto.getPassword().isBlank()) {
+        if (patientCreateDto.getPassword() == null || patientCreateDto.getPassword().isBlank()) {
             patientCreateDto.setPassword(entity.getPassword());
         }
 
+        patientCreateDto.setRole(Role.PATIENT);
         patientMapper.merge(patientCreateDto, entity);
         patientRepository.save(entity);
     }
