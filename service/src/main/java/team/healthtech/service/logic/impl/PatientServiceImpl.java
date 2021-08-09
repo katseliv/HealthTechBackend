@@ -81,6 +81,7 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Transactional
     public void updatePatient(PatientCreateDto patientCreateDto, int patientId) {
+        logger.info("Patient with id {} update request by {}", patientId, profileProvider.getIfAvailable());
         PatientEntity entity = patientRepository.findById(patientId).orElseThrow();
 
         if (patientCreateDto.getPassword().isBlank()) {
@@ -93,6 +94,7 @@ public class PatientServiceImpl implements PatientService {
 
     @Override
     public PatientDto getPatientById(int patientId) {
+        logger.info("Patient with id {} get request by {}", patientId, profileProvider.getIfAvailable());
         PatientDto patientDto = patientMapper.fromEntity(patientRepository.findById(patientId).orElse(null));
         patientDto.setAge(getAgeOfPatient(patientId));
         return patientDto;
@@ -101,11 +103,13 @@ public class PatientServiceImpl implements PatientService {
     @Override
     @Transactional
     public void deletePatientById(int patientId) {
+        logger.info("Patient with id {} delete request by {}", patientId, profileProvider.getIfAvailable());
         patientRepository.deleteById(patientId);
     }
 
     @Override
     public List<PatientDto> getAllPatients() {
+        logger.info("Patients list get request by {}", profileProvider.getIfAvailable());
         List<PatientDto> patients = patientMapper.fromEntities(patientRepository.findAll());
         for (var patient : patients) {
             patient.setAge(getAgeOfPatient(patient.getId()));

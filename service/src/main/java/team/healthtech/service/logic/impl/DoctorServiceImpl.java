@@ -51,6 +51,7 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public DoctorDto createDoctor(@Valid DoctorCreateDto doctorDto) {
+        logger.info("New doctor create request by {}", profileProvider.getIfAvailable());
         String encodePassword = passwordEncoder.encode(doctorDto.getPassword());
         doctorDto.setPassword(encodePassword);
         doctorDto.setRole(Role.DOCTOR);
@@ -64,18 +65,19 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public void updateDoctor(DoctorCreateDto doctorCreateDto, int doctorId) {
+        logger.info("Doctor update with id {} request by {}", doctorId, profileProvider.getIfAvailable());
         DoctorEntity entity = doctorRepository.findById(doctorId).orElseThrow();
 
         if (doctorCreateDto.getPassword().isBlank()) {
             doctorCreateDto.setPassword(entity.getPassword());
         }
-
         doctorMapper.merge(doctorCreateDto, entity);
         doctorRepository.save(entity);
     }
 
     @Override
     public DoctorDto getDoctorById(int doctorId) {
+        logger.info("Doctor with id {} get request by {}", doctorId, profileProvider.getIfAvailable());
         DoctorDto doctorDto = doctorMapper
             .fromEntity(
                 doctorRepository
@@ -89,11 +91,13 @@ public class DoctorServiceImpl implements DoctorService {
 
     @Override
     public void deleteDoctorById(int doctorId) {
+        logger.info("Doctor with id {} delete request by {}", doctorId, profileProvider.getIfAvailable());
         doctorRepository.deleteById(doctorId);
     }
 
     @Override
     public List<DoctorDto> getAllDoctors() {
+        logger.info("Doctors list get request by {}", profileProvider.getIfAvailable());
         return doctorMapper.fromEntities(doctorRepository.findAll());
     }
 
