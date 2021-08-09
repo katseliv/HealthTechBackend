@@ -2,6 +2,8 @@ package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.DoctorSpecialitiesService;
 import team.healthtech.service.model.DoctorSpecialitiesDto;
 
@@ -18,6 +20,7 @@ public class DoctorSpecialitiesController {
         this.service = service;
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @PostMapping
     public void addSpecialityToDoctor(@RequestBody DoctorSpecialitiesDto dto, @PathVariable int doctorId){
         service.addSpecialityByDoctorId(dto, doctorId);

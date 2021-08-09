@@ -22,7 +22,7 @@ public class DoctorController {
         this.service = service;
     }
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE)
     public DoctorDto createDoctor(
@@ -36,7 +36,8 @@ public class DoctorController {
         return service.getAllDoctors();
     }
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
+    @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{doctorId}")
     public void updateDoctor(
         @RequestBody DoctorCreateDto doctorDto,
@@ -45,6 +46,7 @@ public class DoctorController {
         service.updateDoctor(doctorDto, doctorId);
     }
 
+    @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{doctorId}")
     public DoctorDto findDoctor(
         @PathVariable int doctorId
@@ -52,7 +54,8 @@ public class DoctorController {
         return service.getDoctorById(doctorId);
     }
 
-    //@Secured("ROLE_ADMIN")
+    @Secured("ROLE_ADMIN")
+    @ResponseStatus(HttpStatus.OK)
     @DeleteMapping("/{doctorId}")
     public void deleteDoctor(
         @PathVariable int doctorId
