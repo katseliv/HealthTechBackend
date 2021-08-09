@@ -30,7 +30,7 @@ public class PatientAllergyController {
         service.addAllergyToPatient(allergyId, patientId);
     }
 
-    @Secured({"ROLE_DOCTOR", "ROLE_ADMIN"})
+    @Secured({"ROLE_PATIENT", "ROLE_DOCTOR", "ROLE_ADMIN"})
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public List<AllergyDto> getAllAllergiesFromPatient(@PathVariable int patientId) {

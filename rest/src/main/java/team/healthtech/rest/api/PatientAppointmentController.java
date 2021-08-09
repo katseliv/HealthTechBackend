@@ -31,7 +31,7 @@ public class PatientAppointmentController {
         return service.createAppointment(appointmentCreateDto, patientId);
     }
 
-    @Secured({"ROLE_PATIENT", "ROLE_ADMIN"})
+    @Secured({"ROLE_PATIENT", "ROLE_DOCTOR", "ROLE_ADMIN"})
     @ResponseStatus(HttpStatus.OK)
     @GetMapping
     public List<AppointmentDto> getAllAppointmentsOfPatient(@PathVariable int patientId){

@@ -57,7 +57,7 @@ public class PatientController {
         return service.getPatientById(patientId);
     }
 
-    @Secured("ROLE_ADMIN")
+    @Secured({"ROLE_ADMIN", "ROLE_PATIENT"})
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{patientId}/last_appointment")
     public Integer getLastAppointment(

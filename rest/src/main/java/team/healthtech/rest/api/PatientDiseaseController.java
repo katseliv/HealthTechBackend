@@ -29,7 +29,7 @@ public class PatientDiseaseController {
         return service.createDisease(dto);
     }
 
-    @Secured({"ROLE_DOCTOR", "ROLE_ADMIN"})
+    @Secured({"ROLE_PATIENT", "ROLE_DOCTOR", "ROLE_ADMIN"})
     @GetMapping
     public List<DiseaseDto> getAllDiseasesOfPatient(@PathVariable int patientId) {
         return service.getAllDiseases(patientId);

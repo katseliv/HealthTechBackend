@@ -1,6 +1,7 @@
 package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -20,6 +21,7 @@ public class DoctorSpecialitiesController {
         this.service = service;
     }
 
+    @Secured("ROLE_ADMIN")
     @ResponseStatus(HttpStatus.OK)
     @PostMapping
     public void addSpecialityToDoctor(@RequestBody DoctorSpecialitiesDto dto, @PathVariable int doctorId){

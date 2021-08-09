@@ -36,7 +36,7 @@ public class DoctorController {
         return service.getAllDoctors();
     }
 
-    @Secured("ROLE_ADMIN")
+    @Secured({"ROLE_ADMIN", "ROLE_DOCTOR"})
     @ResponseStatus(HttpStatus.OK)
     @PutMapping("/{doctorId}")
     public void updateDoctor(

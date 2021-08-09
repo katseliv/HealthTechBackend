@@ -32,6 +32,7 @@ public class AdminController {
         return service.createAdmin(adminDto);
     }
 
+    @Secured("ROLE_ADMIN")
     @GetMapping
     public List<AdminDto> getAllAdmins() {
         return service.getAllAdmins();
@@ -47,6 +48,7 @@ public class AdminController {
         service.updateAdmin(adminDto, adminId);
     }
 
+    @Secured("ROLE_ADMIN")
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{adminId}")
     public AdminDto findAdmin(
