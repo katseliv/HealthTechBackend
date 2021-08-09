@@ -87,6 +87,9 @@ public class PatientServiceImpl implements PatientService {
         if (patientCreateDto.getPassword() == null || patientCreateDto.getPassword().isBlank()) {
             patientCreateDto.setPassword(entity.getPassword());
         }
+        if (patientCreateDto.getBirthdate() == null){
+            patientCreateDto.setBirthdate(entity.getBirthdate());
+        }
 
         patientCreateDto.setRole(Role.PATIENT);
         patientMapper.merge(patientCreateDto, entity);

@@ -68,9 +68,11 @@ public class DoctorServiceImpl implements DoctorService {
         logger.info("Doctor update with id {} request by {}", doctorId, profileProvider.getIfAvailable());
         DoctorEntity entity = doctorRepository.findById(doctorId).orElseThrow();
 
-        if (doctorCreateDto.getPassword().isBlank()) {
+        if (doctorCreateDto.getPassword() == null || doctorCreateDto.getPassword().isBlank()) {
             doctorCreateDto.setPassword(entity.getPassword());
         }
+
+        doctorCreateDto.setRole(Role.DOCTOR);
         doctorMapper.merge(doctorCreateDto, entity);
         doctorRepository.save(entity);
     }

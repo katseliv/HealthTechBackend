@@ -16,6 +16,7 @@ public class PatientDto extends UserDto {
     private String lastName;
 
     private Integer age;
+
     private Character sex;
 
     @JsonProperty("phone_number")
