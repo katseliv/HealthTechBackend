@@ -69,7 +69,11 @@ public class AdminServiceImpl implements AdminService {
         if (adminCreateDto.getPassword().isBlank()) {
             adminCreateDto.setPassword(entity.getPassword());
         }
-        logger.info("Admin update with id {} request by {}", adminDto.getId(), profileProvider.getIfAvailable());
+        logger.info(
+            "Admin update with id {} request by {}",
+            adminMapper.toEntity(adminCreateDto).getId(),
+            profileProvider.getIfAvailable()
+        );
         adminMapper.merge(adminCreateDto, entity);
         adminRepository.save(entity);
     }

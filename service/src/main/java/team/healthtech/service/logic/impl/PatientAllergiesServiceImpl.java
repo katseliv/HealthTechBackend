@@ -97,6 +97,11 @@ public class PatientAllergiesServiceImpl implements PatientAllergiesService {
 
     @Override
     public AllergyDto getAllergyById(int allergyId) {
+        logger.info(
+            "Allergy with id {} get request by {}",
+            allergyId,
+            profileProvider.getIfAvailable()
+        );
         return allergyRepository.findById(allergyId)
             .map(allergyMapper::fromEntity)
             .orElse(null);

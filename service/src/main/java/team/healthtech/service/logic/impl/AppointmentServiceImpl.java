@@ -55,6 +55,7 @@ public class AppointmentServiceImpl implements AppointmentService {
 
     @Override
     public void updateAppointment(AppointmentCreateDto appointmentCreateDto, Integer appointmentId) {
+        logger.info("Appointment update request");
         AppointmentEntity entity = appointmentRepository.findById(appointmentId).orElseThrow();
         appointmentMapper.merge(appointmentCreateDto, entity);
         appointmentRepository.save(appointmentMapper.toEntity(appointmentCreateDto));

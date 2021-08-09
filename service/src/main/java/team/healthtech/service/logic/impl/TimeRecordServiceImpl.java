@@ -47,6 +47,7 @@ public class TimeRecordServiceImpl implements TimeRecordService {
 
     @Override
     public TimeRecordDto createTimeRecord(TimeRecordDto dto) throws Exception {
+        logger.info("New timerecord create request");
         TimeRecordEntity targetEntity = mapper.toEntity(dto);
 
         DoctorEntity doctor = doctorRepository.findById(dto.getDoctorId()).orElseThrow();

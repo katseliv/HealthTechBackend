@@ -6,6 +6,7 @@ import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.entity.DiseaseEntity;
+import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.db.repository.DiseaseRepository;
 import team.healthtech.db.repository.PatientRepository;
 import team.healthtech.service.logic.PatientDiseasesService;
@@ -21,7 +22,7 @@ import java.util.List;
 @Service
 public class PatientDiseasesServiceImpl implements PatientDiseasesService {
 
-    private static final Logger logger = LoggerFactory.getLogger(AdminServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(PatientDiseasesServiceImpl.class);
     private final ObjectProvider<Profile> profileProvider;
     private final DiseaseMapper mapper;
     private final DiseaseRepository repository;
@@ -41,14 +42,9 @@ public class PatientDiseasesServiceImpl implements PatientDiseasesService {
     public DiseaseDto createDisease(@Valid DiseaseCreateDto dto) {
         logger.info("New disease create request by {}", profileProvider.getIfAvailable());
         DiseaseEntity entity = mapper.toEntity(dto);
-        //Optional<PatientEntity> patient = patientRepository.findById(1);//.orElseThrow();
         PatientEntity patient = patientRepository.findById(dto.getPatientId()).orElseThrow();
         entity.setPatient(patient);
         DiseaseEntity e = repository.save(entity);
-        /*return Optional.of(entity)
-            .map(repository::save)
-            .map(mapper::fromEntity)
-            .orElseThrow();*/
         return mapper.fromEntity(e);
     }
 

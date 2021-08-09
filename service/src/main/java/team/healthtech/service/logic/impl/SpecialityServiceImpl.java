@@ -13,7 +13,7 @@ import java.util.List;
 
 @Service
 public class SpecialityServiceImpl implements SpecialityService {
-    private static final Logger logger = LoggerFactory.getLogger(PatientServiceImpl.class);
+    private static final Logger logger = LoggerFactory.getLogger(SpecialityServiceImpl.class);
     private final SpecialityRepository specialityRepository;
     private final SpecialityMapper specialityMapper;
 
@@ -27,11 +27,13 @@ public class SpecialityServiceImpl implements SpecialityService {
 
     @Override
     public void createSpeciality(SpecialityDto specialityDto) {
+        logger.info("New speciality create request");
         specialityRepository.save(specialityMapper.toEntity(specialityDto));
     }
 
     @Override
     public List<SpecialityDto> getAllSpecialities() {
+        logger.info("All specialities get request");
         List<SpecialityDto> specialities = new ArrayList<>();
         for (var speciality : specialityRepository.findAll()) {
             specialities.add(specialityMapper.fromEntity(speciality));
