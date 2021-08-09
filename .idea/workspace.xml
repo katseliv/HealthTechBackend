@@ -1,0 +1,726 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21ffe208-a334-477f-8846-cec333ff82e3" name="Default Changelist" comment="update patient fix" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="HealthTech" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="AnnotationType" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="feature/database" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="ProjectId" id="1vkoD4nleCqYswoO4HWWJGiE7Yy" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/service/build/generated/sources/annotationProcessor/java/main/team/healthtech/service/mapper/PatientMapperImpl.java" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/commons" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.15174508" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.Java" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="team.healthtech.handler" />
+      <recent name="org.springframework.security.core.userdetails" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Paul Robinson\IdeaProjects\HealthTech-Team\commons" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Paul Robinson\IdeaProjects\HealthTech-Team\gradle\wrapper" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="team.healthtech.service" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="build gradle" />
+      <command value="HealthTech-Team [compileJava]" />
+      <command value="gradle db:newMigration" />
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.HealthtechApplication">
+    <configuration name="SecurityConfig" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="team.healthtech.SecurityConfig" />
+      <module name="HealthTech.security.main" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="team.healthtech.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="HealthTech-Team [compileJava]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="compileJava" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HealthTech-Team [db:newMigration]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="db:newMigration" />
+          </list>
+        </option>
+        <option name="vmOptions" value="" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HealthTech-Team [dependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="dependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HealthTech-Team [newMigration]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="newMigration" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="HealthtechApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="HealthTech.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="team.healthtech.HealthtechApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.HealthTech-Team [db:newMigration]" />
+        <item itemvalue="Gradle.HealthTech-Team [compileJava]" />
+        <item itemvalue="Gradle.HealthTech-Team [dependencies]" />
+        <item itemvalue="Gradle.HealthTech-Team [newMigration]" />
+        <item itemvalue="Application.SecurityConfig" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21ffe208-a334-477f-8846-cec333ff82e3" name="Default Changelist" comment="" />
+      <created>1627115324657</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1627115324657</updated>
+      <workItem from="1627115327761" duration="15038000" />
+      <workItem from="1627292919190" duration="506000" />
+      <workItem from="1627293449131" duration="9523000" />
+      <workItem from="1627369404614" duration="4565000" />
+      <workItem from="1627508842394" duration="9057000" />
+      <workItem from="1627560091461" duration="10953000" />
+      <workItem from="1627588846623" duration="5886000" />
+      <workItem from="1627630408415" duration="1399000" />
+      <workItem from="1627661107440" duration="3469000" />
+      <workItem from="1627674720261" duration="988000" />
+      <workItem from="1627749328030" duration="1916000" />
+      <workItem from="1627751389446" duration="168000" />
+      <workItem from="1627751579255" duration="11515000" />
+      <workItem from="1627807087808" duration="7402000" />
+      <workItem from="1627901146215" duration="1106000" />
+      <workItem from="1627993164741" duration="8955000" />
+      <workItem from="1628005914000" duration="4132000" />
+      <workItem from="1628012248747" duration="12181000" />
+      <workItem from="1628101824293" duration="299000" />
+      <workItem from="1628102182227" duration="12118000" />
+      <workItem from="1628156242283" duration="15838000" />
+      <workItem from="1628239490087" duration="20827000" />
+      <workItem from="1628327837148" duration="2172000" />
+      <workItem from="1628350019501" duration="11548000" />
+      <workItem from="1628371333183" duration="11692000" />
+      <workItem from="1628418509926" duration="45180000" />
+    </task>
+    <task id="LOCAL-00020" summary="allergy and speciality entities fixed">
+      <created>1627807213446</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1627807213446</updated>
+    </task>
+    <task id="LOCAL-00021" summary="build.gradle fix">
+      <created>1627813857332</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1627813857332</updated>
+    </task>
+    <task id="LOCAL-00022" summary="entities refactor">
+      <created>1627813879192</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1627813879192</updated>
+    </task>
+    <task id="LOCAL-00023" summary="entities refactor">
+      <created>1627813886545</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1627813886545</updated>
+    </task>
+    <task id="LOCAL-00024" summary="include commons">
+      <created>1627813914782</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1627813914782</updated>
+    </task>
+    <task id="LOCAL-00025" summary="security">
+      <created>1627813952331</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1627813952331</updated>
+    </task>
+    <task id="LOCAL-00026" summary="compiler settings">
+      <created>1627999832471</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1627999832471</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Doctor mapper and simple doctor service implemented">
+      <created>1628002607313</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1628002607313</updated>
+    </task>
+    <task id="LOCAL-00028" summary="doctor controller">
+      <created>1628002639785</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1628002639785</updated>
+    </task>
+    <task id="LOCAL-00029" summary="refactor commit">
+      <created>1628002657495</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1628002657495</updated>
+    </task>
+    <task id="LOCAL-00030" summary="doctor service added">
+      <created>1628004169145</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1628004169145</updated>
+    </task>
+    <task id="LOCAL-00031" summary="user dto changes">
+      <created>1628004993697</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1628004993697</updated>
+    </task>
+    <task id="LOCAL-00032" summary="patient validation improved">
+      <created>1628029192482</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1628029192482</updated>
+    </task>
+    <task id="LOCAL-00033" summary="doctor create validation added">
+      <created>1628030218134</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1628030218134</updated>
+    </task>
+    <task id="LOCAL-00034" summary="create user email validation implemented">
+      <created>1628031602262</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1628031602262</updated>
+    </task>
+    <task id="LOCAL-00035" summary="security">
+      <created>1628164533174</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1628164533175</updated>
+    </task>
+    <task id="LOCAL-00036" summary="refactor">
+      <created>1628164620738</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1628164620738</updated>
+    </task>
+    <task id="LOCAL-00037" summary="security and roles">
+      <created>1628164641106</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1628164641106</updated>
+    </task>
+    <task id="LOCAL-00038" summary="redundant fields in mappers now ignoring">
+      <created>1628243355719</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1628243355719</updated>
+    </task>
+    <task id="LOCAL-00039" summary="roles fixed ?">
+      <created>1628245694332</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1628245694332</updated>
+    </task>
+    <task id="LOCAL-00040" summary="code refactor and cors fixed">
+      <created>1628260958141</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1628260958141</updated>
+    </task>
+    <task id="LOCAL-00041" summary="docker0compose frontend">
+      <created>1628371580330</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1628371580330</updated>
+    </task>
+    <task id="LOCAL-00042" summary="refactor">
+      <created>1628378926363</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1628378926363</updated>
+    </task>
+    <task id="LOCAL-00043" summary="admin logger implemented">
+      <created>1628380061863</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1628380061863</updated>
+    </task>
+    <task id="LOCAL-00044" summary="appointment service logger implemented">
+      <created>1628381582687</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381582687</updated>
+    </task>
+    <task id="LOCAL-00045" summary="comment service logger implemented">
+      <created>1628381589931</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381589931</updated>
+    </task>
+    <task id="LOCAL-00046" summary="doctor service logger implemented">
+      <created>1628381596504</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381596504</updated>
+    </task>
+    <task id="LOCAL-00047" summary="patients-allergies service logger implemented">
+      <created>1628381609862</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381609862</updated>
+    </task>
+    <task id="LOCAL-00048" summary="patients-diseases service logger implemented">
+      <created>1628381618907</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381618907</updated>
+    </task>
+    <task id="LOCAL-00049" summary="patient service logger implemented">
+      <created>1628381625714</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381625714</updated>
+    </task>
+    <task id="LOCAL-00050" summary="time record service logger implemented">
+      <created>1628381638126</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381638127</updated>
+    </task>
+    <task id="LOCAL-00051" summary="user service logger implemented">
+      <created>1628381644068</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1628381644068</updated>
+    </task>
+    <task id="LOCAL-00052" summary="http responses and access filters implemented">
+      <created>1628383778373</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1628383778373</updated>
+    </task>
+    <task id="LOCAL-00053" summary="remote database connection">
+      <created>1628424558524</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1628424558524</updated>
+    </task>
+    <task id="LOCAL-00054" summary="origin/database merge with origin/obukhova_e_v">
+      <created>1628426408180</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1628426408180</updated>
+    </task>
+    <task id="LOCAL-00055" summary="fix security config">
+      <created>1628426655042</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1628426655042</updated>
+    </task>
+    <task id="LOCAL-00056" summary="fix remote database connection">
+      <created>1628430365591</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1628430365591</updated>
+    </task>
+    <task id="LOCAL-00057" summary="docker-compose.yaml fix">
+      <created>1628430701588</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1628430701588</updated>
+    </task>
+    <task id="LOCAL-00058" summary="add doctor dto rating counting and delete column rating from doctor entity and table">
+      <created>1628433528054</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1628433528054</updated>
+    </task>
+    <task id="LOCAL-00059" summary="doctor specialities testing">
+      <created>1628434106781</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1628434106781</updated>
+    </task>
+    <task id="LOCAL-00060" summary="doctor rating implemented">
+      <created>1628439119007</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1628439119007</updated>
+    </task>
+    <task id="LOCAL-00061" summary="patient stores with birthday instead of age">
+      <created>1628447662386</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1628447662386</updated>
+    </task>
+    <task id="LOCAL-00062" summary="patient stores with birthday instead of age">
+      <created>1628448287484</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1628448287484</updated>
+    </task>
+    <task id="LOCAL-00063" summary="specialities adding service implemented">
+      <created>1628451622986</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1628451622986</updated>
+    </task>
+    <task id="LOCAL-00064" summary="specialities rest controller added">
+      <created>1628455222752</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1628455222752</updated>
+    </task>
+    <task id="LOCAL-00065" summary="specialities rest controller improved">
+      <created>1628457850506</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1628457850506</updated>
+    </task>
+    <task id="LOCAL-00066" summary="last appointment doctor get request for patient">
+      <created>1628466819581</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1628466819581</updated>
+    </task>
+    <task id="LOCAL-00067" summary="doctor specialities fixed">
+      <created>1628469144943</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1628469144943</updated>
+    </task>
+    <task id="LOCAL-00068" summary="update patient fix">
+      <created>1628472687599</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1628472687599</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="8bc80efb-de69-487d-89a2-82bee9c7e054">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="8bc80efb-de69-487d-89a2-82bee9c7e054" value="TOOL_WINDOW" />
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="admin logger implemented" />
+    <MESSAGE value="appointment service logger implemented" />
+    <MESSAGE value="comment service logger implemented" />
+    <MESSAGE value="doctor service logger implemented" />
+    <MESSAGE value="patients-allergies service logger implemented" />
+    <MESSAGE value="patients-diseases service logger implemented" />
+    <MESSAGE value="patient service logger implemented" />
+    <MESSAGE value="time record service logger implemented" />
+    <MESSAGE value="user service logger implemented" />
+    <MESSAGE value="http responses and access filters implemented" />
+    <MESSAGE value="remote database connection" />
+    <MESSAGE value="origin/database merge with origin/obukhova_e_v" />
+    <MESSAGE value="fix security config" />
+    <MESSAGE value="fix remote database connection" />
+    <MESSAGE value="docker-compose.yaml fix" />
+    <MESSAGE value="add doctor dto rating counting and delete column rating from doctor entity and table" />
+    <MESSAGE value="doctor specialities testing" />
+    <MESSAGE value="doctor rating implemented" />
+    <MESSAGE value="patient stores with birthday instead of age" />
+    <MESSAGE value="specialities adding service implemented" />
+    <MESSAGE value="specialities rest controller added" />
+    <MESSAGE value="specialities rest controller improved" />
+    <MESSAGE value="last appointment doctor get request for patient" />
+    <MESSAGE value="doctor specialities fixed" />
+    <MESSAGE value="update patient fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="update patient fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="org.hibernate.MappingException" package="org.hibernate" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="javax.persistence.PersistenceException" package="javax.persistence" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/security/src/main/java/team/healthtech/handler/HealthtechFailureHandler.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rest/src/main/java/team/healthtech/rest/api/PatientController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service/build/generated/sources/annotationProcessor/java/main/team/healthtech/service/mapper/PatientMapperImpl.java</url>
+          <line>148</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/rest/src/main/java/team/healthtech/rest/api/TimeRecordController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/service/src/main/java/team/healthtech/service/logic/impl/DoctorSpecialitiesServiceImpl.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.apache.catalina.connector.RequestFacade" memberName="request" />
+      </pinned-members>
+    </pin-to-top-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/HealthTech$HealthtechApplication.ic" NAME="HealthtechApplication Coverage Results" MODIFIED="1628437136964" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+  </component>
+</project>

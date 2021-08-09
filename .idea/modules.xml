@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HealthTech.iml" filepath="$PROJECT_DIR$/.idea/modules/HealthTech.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/db/HealthTech.db.iml" filepath="$PROJECT_DIR$/.idea/modules/db/HealthTech.db.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/db/HealthTech.db.main.iml" filepath="$PROJECT_DIR$/.idea/modules/db/HealthTech.db.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/db/HealthTech.db.test.iml" filepath="$PROJECT_DIR$/.idea/modules/db/HealthTech.db.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/HealthTech.main.iml" filepath="$PROJECT_DIR$/.idea/modules/HealthTech.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest/HealthTech.rest.iml" filepath="$PROJECT_DIR$/.idea/modules/rest/HealthTech.rest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest/HealthTech.rest.main.iml" filepath="$PROJECT_DIR$/.idea/modules/rest/HealthTech.rest.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/rest/HealthTech.rest.test.iml" filepath="$PROJECT_DIR$/.idea/modules/rest/HealthTech.rest.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/HealthTech.security.iml" filepath="$PROJECT_DIR$/.idea/modules/security/HealthTech.security.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/HealthTech.security.main.iml" filepath="$PROJECT_DIR$/.idea/modules/security/HealthTech.security.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/security/HealthTech.security.test.iml" filepath="$PROJECT_DIR$/.idea/modules/security/HealthTech.security.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/HealthTech.service.iml" filepath="$PROJECT_DIR$/.idea/modules/service/HealthTech.service.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/HealthTech.service.main.iml" filepath="$PROJECT_DIR$/.idea/modules/service/HealthTech.service.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/service/HealthTech.service.test.iml" filepath="$PROJECT_DIR$/.idea/modules/service/HealthTech.service.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons/commons.iml" filepath="$PROJECT_DIR$/.idea/modules/commons/commons.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons/commons.main.iml" filepath="$PROJECT_DIR$/.idea/modules/commons/commons.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/commons/commons.test.iml" filepath="$PROJECT_DIR$/.idea/modules/commons/commons.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/team.healthtech.HealthTech.test.iml" filepath="$PROJECT_DIR$/.idea/modules/team.healthtech.HealthTech.test.iml" />
+    </modules>
+  </component>
+</project>

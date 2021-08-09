@@ -1,0 +1,5 @@
+--ALTER TABLE healthtech.doctors_specialities
+--    DROP PRIMARY KEY,
+--    ADD CONSTRAINT primary_key
+--        PRIMARY KEY (doctor_id, speciality_id)
+--;
