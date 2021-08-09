@@ -48,7 +48,7 @@ public class PatientController {
         service.updatePatient(patientDto, patientId);
     }
 
-    @Secured({"ROLE_DOCTOR", "ROLE_ADMIN"})
+    @Secured({"ROLE_PATIENT", "ROLE_DOCTOR", "ROLE_ADMIN"})
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{patientId}")
     public PatientDto getPatient(

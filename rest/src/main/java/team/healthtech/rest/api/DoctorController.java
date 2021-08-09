@@ -46,6 +46,7 @@ public class DoctorController {
         service.updateDoctor(doctorDto, doctorId);
     }
 
+    @Secured({"ROLE_PATIENT", "ROLE_DOCTOR", "ROLE_ADMIN"})
     @ResponseStatus(HttpStatus.OK)
     @GetMapping("/{doctorId}")
     public DoctorDto findDoctor(
