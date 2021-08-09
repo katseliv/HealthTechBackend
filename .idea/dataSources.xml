@@ -22,5 +22,12 @@
       <jdbc-url>jdbc:postgresql://servachok2021.ddns.net:35432/postgres</jdbc-url>
       <working-dir>$ProjectFileDir$</working-dir>
     </data-source>
+    <data-source source="LOCAL" name="postgres@servachok2021.ddns.net [2]" uuid="559e20e9-382d-4f6a-a002-b78c1888f90a">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://servachok2021.ddns.net:35432/postgres</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
   </component>
 </project>
