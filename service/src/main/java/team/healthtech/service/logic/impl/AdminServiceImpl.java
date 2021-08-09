@@ -61,10 +61,11 @@ public class AdminServiceImpl implements AdminService {
     public void updateAdmin(AdminCreateDto adminCreateDto, int adminId) {
         AdminEntity entity = adminRepository.findById(adminId).orElseThrow();
 
-        if (adminCreateDto.getPassword().isBlank()) {
+        if (adminCreateDto.getPassword() == null || adminCreateDto.getPassword().isBlank()) {
             adminCreateDto.setPassword(entity.getPassword());
         }
 
+        adminCreateDto.setRole(Role.ADMIN);
         adminMapper.merge(adminCreateDto, entity);
         adminRepository.save(entity);
     }

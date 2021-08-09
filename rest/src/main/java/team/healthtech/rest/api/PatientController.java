@@ -35,7 +35,7 @@ public class PatientController {
         return service.getAllPatients();
     }
 
-    @Secured("ROLE_ADMIN")
+    //@Secured("ROLE_ADMIN")
     @PutMapping("/{patientId}")
     public void updatePatient(
         @RequestBody PatientCreateDto patientDto,

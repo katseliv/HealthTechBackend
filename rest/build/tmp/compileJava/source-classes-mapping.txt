@@ -16,13 +16,13 @@ team/healthtech/rest/api/DoctorSpecialitiesController.java
  team.healthtech.rest.api.DoctorSpecialitiesController
 team/healthtech/rest/api/DoctorAppointmentController.java
  team.healthtech.rest.api.DoctorAppointmentController
-team/healthtech/rest/api/AdminController.java
- team.healthtech.rest.api.AdminController
+team/healthtech/rest/api/TimeRecordController.java
+ team.healthtech.rest.api.TimeRecordController
 team/healthtech/rest/api/DoctorController.java
  team.healthtech.rest.api.DoctorController
 team/healthtech/rest/api/PatientAppointmentController.java
  team.healthtech.rest.api.PatientAppointmentController
+team/healthtech/rest/api/AdminController.java
+ team.healthtech.rest.api.AdminController
 team/healthtech/rest/api/PatientController.java
  team.healthtech.rest.api.PatientController
-team/healthtech/rest/api/TimeRecordController.java
- team.healthtech.rest.api.TimeRecordController
