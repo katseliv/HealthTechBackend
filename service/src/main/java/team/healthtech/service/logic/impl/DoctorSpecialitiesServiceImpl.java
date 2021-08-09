@@ -1,5 +1,7 @@
 package team.healthtech.service.logic.impl;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import team.healthtech.db.entity.DoctorEntity;
@@ -17,6 +19,7 @@ import java.util.List;
 @Service
 public class DoctorSpecialitiesServiceImpl implements DoctorSpecialitiesService {
 
+    private static final Logger logger = LoggerFactory.getLogger(DoctorSpecialitiesServiceImpl.class);
     private final DoctorsSpecialitiesRepository repository;
     private final DoctorSpecialitiesMapper mapper;
 
@@ -30,12 +33,18 @@ public class DoctorSpecialitiesServiceImpl implements DoctorSpecialitiesService 
 
     @Override
     public void addSpecialityByDoctorId(DoctorSpecialitiesDto dto, Integer doctorId) {
+        logger.info(
+            "Speciality with id {} to doctor with id {} add request",
+            dto.getSpecialityId(),
+            doctorId
+        );
         var entity = mapper.toEntity(dto, doctorId);
         repository.save(entity);
     }
 
     @Override
     public List<DoctorSpecialitiesDto> getAllSpecialitiesByDoctorId(Integer doctorId) {
+        logger.info("All specialities of doctor with id {} get request", doctorId);
         return mapper.fromEntities(repository.getDoctorsSpecialitiesEntitiesByDoctorId(doctorId));
     }
 

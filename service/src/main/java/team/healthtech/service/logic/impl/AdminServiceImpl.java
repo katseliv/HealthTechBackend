@@ -46,6 +46,11 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public AdminDto createAdmin(@Valid AdminCreateDto adminDto) {
+        if (profileProvider.getIfAvailable() == null) {
+            logger.info("New admin create request by anonymous");
+        } else {
+            logger.info("New admin create request by {}", profileProvider.getIfAvailable());
+        }
         String encodePassword = passwordEncoder.encode(adminDto.getPassword());
         adminDto.setPassword(encodePassword);
         adminDto.setRole(Role.ADMIN);
@@ -61,16 +66,23 @@ public class AdminServiceImpl implements AdminService {
     public void updateAdmin(AdminCreateDto adminCreateDto, int adminId) {
         AdminEntity entity = adminRepository.findById(adminId).orElseThrow();
 
-        if (adminCreateDto.getPassword().isBlank()) {
+        if (adminCreateDto.getPassword() == null || adminCreateDto.getPassword().isBlank()) {
             adminCreateDto.setPassword(entity.getPassword());
         }
+        logger.info(
+            "Admin update with id {} request by {}",
+            adminMapper.toEntity(adminCreateDto).getId(),
+            profileProvider.getIfAvailable()
+        );
 
+        adminCreateDto.setRole(Role.ADMIN);
         adminMapper.merge(adminCreateDto, entity);
         adminRepository.save(entity);
     }
 
     @Override
     public AdminDto getAdminById(int adminId) {
+        logger.info("Admin get with id {} request by {}", adminId, profileProvider.getIfAvailable());
         return adminRepository.findById(adminId)
             .map(adminMapper::fromEntity)
             .orElse(null);
@@ -78,11 +90,13 @@ public class AdminServiceImpl implements AdminService {
 
     @Override
     public void deleteAdminById(int adminId) {
+        logger.info("Admin delete with id {} request by {}", adminId, profileProvider.getIfAvailable());
         adminRepository.deleteById(adminId);
     }
 
     @Override
     public List<AdminDto> getAllAdmins() {
+        logger.info("Admin list get request by {}", profileProvider.getIfAvailable());
         return adminMapper.fromEntities(adminRepository.findAll());
     }
 
