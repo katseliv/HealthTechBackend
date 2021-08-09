@@ -1,6 +1,7 @@
 package team.healthtech.rest.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.*;
 import team.healthtech.service.logic.AppointmentService;
 import team.healthtech.service.model.AppointmentDto;
@@ -19,6 +20,7 @@ public class DoctorAppointmentController {
         this.service = service;
     }
 
+    @Secured({"ROLE_PATIENT", "ROLE_DOCTOR"})
     @PutMapping
     public void updateAppointment(
         @RequestBody AppointmentCreateDto appointmentCreateDto,
