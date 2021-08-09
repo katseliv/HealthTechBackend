@@ -1,0 +1,252 @@
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+  "id": 2,
+  "first_name": "John",
+  "mid_name": "Doevych",
+  "last_name": "Doe",
+  "password": "12345"
+}
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+  "first_name": "John",
+  "mid_name": "Doevych",
+  "last_name": "Doe",
+  "password": "12345"
+}
+
+<> 2021-07-20T134814.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+  "first_name": "John",
+  "mid_name": "Doevych",
+  "last_name": "Doe",
+  "password": "12345"
+}
+
+<> 2021-07-20T134728.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+  "id": 2,
+  "first_name": "John",
+  "mid_name": "Doevych",
+  "last_name": "Doe",
+  "password": "12345"
+}
+
+<> 2021-07-20T133720.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+  "id": 5,
+  "first_name": "John",
+  "mid_name": "Robertovych",
+  "last_name": "Doe",
+  "password": "12345"
+}
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+  "id": 5,
+  "first_name": "John",
+  "mid_name": "Robertovych",
+  "last_name": "Doe",
+  "password": "12345"
+}
+
+<> 2021-07-20T130030.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+  "id": 2,
+  "first_name": "John",
+  "mid_name": "Robertovych",
+  "last_name": "Doe",
+  "password": "12345"
+}
+
+<> 2021-07-20T125739.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+    "first_name": "John",
+    "mid_name": "Robertovych",
+    "last_name": "Doe",
+    "password": "12345"
+}
+
+<> 2021-07-20T125713.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+    "first_name": "John",
+    "mid_name": "Robertovych",
+    "last_name": "Doe",
+    "password": "12345"
+}
+
+<> 2021-07-20T125654.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+    "first_name": "John",
+    "mid_name": "Robertovych",
+    "last_name": "Doe",
+    "password": "12345"
+}
+
+<> 2021-07-20T125517.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+    "first_name": "John",
+    "mid_name": "Robertovych",
+    "last_name": "Doe",
+    "password": "12345"
+}
+
+<> 2021-07-20T124645.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+    "id": 2,
+    "first_name": "John",
+    "mid_name": "Robertovych",
+    "last_name": "Doe",
+    "password": "12345"
+}
+
+<> 2021-07-20T124343.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+"id": 2,
+"first_name": "John",
+"mid_name": "Robertovych",
+"last_name": "Doe",
+"password": "12345"
+}
+
+<> 2021-07-20T124004.500.json
+
+###
+
+POST http://localhost:8081/users
+Content-Type: application/json
+
+{
+"id": "2",
+"first_name": "John",
+"mid_name": "Robertovych",
+"last_name": "Doe",
+"password": "12345"
+}
+
+<> 2021-07-20T123753.500.json
+
+###
+
+POST http://localhost:8081/users
+
+{
+"id": "2",
+"first_name": "John",
+"mid_name": "Robertovych",
+"last_name": "Doe",
+"password": "12345"
+}
+
+<> 2021-07-20T123716.415.json
+
+###
+
+POST http://localhost:8081/users
+{:
+"id": "2",
+"first_name": "John",
+"mid_name": "Robertovych",
+"last_name": "Doe",
+"password": "12345"
+}:
+
+<> 2021-07-20T123553.400.html
+
+###
+
+POST http://localhost:8081/users
+{:
+"id": "2",
+"first_name": "John",
+"mid_name": "Robertovych",
+"last_name": "Doe",
+"password": "12345"
+}:
+
+<> 2021-07-20T123012.400.html
+
+###
+
+POST http://localhost:8081/users
+
+<> 2021-07-20T122620.400.json
+
+###
+
+POST http://localhost:8081/users
+
+<> 2021-07-20T122401.400.json
+
+###
+

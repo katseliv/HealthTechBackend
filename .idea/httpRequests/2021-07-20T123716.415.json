@@ -1,0 +1,6 @@
+{
+  "timestamp": "2021-07-20T09:37:16.876+00:00",
+  "status": 415,
+  "error": "Unsupported Media Type",
+  "path": "/users"
+}

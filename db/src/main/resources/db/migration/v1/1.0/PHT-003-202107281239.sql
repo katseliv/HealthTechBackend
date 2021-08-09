@@ -1,0 +1,3 @@
+ALTER TABLE healthtech.appointments
+    ALTER COLUMN datetime TYPE TIMESTAMP,
+    ALTER COLUMN datetime SET DEFAULT CURRENT_TIMESTAMP;
