@@ -8,6 +8,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 import team.healthtech.common.Role;
 import team.healthtech.db.entity.CommentEntity;
+import team.healthtech.db.entity.DoctorEntity;
+import team.healthtech.db.entity.PatientEntity;
 import team.healthtech.db.repository.CommentRepository;
 import team.healthtech.db.repository.DoctorRepository;
 import team.healthtech.service.logic.DoctorService;
@@ -61,9 +63,15 @@ public class DoctorServiceImpl implements DoctorService {
     }
 
     @Override
-    public void updateDoctor(DoctorDto doctorDto, int doctorId) {
-        doctorMapper.merge(doctorDto, doctorRepository.findById(doctorId).orElseThrow());
-        doctorRepository.save(doctorMapper.toEntity(doctorDto));
+    public void updateDoctor(DoctorCreateDto doctorCreateDto, int doctorId) {
+        DoctorEntity entity = doctorRepository.findById(doctorId).orElseThrow();
+
+        if (doctorCreateDto.getPassword().isBlank()) {
+            doctorCreateDto.setPassword(entity.getPassword());
+        }
+
+        doctorMapper.merge(doctorCreateDto, entity);
+        doctorRepository.save(entity);
     }
 
     @Override

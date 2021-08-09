@@ -10,7 +10,7 @@ public interface DoctorService {
 
     DoctorDto createDoctor(@Valid DoctorCreateDto doctorDto);
 
-    void updateDoctor(DoctorDto doctorDto, int doctorId);
+    void updateDoctor(DoctorCreateDto doctorDto, int doctorId);
 
     DoctorDto getDoctorById(int doctorId);
 

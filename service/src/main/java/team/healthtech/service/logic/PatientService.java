@@ -11,7 +11,7 @@ public interface PatientService {
 
     PatientDto createPatient(@Valid PatientCreateDto patientDto);
 
-    void updatePatient(PatientDto patientDto, int patientId);
+    void updatePatient(PatientCreateDto patientDto, int patientId);
 
     PatientDto getPatientById(int patientId);
 

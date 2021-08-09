@@ -40,7 +40,7 @@ public class AdminController {
     //@Secured("ROLE_ADMIN")
     @PutMapping("/{adminId}")
     public void updateAdmin(
-        @RequestBody AdminDto adminDto,
+        @RequestBody AdminCreateDto adminDto,
         @PathVariable int adminId
     ) {
         service.updateAdmin(adminDto, adminId);

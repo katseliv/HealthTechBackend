@@ -10,7 +10,7 @@ public interface AdminService {
 
     AdminDto createAdmin(@Valid AdminCreateDto adminDto);
 
-    void updateAdmin(AdminDto adminDto, int adminId);
+    void updateAdmin(AdminCreateDto adminDto, int adminId);
 
     AdminDto getAdminById(int adminId);
 
