@@ -85,6 +85,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
             .csrf().disable() // защита от Cross-Site Request Forgery
             .logout()
             .logoutUrl("/user/logout")
+            .deleteCookies("JSESSIONID")
             .and()
             .formLogin()
             .loginProcessingUrl("/user/login")
